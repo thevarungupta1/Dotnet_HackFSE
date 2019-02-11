@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\bin\Debug\netcoreapp2.2\Outreach.Reporting.Service.deps.json
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\bin\Debug\netcoreapp2.2\Outreach.Reporting.Service.runtimeconfig.json
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\bin\Debug\netcoreapp2.2\Outreach.Reporting.Service.runtimeconfig.dev.json
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\bin\Debug\netcoreapp2.2\Outreach.Reporting.Service.dll
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\bin\Debug\netcoreapp2.2\Outreach.Reporting.Service.pdb
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\bin\Debug\netcoreapp2.2\Outreach Reporting System.xml
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.RazorAssemblyInfo.cache
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.RazorAssemblyInfo.cs
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.RazorTargetAssemblyInfo.cache
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.dll
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.pdb
+C:\Users\Administrator\Desktop\Project\Back End\Outreach Reporting System\Outreach Reporting System\obj\Debug\netcoreapp2.2\Outreach.Reporting.Service.csprojAssemblyReference.cache
