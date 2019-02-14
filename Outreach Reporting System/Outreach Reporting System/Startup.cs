@@ -29,7 +29,7 @@ namespace Outreach_Reporting_System
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 //The generated Swagger JSON file will have these properties.
@@ -51,6 +51,12 @@ namespace Outreach_Reporting_System
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors(builder =>
+                builder.WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                );
+            //app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -72,6 +78,7 @@ namespace Outreach_Reporting_System
             {
                 c. SwaggerEndpoint("/swagger/v1/swagger.json", "Outreach Reporting System");
             });
+
         }
     }
 }
