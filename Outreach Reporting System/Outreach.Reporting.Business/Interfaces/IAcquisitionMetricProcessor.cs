@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Outreach.Reporting.Data.Interfaces
+namespace Outreach.Reporting.Business.Interfaces
 {
-    public interface IAssocateRepository
+    class IAcquisitionMetricProcessor
     {
     }
 }

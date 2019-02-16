@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Interfaces
 {
-    class IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
+        IAssociateRepository Associates { get; }
+        IEventRepository Events { get; }
+        IUserRepository Users { get; }
+        int Complete();
     }
 }

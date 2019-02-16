@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Repository
 {
-    public class EventRepository : Repository<Events>, IEventRepository
+    public class AssociateRepository : Repository<Associates>, IAssociateRepository
     {
-        public EventRepository(ReportContext context) : base(context)
+        public AssociateRepository(ReportContext context) : base(context)
         {
         }
 
