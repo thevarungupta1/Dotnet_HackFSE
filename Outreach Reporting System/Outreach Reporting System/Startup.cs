@@ -13,7 +13,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Outreach.Reporting.Business.Interfaces;
+using Outreach.Reporting.Business.Processors;
 using Outreach.Reporting.Data.Entities;
+using Outreach.Reporting.Data.Interfaces;
+using Outreach.Reporting.Data.Repository;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Outreach_Reporting_System
@@ -51,6 +55,10 @@ namespace Outreach_Reporting_System
                 //... and tell Swagger to use those XML comments.
                 c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddTransient<IAssociateProcessor, AssociateProcessor>();
+            services.AddTransient<IEventProcessor, EventProcessor>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

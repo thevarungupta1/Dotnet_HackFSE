@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Outreach.Reporting.Data.Entities
@@ -29,7 +30,13 @@ namespace Outreach.Reporting.Data.Entities
             modelBuilder.Entity<AssociatesEnrolledToEvents>().ToTable("AssociatesEnrolledToEvents");
             modelBuilder.Entity<Locations>().ToTable("Locations");
             modelBuilder.Entity<Users>().ToTable("Users");
+            modelBuilder.Entity<UserRoles>().ToTable("UserRoles");
             modelBuilder.Entity<Configurations>().ToTable("Configurations");
+
+            modelBuilder.Entity<Associates>()
+                   .Property(c => c.ID)
+                   .ValueGeneratedNever()
+                   .HasAnnotation("DatabaseGenerated", DatabaseGeneratedOption.None);
         }
 
     }

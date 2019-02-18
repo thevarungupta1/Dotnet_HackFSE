@@ -15,7 +15,12 @@ namespace Outreach.Reporting.Data.Entities
         public string State { get; set; }
         public string Country { get; set; }
         public string PinCode { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime? ModifiedOn { get; set; }
 
+        //Navigation properties
         public ICollection<Associates> Associates { get; set; }
         public ICollection<Events> Events { get; set; }
     }

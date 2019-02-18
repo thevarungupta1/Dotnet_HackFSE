@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outreach.Reporting.Service", "Outreach Reporting System\Outreach.Reporting.Service.csproj", "{264CB249-D0EC-4265-92A8-FA7FAC358B16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outreach.Reporting.Service", "Outreach Reporting System\Outreach.Reporting.Service.csproj", "{264CB249-D0EC-4265-92A8-FA7FAC358B16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outreach.Reporting.Business", "Outreach.Reporting.Business\Outreach.Reporting.Business.csproj", "{DBC088C8-2B6C-44C2-A0D3-A522098E0C4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outreach.Reporting.Business", "Outreach.Reporting.Business\Outreach.Reporting.Business.csproj", "{DBC088C8-2B6C-44C2-A0D3-A522098E0C4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outreach.Reporting.Data", "Outreach.Reporting.Data\Outreach.Reporting.Data.csproj", "{19F9B407-D423-471D-BC49-7F54F9520FF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outreach.Reporting.Data", "Outreach.Reporting.Data\Outreach.Reporting.Data.csproj", "{19F9B407-D423-471D-BC49-7F54F9520FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outreach.Reporting.Entity", "Outreach.Reporting.Entity\Outreach.Reporting.Entity.csproj", "{F6A8BF55-B809-4B4E-8F2F-E345F36B76B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outreach.Reporting.Model", "Outreach.Reporting.Entity\Outreach.Reporting.Model.csproj", "{F6A8BF55-B809-4B4E-8F2F-E345F36B76B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

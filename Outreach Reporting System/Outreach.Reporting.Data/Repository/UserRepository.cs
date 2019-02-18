@@ -16,5 +16,6 @@ namespace Outreach.Reporting.Data.Repository
         {
             get { return Context as ReportContext; }
         }
+
     }
 }

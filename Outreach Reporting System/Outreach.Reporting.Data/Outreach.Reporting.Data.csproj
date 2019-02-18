@@ -12,4 +12,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Outreach.Reporting.Entity\Outreach.Reporting.Model.csproj" />
+  </ItemGroup>
+
 </Project>
