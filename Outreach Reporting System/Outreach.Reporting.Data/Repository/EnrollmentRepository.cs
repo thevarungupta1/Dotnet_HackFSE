@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Repository
 {
-    public class AssociateRepository : Repository<Associates>, IAssociateRepository
+    public class EnrollmentRepository : Repository<Enrollments>, IEnrollmentRepository
     {
-        public AssociateRepository(ReportContext context) : base(context)
+        public EnrollmentRepository(ReportContext context) : base(context)
         {
         }
 

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Outreach.Reporting.Business.Interfaces;
-using Outreach.Reporting.Model;
+using Outreach.Reporting.Entity.Entities;
 
 namespace Outreach.Reporting.Service.Controllers
 {
@@ -38,7 +38,7 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] List<EventModel> events)
+        public void Post([FromBody] IEnumerable<Events> events)
         {
             _eventProcessor.SaveEvents(events);
         }

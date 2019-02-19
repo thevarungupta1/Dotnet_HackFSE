@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 using System.Runtime.InteropServices;
-using Excel = Microsoft.Office.Interop.Excel;       //microsoft Excel 14 object in references-> COM tab
 using System.Data;
 //using Microsoft.Office.Interop.Excel;
 using Microsoft.Extensions.DependencyInjection;

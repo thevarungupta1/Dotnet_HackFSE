@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,8 +15,8 @@ namespace Outreach.Reporting.Data.Entities
 
         public DbSet<Associates> Associates { get; set; }
         public DbSet<Events> Events { get; set; }
-        public DbSet<AssociatesEnrolledToEvents> AssociatesEnrolledToEvents { get; set; }
-        public DbSet<Locations> Locations { get; set; }
+        public DbSet<Enrollments> Enrollments { get; set; }
+       // public DbSet<Locations> Locations { get; set; }
         public DbSet<Users> Users { get; set; }
         public DbSet<Configurations> Configurations { get; set; }
 
@@ -27,8 +28,8 @@ namespace Outreach.Reporting.Data.Entities
         {
             modelBuilder.Entity<Associates>().ToTable("Associates");
             modelBuilder.Entity<Events>().ToTable("Events");
-            modelBuilder.Entity<AssociatesEnrolledToEvents>().ToTable("AssociatesEnrolledToEvents");
-            modelBuilder.Entity<Locations>().ToTable("Locations");
+            modelBuilder.Entity<Enrollments>().ToTable("Enrollments");
+            //modelBuilder.Entity<Locations>().ToTable("Locations");
             modelBuilder.Entity<Users>().ToTable("Users");
             modelBuilder.Entity<UserRoles>().ToTable("UserRoles");
             modelBuilder.Entity<Configurations>().ToTable("Configurations");

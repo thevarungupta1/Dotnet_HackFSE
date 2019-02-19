@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Outreach.Reporting.Business.Interfaces
 {
-    public interface IEventProcessor
+    public interface IEnrollmentProcessor
     {
-        bool SaveEvents(IEnumerable<Events> events);
+        bool SaveEnrollments(IEnumerable<Enrollments> associates);
     }
 }

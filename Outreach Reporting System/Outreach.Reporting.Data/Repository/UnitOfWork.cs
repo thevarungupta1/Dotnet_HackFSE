@@ -12,14 +12,14 @@ namespace Outreach.Reporting.Data.Repository
 
         public IAssociateRepository Associates { get; private set; }
         public IEventRepository Events { get; private set; }
-        public IUserRepository Users { get; private set; }
+        public IEnrollmentRepository Enrollments { get; private set; }
 
         public UnitOfWork(ReportContext context)
         {
             _context = context;
             Associates = new AssociateRepository(_context);
             Events = new EventRepository(_context);
-            Users = new UserRepository(_context);
+            Enrollments = new EnrollmentRepository(_context);
         }
 
         public int Complete()

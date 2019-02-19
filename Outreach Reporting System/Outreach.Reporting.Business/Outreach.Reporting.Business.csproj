@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Outreach.Reporting.Data\Outreach.Reporting.Data.csproj" />
-    <ProjectReference Include="..\Outreach.Reporting.Entity\Outreach.Reporting.Model.csproj" />
+    <ProjectReference Include="..\Outreach.Reporting.Entity\Outreach.Reporting.Entity.csproj" />
   </ItemGroup>
 
 </Project>

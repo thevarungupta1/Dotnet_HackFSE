@@ -1,4 +1,5 @@
 ﻿using Outreach.Reporting.Data.Entities;
+using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;

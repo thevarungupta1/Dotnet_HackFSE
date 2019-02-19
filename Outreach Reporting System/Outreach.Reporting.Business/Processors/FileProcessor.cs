@@ -4,7 +4,7 @@ using System.Data;
 using System.Text;
 using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Data.Interfaces;
-using Outreach.Reporting.Model;
+using Outreach.Reporting.Entity.Entities;
 
 namespace Outreach.Reporting.Business.Processors
 {
@@ -41,11 +41,11 @@ namespace Outreach.Reporting.Business.Processors
 
         static void AssociatesDataProcess(DataTable dtContent)
         {
-            List<AssociateModel> modelList = new List<AssociateModel>();
-            AssociateModel model;
+            List<Associates> modelList = new List<Associates>();
+            Associates model;
             foreach(DataRow dr in dtContent.Rows)
             {
-                model = new AssociateModel();
+                model = new Associates();
                 model.ID = dr["Associate ID"] != null ? Convert.ToInt32(dr["Associate ID"]) : 0;
                 model.Name = Convert.ToString(dr["Name"]);
                 model.Designation = Convert.ToString(dr["Designation"]);

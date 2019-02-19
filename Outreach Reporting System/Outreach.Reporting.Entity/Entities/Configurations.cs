@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Outreach.Reporting.Data.Entities
+namespace Outreach.Reporting.Entity.Entities
 {
     public class Configurations
     {

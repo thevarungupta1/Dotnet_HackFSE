@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Outreach.Reporting.Data.Entities
+namespace Outreach.Reporting.Entity.Entities
 {
-    public class AssociatesEnrolledToEvents
+    public class Enrollments
     {
         [Key]
         public int EnrollmentID { get; set; }

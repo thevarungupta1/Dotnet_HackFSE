@@ -1,6 +1,6 @@
 ﻿using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Data.Interfaces;
-using Outreach.Reporting.Model;
+using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,9 +15,14 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public bool SaveEvents(List<EventModel> events)
+        public bool SaveEvents(IEnumerable<Events> events)
         {
-            //_unitOfWork.Associates.AddRange((IEnumerable<AssociateModel>)associates);
+            foreach (var row in events)
+            {
+                row.CreatedOn = DateTime.Now;
+            }
+            _unitOfWork.Events.AddRange(events);
+            _unitOfWork.Complete();
             return true;
         }
     }

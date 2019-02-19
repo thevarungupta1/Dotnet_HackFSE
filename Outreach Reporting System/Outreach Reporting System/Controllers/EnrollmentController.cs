@@ -4,23 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Outreach.Reporting.Business.Processors;
-using Outreach.Reporting.Business.Interfaces;
 using Microsoft.Extensions.Logging;
+using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Entity.Entities;
 
 namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AssociateController : ControllerBase
+    public class EnrollmentController : ControllerBase
     {
-        private readonly IAssociateProcessor _associateProcessor;
-        private readonly ILogger<AssociateController> _logger;
+        private readonly IEnrollmentProcessor _enrollmentProcessor;
+        private readonly ILogger<EnrollmentController> _logger;
 
-        public AssociateController(IAssociateProcessor associateProcessor, ILogger<AssociateController> logger)
+        public EnrollmentController(IEnrollmentProcessor enrollmentProcessor, ILogger<EnrollmentController> logger)
         {
-            _associateProcessor = associateProcessor;
+            _enrollmentProcessor = enrollmentProcessor;
             _logger = logger;
         }
         // GET api/values
@@ -39,9 +38,9 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] IEnumerable<Associates> associates)
+        public void Post([FromBody] IEnumerable<Enrollments> enrollments)
         {
-            _associateProcessor.SaveAssociates(associates);
+            _enrollmentProcessor.SaveEnrollments(enrollments);
         }
 
         // PUT api/values/5

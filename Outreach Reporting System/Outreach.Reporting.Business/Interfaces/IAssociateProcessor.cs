@@ -1,4 +1,4 @@
-﻿using Outreach.Reporting.Model;
+﻿using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +7,6 @@ namespace Outreach.Reporting.Business.Interfaces
 {
     public interface IAssociateProcessor
     {
-        bool SaveAssociates(List<AssociateModel> associates);
+        bool SaveAssociates(IEnumerable<Associates> associates);
     }
 }

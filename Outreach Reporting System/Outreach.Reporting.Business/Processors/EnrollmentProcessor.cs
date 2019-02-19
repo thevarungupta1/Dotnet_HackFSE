@@ -7,21 +7,21 @@ using System.Text;
 
 namespace Outreach.Reporting.Business.Processors
 {
-    public class AssociateProcessor : IAssociateProcessor
+    public class EnrollmentProcessor : IEnrollmentProcessor
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public AssociateProcessor(IUnitOfWork unitOfWork)
+        public EnrollmentProcessor(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
-        public bool SaveAssociates(IEnumerable<Associates> associates)
+        public bool SaveEnrollments(IEnumerable<Enrollments> enrollments)
         {
-            foreach(var row in associates)
+            foreach (var row in enrollments)
             {
                 row.CreatedOn = DateTime.Now;
             }
-            _unitOfWork.Associates.AddRange(associates);
+            _unitOfWork.Enrollments.AddRange(enrollments);
             _unitOfWork.Complete();
             return true;
         }

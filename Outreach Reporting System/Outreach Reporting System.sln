@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outreach.Reporting.Business
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outreach.Reporting.Data", "Outreach.Reporting.Data\Outreach.Reporting.Data.csproj", "{19F9B407-D423-471D-BC49-7F54F9520FF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outreach.Reporting.Model", "Outreach.Reporting.Entity\Outreach.Reporting.Model.csproj", "{F6A8BF55-B809-4B4E-8F2F-E345F36B76B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outreach.Reporting.Entity", "Outreach.Reporting.Entity\Outreach.Reporting.Entity.csproj", "{F6A8BF55-B809-4B4E-8F2F-E345F36B76B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
