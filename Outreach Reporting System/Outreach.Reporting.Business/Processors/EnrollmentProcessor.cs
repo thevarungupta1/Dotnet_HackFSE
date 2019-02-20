@@ -15,6 +15,17 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
+        public IEnumerable<Enrollments> GetAll()
+        {
+            try
+            {
+                return _unitOfWork.Enrollments.GetAll();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public bool SaveEnrollments(IEnumerable<Enrollments> enrollments)
         {
             foreach (var row in enrollments)
@@ -25,5 +36,6 @@ namespace Outreach.Reporting.Business.Processors
             _unitOfWork.Complete();
             return true;
         }
+
     }
 }

@@ -15,15 +15,34 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
+        public IEnumerable<Associates> GetAll()
+        {
+            try
+            {
+                return _unitOfWork.Associates.GetAll();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public bool SaveAssociates(IEnumerable<Associates> associates)
         {
-            foreach(var row in associates)
+            try
             {
-                row.CreatedOn = DateTime.Now;
+                foreach (var row in associates)
+                {
+                    row.CreatedOn = DateTime.Now;
+                }
+                _unitOfWork.Associates.AddRange(associates);
+                _unitOfWork.Complete();
+                return true;
             }
-            _unitOfWork.Associates.AddRange(associates);
-            _unitOfWork.Complete();
-            return true;
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
+
     }
 }

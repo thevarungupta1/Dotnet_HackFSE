@@ -15,6 +15,17 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
+        public IEnumerable<Events> GetAll()
+        {
+            try
+            {
+                return _unitOfWork.Events.GetAll();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public bool SaveEvents(IEnumerable<Events> events)
         {
             foreach (var row in events)

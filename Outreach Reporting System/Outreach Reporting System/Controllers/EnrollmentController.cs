@@ -22,11 +22,11 @@ namespace Outreach.Reporting.Service.Controllers
             _enrollmentProcessor = enrollmentProcessor;
             _logger = logger;
         }
-        // GET api/values
+        // GET api/AllEnrollments
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Enrollments>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_enrollmentProcessor.GetAll());
         }
 
         // GET api/values/5

@@ -23,11 +23,11 @@ namespace Outreach.Reporting.Service.Controllers
             _associateProcessor = associateProcessor;
             _logger = logger;
         }
-        // GET api/values
+        // GET api/AllAssociates
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Associates>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_associateProcessor.GetAll());
         }
 
         // GET api/values/5

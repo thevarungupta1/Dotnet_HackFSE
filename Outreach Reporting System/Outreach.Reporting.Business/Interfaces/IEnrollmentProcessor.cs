@@ -7,6 +7,7 @@ namespace Outreach.Reporting.Business.Interfaces
 {
     public interface IEnrollmentProcessor
     {
+        IEnumerable<Enrollments> GetAll();
         bool SaveEnrollments(IEnumerable<Enrollments> associates);
     }
 }

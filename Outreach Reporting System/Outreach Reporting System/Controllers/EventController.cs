@@ -22,11 +22,11 @@ namespace Outreach.Reporting.Service.Controllers
             _eventProcessor = eventProcessor;
             _logger = logger;
         }
-        // GET api/values
+        // GET api/AllEvents
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Events>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_eventProcessor.GetAll());
         }
 
         // GET api/values/5

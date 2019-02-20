@@ -59,6 +59,7 @@ namespace Outreach_Reporting_System
             services.AddTransient<IAssociateProcessor, AssociateProcessor>();
             services.AddTransient<IEventProcessor, EventProcessor>();
             services.AddTransient<IEnrollmentProcessor, EnrollmentProcessor>();
+            services.AddTransient<IParticipationMetricProcessor, ParticipationMetricProcessor>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 

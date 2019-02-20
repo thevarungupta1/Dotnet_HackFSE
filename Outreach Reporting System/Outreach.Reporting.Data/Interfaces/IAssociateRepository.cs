@@ -8,6 +8,6 @@ namespace Outreach.Reporting.Data.Interfaces
 {
     public interface IAssociateRepository : IRepository<Associates>
     {
-
+        int GetHeadCount();
     }
 }
