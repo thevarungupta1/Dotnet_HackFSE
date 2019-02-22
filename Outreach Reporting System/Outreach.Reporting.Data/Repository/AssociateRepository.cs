@@ -3,8 +3,9 @@ using Outreach.Reporting.Data.Interfaces;
 using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Outreach.Reporting.Data.Repository
 {
@@ -19,9 +20,9 @@ namespace Outreach.Reporting.Data.Repository
             get { return Context as ReportContext; }
         }
 
-        public int GetHeadCount()
+        public IEnumerable<Associates> GetAssociatesRelatedData()
         {
-            return ReportContext.Associates.ToList().Count();
+            return ReportContext.Associates.ToList();
         }
     }
 }

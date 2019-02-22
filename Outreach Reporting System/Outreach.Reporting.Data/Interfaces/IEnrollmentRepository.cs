@@ -7,5 +7,6 @@ namespace Outreach.Reporting.Data.Interfaces
 {
     public interface IEnrollmentRepository : IRepository<Enrollments>
     {
+        IEnumerable<Enrollments> GetEnrollmentsRelatedData();
     }
 }

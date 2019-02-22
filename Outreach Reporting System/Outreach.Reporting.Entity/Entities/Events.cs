@@ -35,6 +35,6 @@ namespace Outreach.Reporting.Entity.Entities
 
         //Navigation properties
        // public Locations Locations { get; set; }
-        public ICollection<Enrollments> Enrollments { get; set; }
+        //public ICollection<Enrollments> Enrollments { get; set; }
     }
 }

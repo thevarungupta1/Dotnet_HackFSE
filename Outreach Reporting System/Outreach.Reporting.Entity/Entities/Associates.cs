@@ -24,6 +24,6 @@ namespace Outreach.Reporting.Entity.Entities
         public DateTime? ModifiedOn { get; set; }
 
         //Navigation properties
-        public ICollection<Enrollments> Enrollments { get; set; }
+        //public ICollection<Enrollments> Enrollments { get; set; }
     }
 }

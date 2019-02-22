@@ -4,6 +4,8 @@ using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Outreach.Reporting.Data.Repository
 {
@@ -17,5 +19,10 @@ namespace Outreach.Reporting.Data.Repository
         {
             get { return Context as ReportContext; }
         }
+        public IEnumerable<Events> GetEventsRelatedData()
+        {
+            return ReportContext.Events.ToList();
+        }
+
     }
 }

@@ -9,5 +9,6 @@ namespace Outreach.Reporting.Business.Interfaces
     {
         IEnumerable<Enrollments> GetAll();
         bool SaveEnrollments(IEnumerable<Enrollments> associates);
+        IEnumerable<Enrollments> GetEnrollmentsRelatedData();
     }
 }

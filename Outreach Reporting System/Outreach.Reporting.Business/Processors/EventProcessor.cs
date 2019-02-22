@@ -26,6 +26,18 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
+        public IEnumerable<Events> GetEventsRelatedData()
+        {
+            try
+            {
+                var x = _unitOfWork.Events.GetEventsRelatedData();
+                return x;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public bool SaveEvents(IEnumerable<Events> events)
         {
             foreach (var row in events)

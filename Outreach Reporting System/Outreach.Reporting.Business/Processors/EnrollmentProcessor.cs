@@ -26,6 +26,27 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
+
+        public IEnumerable<Enrollments> GetEnrollmentsRelatedData()
+        {
+            try
+            {
+                var x = _unitOfWork.Enrollments.GetEnrollmentsRelatedData();
+                foreach (var item in x)
+                {
+                    var test = item.Events;
+                    if (test != null)
+                    {
+                        var test1 = test.BaseLocation;
+                    }
+                }
+                return x;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public bool SaveEnrollments(IEnumerable<Enrollments> enrollments)
         {
             foreach (var row in enrollments)

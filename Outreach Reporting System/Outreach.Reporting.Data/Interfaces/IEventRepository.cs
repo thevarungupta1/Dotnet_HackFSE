@@ -8,5 +8,6 @@ namespace Outreach.Reporting.Data.Interfaces
 {
     public interface IEventRepository : IRepository<Events>
     {
+        IEnumerable<Events> GetEventsRelatedData();
     }
 }

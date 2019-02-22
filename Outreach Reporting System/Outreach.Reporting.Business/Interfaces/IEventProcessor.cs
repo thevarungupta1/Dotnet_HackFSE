@@ -9,5 +9,6 @@ namespace Outreach.Reporting.Business.Interfaces
     {
         bool SaveEvents(IEnumerable<Events> events);
         IEnumerable<Events> GetAll();
+        IEnumerable<Events> GetEventsRelatedData();
     }
 }
