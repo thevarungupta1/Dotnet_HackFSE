@@ -29,6 +29,14 @@ namespace Outreach.Reporting.Service.Controllers
             return Ok(_enrollmentProcessor.GetAll());
         }
 
+        // GET api/GetWithRelatedData
+        [HttpGet]
+        [Route("GetWithRelatedData")]
+        public ActionResult<IEnumerable<Enrollments>> GetWithRelatedData()
+        {
+            return Ok(_enrollmentProcessor.GetEnrollmentsRelatedData());
+        }
+
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)

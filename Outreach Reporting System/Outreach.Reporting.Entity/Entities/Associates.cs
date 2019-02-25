@@ -9,18 +9,24 @@ namespace Outreach.Reporting.Entity.Entities
     public class Associates
     {
         [Key]
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Designation { get; set; }
-        public string ContactNumber { get; set; }
-        public string BaseLocation { get; set; }
-        public string BU { get; set; }
-        public string SBU { get; set; }
-        public string Account { get; set; }
-        public string Client { get; set; }
-        public string CreatedBy { get; set; }
+        [MaxLength(6)]
+        public int ID { get; set; }//6digit
+        [MaxLength(50)]
+        public string Name { get; set; }//50 char  null
+        [MaxLength(50)]
+        public string Designation { get; set; }//50 null
+        [MaxLength(20)]
+        public string ContactNumber { get; set; }//20 null
+        [MaxLength(50)]
+        public string BaseLocation { get; set; }//50 null
+        [MaxLength(50)]
+        public string BusinessUnit { get; set; }// business unit -50 null
+        [MaxLength(50)]
+        [Required]
+        public string CreatedBy { get; set; }//50 not null
         public DateTime CreatedOn { get; set; }
-        public string ModifiedBy { get; set; }
+        [MaxLength(50)]
+        public string ModifiedBy { get; set; }// null 50
         public DateTime? ModifiedOn { get; set; }
 
         //Navigation properties

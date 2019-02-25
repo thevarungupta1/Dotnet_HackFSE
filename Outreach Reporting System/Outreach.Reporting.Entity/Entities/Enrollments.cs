@@ -13,14 +13,23 @@ namespace Outreach.Reporting.Entity.Entities
         [ForeignKey("Associates")]
         public int AssociateID { get; set; }
         [ForeignKey("Events")]
-        public string EventID { get; set; }
-        public decimal VolunteerHours { get; set; }
-        public decimal TravelHours { get; set; }
-        public string Status { get; set; }
-        public string IIEPCategory { get; set; }
-        public bool IsPOC { get; set; }
+        [Required]
+        public string EventID { get; set; }//not null 
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal VolunteerHours { get; set; }//not null
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal TravelHours { get; set; }//not null
+        [MaxLength(50)]
+        public string Status { get; set; }//50 null
+        [MaxLength(100)]
+        public string IIEPCategory { get; set; }//null 100
+        [Required]
+        public bool IsPOC { get; set; }//not null
+        [MaxLength(50)]
+        [Required]
         public string CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
+        [MaxLength(50)]
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedOn { get; set; }
 
