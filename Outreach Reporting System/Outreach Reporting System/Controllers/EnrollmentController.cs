@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,6 +13,7 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin, PMO, POC")]
     public class EnrollmentController : ControllerBase
     {
         private readonly IEnrollmentProcessor _enrollmentProcessor;
@@ -35,6 +37,13 @@ namespace Outreach.Reporting.Service.Controllers
         public ActionResult<IEnumerable<Enrollments>> GetWithRelatedData()
         {
             return Ok(_enrollmentProcessor.GetEnrollmentsRelatedData());
+        }
+        // GET api/GetEnrolledAssociates
+        [HttpGet]
+        [Route("GetEnrolledAssociates")]
+        public ActionResult<IEnumerable<Enrollments>> GetEnrolledAssociates()
+        {
+            return Ok(_enrollmentProcessor.GetEnrolledAssociates());
         }
 
         // GET api/values/5

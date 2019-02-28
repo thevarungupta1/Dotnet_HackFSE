@@ -31,16 +31,7 @@ namespace Outreach.Reporting.Business.Processors
         {
             try
             {
-                var x = _unitOfWork.Enrollments.GetEnrollmentsRelatedData();
-                foreach (var item in x)
-                {
-                    var test = item.Events;
-                    if (test != null)
-                    {
-                        var test1 = test.BaseLocation;
-                    }
-                }
-                return x;
+               return _unitOfWork.Enrollments.GetEnrollmentsRelatedData();
             }
             catch (Exception ex)
             {
@@ -57,6 +48,17 @@ namespace Outreach.Reporting.Business.Processors
             _unitOfWork.Complete();
             return true;
         }
-
+        public IEnumerable<Associates> GetEnrolledAssociates()
+        {
+            try
+            {
+                var enrolledData = _unitOfWork.Enrollments.GetEnrolledAssociates();
+                return enrolledData;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

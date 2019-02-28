@@ -24,6 +24,13 @@ namespace Outreach.Reporting.Data.Repository
         {
             return ReportContext.Enrollments.Include(e=> e.Events).Include(a=> a.Associates).ToList();
         }
+        public IEnumerable<Associates> GetEnrolledAssociates()
+        {
+            return ReportContext.Enrollments
+                                            .Include(e => e.Events)
+                                            .Include(a => a.Associates)
+                                            .Select(stu => stu.Associates).ToList();
+        }
 
     }
 }

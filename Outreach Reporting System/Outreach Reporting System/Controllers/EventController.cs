@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -12,6 +13,7 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+   // [Authorize(Roles = "Admin, PMO, POC")]
     public class EventController : ControllerBase
     {
         private readonly IEventProcessor _eventProcessor;
@@ -27,6 +29,14 @@ namespace Outreach.Reporting.Service.Controllers
         public ActionResult<IEnumerable<Events>> Get()
         {
             return Ok(_eventProcessor.GetAll());
+        }
+
+        // GET api/GetWithRelatedData
+        [HttpGet]
+        [Route("GetWithRelatedData")]
+        public ActionResult<IEnumerable<Enrollments>> GetWithRelatedData()
+        {
+            return Ok(_eventProcessor.GetEventsRelatedData());
         }
 
         // GET api/values/5

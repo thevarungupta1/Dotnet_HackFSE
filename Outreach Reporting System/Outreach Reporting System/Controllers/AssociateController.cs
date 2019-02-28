@@ -8,11 +8,13 @@ using Outreach.Reporting.Business.Processors;
 using Outreach.Reporting.Business.Interfaces;
 using Microsoft.Extensions.Logging;
 using Outreach.Reporting.Entity.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin, PMO, POC")]
     public class AssociateController : ControllerBase
     {
         private readonly IAssociateProcessor _associateProcessor;

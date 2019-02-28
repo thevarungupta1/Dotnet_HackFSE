@@ -9,6 +9,8 @@ namespace Outreach.Reporting.Data.Interfaces
         IAssociateRepository Associates { get; }
         IEventRepository Events { get; }
         IEnrollmentRepository Enrollments { get; }
+        IUserRepository ApplicationUsers { get; }
+        IAuthRepository Auth { get; }
         int Complete();
     }
 }

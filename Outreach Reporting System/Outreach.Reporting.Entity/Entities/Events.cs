@@ -9,14 +9,20 @@ namespace Outreach.Reporting.Entity.Entities
     public class Events
     {
         [Key]
-        [MaxLength(50)]
+        //[MaxLength(50)]
         public string ID { get; set; }//50
         [MaxLength(100)]
         public string Name { get; set; }//null 100
         public string Description { get; set; }
-        public DateTime Date { get; set; }//datetime
-        //[ForeignKey("Locations")]
-        //public int LocationID { get; set; }
+        public string Date { get; set; }//datetime
+                                        //[ForeignKey("Locations")]
+                                        //public int LocationID { get; set; }
+        public int TotalVolunteers { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal TotalVolunteerHours { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal TotalTravelHours { get; set; }
+        public int? LivesImpacted { get; set; }
         [MaxLength(50)]
         [Required]
         public string BaseLocation { get; set; }//not null 50
@@ -38,7 +44,6 @@ namespace Outreach.Reporting.Entity.Entities
         public string Project { get; set; }// null 100
         [MaxLength(100)]
         public string Category { get; set; }// null 100
-        public int? LivesImpacted { get; set; }
         public int? ActivityType { get; set; }
         [MaxLength(50)]
         public string Status { get; set; }// null 50

@@ -17,7 +17,7 @@ namespace Outreach.Reporting.Data.Entities
         public DbSet<Events> Events { get; set; }
         public DbSet<Enrollments> Enrollments { get; set; }
        // public DbSet<Locations> Locations { get; set; }
-        public DbSet<Users> Users { get; set; }
+        public DbSet<ApplicationUsers> ApplicationUsers { get; set; }
         public DbSet<Configurations> Configurations { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,7 +30,7 @@ namespace Outreach.Reporting.Data.Entities
             modelBuilder.Entity<Events>().ToTable("Events");
             modelBuilder.Entity<Enrollments>().ToTable("Enrollments");
             //modelBuilder.Entity<Locations>().ToTable("Locations");
-            modelBuilder.Entity<Users>().ToTable("Users");
+            modelBuilder.Entity<ApplicationUsers>().ToTable("Users");
             modelBuilder.Entity<UserRoles>().ToTable("UserRoles");
             modelBuilder.Entity<Configurations>().ToTable("Configurations");
 

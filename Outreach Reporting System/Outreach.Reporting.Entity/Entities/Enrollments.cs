@@ -23,7 +23,7 @@ namespace Outreach.Reporting.Entity.Entities
         public string Status { get; set; }//50 null
         [MaxLength(100)]
         public string IIEPCategory { get; set; }//null 100
-        [Required]
+        //[Required]
         public bool IsPOC { get; set; }//not null
         [MaxLength(50)]
         [Required]

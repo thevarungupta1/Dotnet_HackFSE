@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Business.Processors;
 using Outreach.Reporting.Data.Entities;
@@ -38,7 +42,39 @@ namespace Outreach_Reporting_System
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //services.AddDbContext<ReportContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddIdentity<ApplicationUsers, IdentityRole>()
+            //    .AddEntityFrameworkStores<ReportContext>()
+            //    .AddDefaultTokenProviders();
+
             services.AddCors();
+
+            string securityKey = "this_is_our_supper_long_security_key_for_token_validation_project_2018_09_07$smesk.in";
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, x =>
+            {
+                //x.RequireHttpsMetadata = false;
+                // x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    //what to validate
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    //setup validate data
+                    ValidIssuer = "smesk.in",
+                    ValidAudience = "readers",
+                    IssuerSigningKey = symmetricSecurityKey
+                };
+            });
+
             services.AddSwaggerGen(c =>
             {
                 //The generated Swagger JSON file will have these properties.
@@ -60,6 +96,7 @@ namespace Outreach_Reporting_System
             services.AddTransient<IEventProcessor, EventProcessor>();
             services.AddTransient<IEnrollmentProcessor, EnrollmentProcessor>();
             services.AddTransient<IParticipationMetricProcessor, ParticipationMetricProcessor>();
+            services.AddTransient<IAuthProcessor, AuthProcessor>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 
@@ -82,6 +119,7 @@ namespace Outreach_Reporting_System
                 app.UseHsts();
             }
 
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
 

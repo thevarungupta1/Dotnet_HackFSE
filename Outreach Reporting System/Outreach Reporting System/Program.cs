@@ -28,6 +28,13 @@ namespace Outreach_Reporting_System
         public static void Main(string[] args)
         {
             var host = CreateWebHostBuilder(args).Build();
+           // var host = new WebHostBuilder()
+           // .UseKestrel()
+           // .UseContentRoot(Directory.GetCurrentDirectory())
+           // .UseIISIntegration()
+           // .UseStartup<Startup>()
+           //// .UseUrls("http://localhost.backend.com:80/")
+           // .Build();
 
             using (var scope = host.Services.CreateScope())
             {
@@ -44,7 +51,7 @@ namespace Outreach_Reporting_System
                 }
             }
 
-            //host.Run();
+            host.Run();
 
             string directory = @"C:\Project\";
             Program._watcher = new FileSystemWatcher(directory);
@@ -52,8 +59,8 @@ namespace Outreach_Reporting_System
                 new FileSystemEventHandler(Program._watcher_Changed);
             Program._watcher.EnableRaisingEvents = true;
             Program._watcher.IncludeSubdirectories = true;
-
-            CreateWebHostBuilder(args).Build().Run();           
+            //host.Run();
+            //CreateWebHostBuilder(args).Build().Run();           
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

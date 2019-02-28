@@ -9,7 +9,7 @@ namespace Outreach.Reporting.Entity.Entities
     public class Associates
     {
         [Key]
-        [MaxLength(6)]
+       // [MaxLength(6)]
         public int ID { get; set; }//6digit
         [MaxLength(50)]
         public string Name { get; set; }//50 char  null
