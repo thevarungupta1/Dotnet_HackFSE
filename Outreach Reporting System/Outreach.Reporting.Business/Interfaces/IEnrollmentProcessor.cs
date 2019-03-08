@@ -9,7 +9,8 @@ namespace Outreach.Reporting.Business.Interfaces
     {
         IEnumerable<Enrollments> GetAll();
         bool SaveEnrollments(IEnumerable<Enrollments> associates);
-        IEnumerable<Enrollments> GetEnrollmentsRelatedData();
-        IEnumerable<Associates> GetEnrolledAssociates();
+        IEnumerable<Enrollments> GetEnrolledAssociates();
+        IEnumerable<Associates> GetTopFrequentVolunteers(int count);
+        Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount);
     }
 }

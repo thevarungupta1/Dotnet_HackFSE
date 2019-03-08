@@ -19,7 +19,12 @@ namespace Outreach.Reporting.Business.Processors
         {
             try
             {
-                return _unitOfWork.Events.GetAll();
+                var events = _unitOfWork.Events.GetAll();
+                foreach(var even in events)
+                {
+                    even.Date = even.Date.Date;
+                }
+                return events;
             }
             catch (Exception ex)
             {

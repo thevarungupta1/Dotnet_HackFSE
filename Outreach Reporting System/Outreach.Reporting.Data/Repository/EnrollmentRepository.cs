@@ -20,16 +20,44 @@ namespace Outreach.Reporting.Data.Repository
             get { return Context as ReportContext; }
         }
 
-        public IEnumerable<Enrollments> GetEnrollmentsRelatedData()
-        {
-            return ReportContext.Enrollments.Include(e=> e.Events).Include(a=> a.Associates).ToList();
-        }
-        public IEnumerable<Associates> GetEnrolledAssociates()
+        public IEnumerable<Enrollments> GetEnrolledAssociates()
         {
             return ReportContext.Enrollments
-                                            .Include(e => e.Events)
-                                            .Include(a => a.Associates)
-                                            .Select(stu => stu.Associates).ToList();
+                                            //.Include(e => e.Events)
+                                            .Include(a => a.Associates).ToList();
+        }
+
+        public IEnumerable<Associates> GetTopFrequentVolunteers(int count)
+        {
+            var enrollments = ReportContext.Enrollments
+                                    .Include(a => a.Associates);
+
+            var groupedData = enrollments.GroupBy(enroll => enroll.AssociateID)
+                                         .Select(group => new
+                                         {
+                                            enrollments = group
+                                         })
+                                         .OrderByDescending(x => x.enrollments.Count()).Take(count);
+
+            return groupedData.SelectMany(group => group.enrollments.Select(s=> s.Associates)).ToList();
+
+        }
+
+        public IEnumerable<Enrollments> GetYearlyVolunteersCount(int yearsCount)
+        {
+            var enrollments = ReportContext.Enrollments
+                                    .Include(a => a.Associates);
+
+            var groupedData = enrollments.GroupBy(enroll => enroll.EventDate.Year)
+            //.Select(group => group);
+            .Select(group => new
+            {
+                eventyear = group.Select(s => s.EventDate.Year).FirstOrDefault(),
+                enrollments = group
+            })
+            .OrderByDescending(x => x.eventyear).Take(yearsCount);
+
+            return groupedData.SelectMany(group => group.enrollments.Select(s=> s));
         }
 
     }

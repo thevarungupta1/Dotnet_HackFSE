@@ -14,7 +14,8 @@ namespace Outreach.Reporting.Entity.Entities
         [MaxLength(100)]
         public string Name { get; set; }//null 100
         public string Description { get; set; }
-        public string Date { get; set; }//datetime
+        [Required]
+        public DateTime Date { get; set; }//datetime
                                         //[ForeignKey("Locations")]
                                         //public int LocationID { get; set; }
         public int TotalVolunteers { get; set; }

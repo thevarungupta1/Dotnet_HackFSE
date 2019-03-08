@@ -15,6 +15,8 @@ namespace Outreach.Reporting.Entity.Entities
         [ForeignKey("Events")]
         [Required]
         public string EventID { get; set; }//not null 
+        [Required]
+        public DateTime EventDate { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal VolunteerHours { get; set; }//not null
         [Column(TypeName = "decimal(18,2)")]

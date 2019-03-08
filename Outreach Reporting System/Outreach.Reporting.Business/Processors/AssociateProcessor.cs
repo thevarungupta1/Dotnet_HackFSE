@@ -19,13 +19,7 @@ namespace Outreach.Reporting.Business.Processors
         {
             try
             {
-                var x = _unitOfWork.Associates.GetAll();
-                //foreach(var item in x)
-                //{
-                //    var e = item.Enrollments;
-                //    var y = e;
-                //}
-                return x;
+                return _unitOfWork.Associates.GetAll();
             }
             catch (Exception ex)
             {
