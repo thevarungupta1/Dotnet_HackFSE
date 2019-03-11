@@ -12,5 +12,9 @@ namespace Outreach.Reporting.Business.Interfaces
         IEnumerable<Enrollments> GetEnrolledAssociates();
         IEnumerable<Associates> GetTopFrequentVolunteers(int count);
         Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount);
+        IEnumerable<Enrollments> GetAllNewVolunteers();
+        Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount();
+        List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount);
+        Dictionary<string, int> GetDesignationWiseVolunteersCount();
     }
 }

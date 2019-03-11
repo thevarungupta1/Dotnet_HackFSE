@@ -43,21 +43,29 @@ namespace Outreach.Reporting.Data.Repository
 
         }
 
-        public IEnumerable<Enrollments> GetYearlyVolunteersCount(int yearsCount)
+        public IEnumerable<Enrollments> GetYearlyVolunteersCount(int yearsCount=100)
         {
             var enrollments = ReportContext.Enrollments
                                     .Include(a => a.Associates);
 
-            var groupedData = enrollments.GroupBy(enroll => enroll.EventDate.Year)
+            var groupedData = enrollments.GroupBy(enroll => enroll.EventDate)
             //.Select(group => group);
             .Select(group => new
             {
-                eventyear = group.Select(s => s.EventDate.Year).FirstOrDefault(),
+                eventyear = group.Select(s => s.EventDate).FirstOrDefault(),
                 enrollments = group
             })
             .OrderByDescending(x => x.eventyear).Take(yearsCount);
 
             return groupedData.SelectMany(group => group.enrollments.Select(s=> s));
+        }
+
+        public IQueryable<Enrollments> GetEnrollments()
+        {
+            var enrollments = ReportContext.Enrollments
+                                    .Include(a => a.Associates);
+
+            return enrollments;//.SelectMany(group => group.enrollments.Select(s=> s));
         }
 
     }

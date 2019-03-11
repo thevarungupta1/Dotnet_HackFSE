@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using OfficeOpenXml;
 using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Entity.Entities;
 
@@ -35,7 +39,6 @@ namespace Outreach.Reporting.Service.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Enrollments>>> GetAsync()
         {
-            await OnPostExport();
            return Ok(_enrollmentProcessor.GetAll());
         }
 
@@ -60,7 +63,33 @@ namespace Outreach.Reporting.Service.Controllers
         {
             return Ok(_enrollmentProcessor.GetYearlyVolunteersCount(years));
         }
+        [HttpGet]
+        [Route("GetYearlyBuWiseVolunteersCount")]
+        public IActionResult GetYearlyBuWiseVolunteersCount(int years)
+        {
+            return Ok(_enrollmentProcessor.GetYearlyBuWiseVolunteersCount(years));
+        }
 
+        [HttpGet]
+        [Route("GetDesignationWiseVolunteersCount")]
+        public IActionResult GetDesignationWiseVolunteersCount()
+        {
+            return Ok(_enrollmentProcessor.GetDesignationWiseVolunteersCount());
+        }
+
+        [HttpGet]
+        [Route("GetAllNewVolunteers")]
+        public IActionResult GetAllNewVolunteers()
+        {
+            return Ok(_enrollmentProcessor.GetAllNewVolunteers());
+        }
+
+        [HttpGet]
+        [Route("GetDateWiseVolunteersCount")]
+        public IActionResult GetDateWiseVolunteersCount()
+        {
+            return Ok(_enrollmentProcessor.GetDateWiseVolunteersCount());
+        }
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
@@ -86,52 +115,37 @@ namespace Outreach.Reporting.Service.Controllers
         public void Delete(int id)
         {
         }
-        [HttpGet("ExcelDownload")]
-        public async Task<IActionResult> OnPostExport()
+       
+        [HttpGet]
+        [Route("ExcelExport")]
+        public IActionResult ExcelExport(string fileName="Report Data")
         {
-            string sWebRootFolder = _hostingEnvironment.WebRootPath;
-            string sFileName = @"demo.xlsx";
-            string URL = string.Format("{0}://{1}/{2}", Request.Scheme, Request.Host, sFileName);
-            if (string.IsNullOrWhiteSpace(_hostingEnvironment.WebRootPath))
+            DataTable table = new DataTable();
+            //Fill datatable
+            table.Columns.Add("Dosage", typeof(int));
+            table.Columns.Add("Drug", typeof(string));
+            table.Columns.Add("Patient", typeof(string));
+            table.Columns.Add("Date", typeof(DateTime));
+
+            // Here we add five DataRows.
+            table.Rows.Add(25, "Indocin", "David", DateTime.Now);
+            table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now);
+            table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now);
+            table.Rows.Add(21, "Combivent", "Janet", DateTime.Now);
+            table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now);
+
+            byte[] fileContents;
+            using (var package = new ExcelPackage())
             {
-                sWebRootFolder = Path.Combine(Directory.GetCurrentDirectory(), "test");
+                var worksheet = package.Workbook.Worksheets.Add(fileName);
+                worksheet.Cells["A1"].LoadFromDataTable(table, true);
+                fileContents = package.GetAsByteArray();
             }
-            FileInfo file = new FileInfo(Path.Combine(sWebRootFolder, sFileName));
-            var fs = new FileStream(Path.Combine(sWebRootFolder, sFileName), FileMode.Create, FileAccess.Write);
-            
-                IWorkbook workbook;
-                workbook = new XSSFWorkbook();
-                ISheet excelSheet = workbook.CreateSheet("Demo");
-                IRow row = excelSheet.CreateRow(0);
-
-                row.CreateCell(0).SetCellValue("ID");
-                row.CreateCell(1).SetCellValue("Name");
-                row.CreateCell(2).SetCellValue("Age");
-
-                row = excelSheet.CreateRow(1);
-                row.CreateCell(0).SetCellValue(1);
-                row.CreateCell(1).SetCellValue("Kane Williamson");
-                row.CreateCell(2).SetCellValue(29);
-
-                row = excelSheet.CreateRow(2);
-                row.CreateCell(0).SetCellValue(2);
-                row.CreateCell(1).SetCellValue("Martin Guptil");
-                row.CreateCell(2).SetCellValue(33);
-
-                row = excelSheet.CreateRow(3);
-                row.CreateCell(0).SetCellValue(3);
-                row.CreateCell(1).SetCellValue("Colin Munro");
-                row.CreateCell(2).SetCellValue(23);
-
-                workbook.Write(fs);
-            MemoryStream memory = new MemoryStream();
-
-            using (var stream = new FileStream(Path.Combine(sWebRootFolder, sFileName), FileMode.Open))
-            {
-                await stream.CopyToAsync(memory);
-            }
-            memory.Position = 0;
-            return File(memory, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", sFileName);
+            return File(
+                fileContents: fileContents,
+                contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                fileDownloadName: fileName + ".xlsx"
+            );
         }
     }
 }

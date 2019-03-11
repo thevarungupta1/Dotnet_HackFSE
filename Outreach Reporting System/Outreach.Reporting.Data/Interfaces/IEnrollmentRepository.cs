@@ -1,6 +1,7 @@
 ﻿using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Outreach.Reporting.Data.Interfaces
@@ -10,5 +11,6 @@ namespace Outreach.Reporting.Data.Interfaces
         IEnumerable<Enrollments> GetEnrolledAssociates();
         IEnumerable<Associates> GetTopFrequentVolunteers(int count);
         IEnumerable<Enrollments> GetYearlyVolunteersCount(int yearsCount);
+        IQueryable<Enrollments> GetEnrollments();
     }
 }
