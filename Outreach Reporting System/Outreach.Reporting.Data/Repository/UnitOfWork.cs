@@ -15,6 +15,7 @@ namespace Outreach.Reporting.Data.Repository
         public IEnrollmentRepository Enrollments { get; private set; }
         public IUserRepository ApplicationUsers { get; private set; }
         public IAuthRepository Auth { get; private set; }
+        public IFileRepository File { get; private set; }
 
         public UnitOfWork(ReportContext context)
         {
@@ -24,6 +25,7 @@ namespace Outreach.Reporting.Data.Repository
             Enrollments = new EnrollmentRepository(_context);
             ApplicationUsers = new UserRepository(_context);
             Auth = new AuthRepository(_context);
+            File = new FileRepository(_context);
         }
 
         public int Complete()

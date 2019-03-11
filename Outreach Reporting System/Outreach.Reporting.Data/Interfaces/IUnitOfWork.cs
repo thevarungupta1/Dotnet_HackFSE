@@ -11,6 +11,7 @@ namespace Outreach.Reporting.Data.Interfaces
         IEnrollmentRepository Enrollments { get; }
         IUserRepository ApplicationUsers { get; }
         IAuthRepository Auth { get; }
+        IFileRepository File { get; }
         int Complete();
     }
 }

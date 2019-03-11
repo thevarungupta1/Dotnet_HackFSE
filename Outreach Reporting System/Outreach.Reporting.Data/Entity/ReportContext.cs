@@ -16,9 +16,10 @@ namespace Outreach.Reporting.Data.Entities
         public DbSet<Associates> Associates { get; set; }
         public DbSet<Events> Events { get; set; }
         public DbSet<Enrollments> Enrollments { get; set; }
-       // public DbSet<Locations> Locations { get; set; }
+        public DbSet<File> File { get; set; }
         public DbSet<ApplicationUsers> ApplicationUsers { get; set; }
         public DbSet<Configurations> Configurations { get; set; }
+        public DbSet<UserRoles> UserRoles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

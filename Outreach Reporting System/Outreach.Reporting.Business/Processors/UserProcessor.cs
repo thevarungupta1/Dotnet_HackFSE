@@ -48,5 +48,17 @@ namespace Outreach.Reporting.Business.Processors
                 return false;
             }
         }
+        public IEnumerable<UserRoles> GetRoles()
+        {
+            try
+            {
+                return _unitOfWork.ApplicationUsers.GetRoles();
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
     }
 }

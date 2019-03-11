@@ -8,5 +8,6 @@ namespace Outreach.Reporting.Data.Interfaces
 {
     public interface IUserRepository : IRepository<ApplicationUsers>
     {
+        IEnumerable<UserRoles> GetRoles();
     }
 }

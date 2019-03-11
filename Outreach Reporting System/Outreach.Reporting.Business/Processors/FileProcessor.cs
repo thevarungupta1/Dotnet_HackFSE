@@ -8,12 +8,41 @@ using Outreach.Reporting.Entity.Entities;
 
 namespace Outreach.Reporting.Business.Processors
 {
-    public class FileProcessor
+    public class FileProcessor : IFileProcessor
     {
         private readonly IUnitOfWork _unitOfWork;
 
         public FileProcessor(IUnitOfWork unitOfWork) {
             _unitOfWork = unitOfWork;
+        }
+
+        public IEnumerable<File> GetAll()
+        {
+            try
+            {
+                return _unitOfWork.File.GetAll();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public bool SaveFiles(IEnumerable<File> files)
+        {
+            try
+            {
+                foreach (var row in files)
+                {
+                    row.CreatedOn = DateTime.Now;
+                }
+                _unitOfWork.File.AddRange(files);
+                _unitOfWork.Complete();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
         public static bool DataTableProcess(DataTable dtContent)
         {

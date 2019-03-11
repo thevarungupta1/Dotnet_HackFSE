@@ -10,5 +10,6 @@ namespace Outreach.Reporting.Business.Interfaces
     {
         IEnumerable<ApplicationUsers> GetAll();
         bool SaveUser(IEnumerable<ApplicationUsers> applicationUsers);
+        IEnumerable<UserRoles> GetRoles();
     }
 }

@@ -7,19 +7,15 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Repository
 {
-    public class UserRepository : Repository<ApplicationUsers>, IUserRepository
+    public class FileRepository : Repository<File>, IFileRepository
     {
-        public UserRepository(ReportContext context) : base(context)
+        public FileRepository(ReportContext context) : base(context)
         {
         }
 
         public ReportContext ReportContext
         {
             get { return Context as ReportContext; }
-        }
-        public IEnumerable<UserRoles> GetRoles()
-        {
-            return ReportContext.UserRoles;
         }
     }
 }

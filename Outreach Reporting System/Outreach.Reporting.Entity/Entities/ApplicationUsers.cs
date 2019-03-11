@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
-using Outreach.Reporting.Data.Entities;
+//using Outreach.Reporting.Data.Entities;
 
 namespace Outreach.Reporting.Entity.Entities
 {

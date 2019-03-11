@@ -12,7 +12,7 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class UserController : ControllerBase
     {
         private readonly IUserProcessor _userProcessor;
@@ -28,6 +28,12 @@ namespace Outreach.Reporting.Service.Controllers
         public ActionResult<IEnumerable<ApplicationUsers>> Get()
         {
             return Ok(_userProcessor.GetAll());
+        }
+        [HttpGet]
+        [Route("GetRoles")]
+        public ActionResult<IEnumerable<UserRoles>> GetRoles()
+        {
+            return Ok(_userProcessor.GetRoles());
         }
 
         // POST api/User
