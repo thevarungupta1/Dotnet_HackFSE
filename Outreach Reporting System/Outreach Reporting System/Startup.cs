@@ -38,7 +38,7 @@ namespace Outreach_Reporting_System
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ReportContext>(options =>
+            services.AddDbContext<ReportDBContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -96,7 +96,6 @@ namespace Outreach_Reporting_System
             services.AddTransient<IEventProcessor, EventProcessor>();
             services.AddTransient<IEnrollmentProcessor, EnrollmentProcessor>();
             services.AddTransient<IUserProcessor, UserProcessor>();
-            services.AddTransient<IParticipationMetricProcessor, ParticipationMetricProcessor>();
             services.AddTransient<IAuthProcessor, AuthProcessor>();
             services.AddTransient<IFileProcessor, FileProcessor>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();

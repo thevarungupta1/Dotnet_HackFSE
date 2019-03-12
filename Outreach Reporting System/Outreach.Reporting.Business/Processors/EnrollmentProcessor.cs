@@ -16,7 +16,7 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Enrollments> GetAll()
+        public IEnumerable<Enrollment> GetAll()
         {
             try
             {
@@ -28,18 +28,31 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Enrollments> GetEnrolledAssociates()
+        public IEnumerable<Associate> GetEnrolledAssociates()
         {
             try
             {
-               return _unitOfWork.Enrollments.GetEnrolledAssociates();
+                return _unitOfWork.Enrollments.GetEnrolledAssociates().Select(s => s.Associates).ToList();
             }
             catch (Exception ex)
             {
                 return null;
             }
         }
-        public bool SaveEnrollments(IEnumerable<Enrollments> enrollments)
+
+        public IEnumerable<Associate> GetEnrolledUniqueAssociates()
+        {
+            try
+            {
+                return _unitOfWork.Enrollments.GetEnrolledAssociates().Select(s => s.Associates).Distinct().ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool SaveEnrollments(IEnumerable<Enrollment> enrollments)
         {
             foreach (var row in enrollments)
             {
@@ -49,7 +62,7 @@ namespace Outreach.Reporting.Business.Processors
             _unitOfWork.Complete();
             return true;
         }
-        public IEnumerable<Associates> GetTopFrequentVolunteers(int count)
+        public IEnumerable<Associate> GetTopFrequentVolunteers(int count)
         {
             try
             {
@@ -108,13 +121,13 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Enrollments> GetAllNewVolunteers()
+        public IEnumerable<Enrollment> GetAllNewVolunteers()
         {
             try
             {
-                var allVolunteers = _unitOfWork.Enrollments.GetEnrolledAssociates();
+                var allVolunteers = _unitOfWork.Enrollments.GetEnrolledAssociates().OrderBy(o => o.EventDate);
 
-                var newVolunteers = new List<Enrollments>();
+                var newVolunteers = new List<Enrollment>();
                 foreach(var volunteer in allVolunteers)
                 {
                     if (!newVolunteers.Any(x => x.AssociateID == volunteer.AssociateID))
@@ -147,7 +160,7 @@ namespace Outreach.Reporting.Business.Processors
                 int recurCount = 0;
                 int newCount = 0;
                 var tmpVolunteerIds = new List<int>();
-                var recurVolunteers = new List<Enrollments>();
+                var recurVolunteers = new List<Enrollment>();
                 foreach (var enrollment in groupedData)
                 {                    
                     recurCount = 0;
@@ -162,43 +175,6 @@ namespace Outreach.Reporting.Business.Processors
                     }
                     volunteersCount.Add(enrollment.enrollments.Select(s => s.EventDate).First(), new List<int> { newCount, recurCount });
                 }
-               // groupedData.SelectMany(group => group.enrollments.Select(s => s));
-
-                //var allEnrollments = _unitOfWork.Enrollments.GetEnrolledAssociates().Select(s => new { s.EventDate.Year, s.AssociateID });
-                //var enrollments = _unitOfWork.Enrollments.GetYearlyVolunteersCount(yearsCount).Select(s => new { s.EventDate.Year, s.AssociateID, s.EnrollmentID });
-
-                //var volunteersCount = new Dictionary<int, List<int>>();
-                //int prevYear = 0;
-                //int currYear = 0;
-                //int recurCount = 0;
-                //int newCount = 0;
-
-                //int enrollId = enrollments.Last().EnrollmentID;
-                //foreach (var enroll in enrollments)
-                //{
-                //    currYear = enroll.Year;
-
-                //    if (prevYear == 0)
-                //        prevYear = currYear;
-
-                //    if (prevYear > 0 && prevYear != currYear && (newCount > 0 || recurCount > 0))
-                //    {
-                //        volunteersCount.Add(prevYear, new List<int> { newCount, recurCount });
-                //        prevYear = currYear;
-                //        newCount = 0;
-                //        recurCount = 0;
-                //    }
-
-                //    if (allEnrollments.Any(x => x.AssociateID == enroll.AssociateID && x.Year < currYear))
-                //        recurCount++;
-                //    else newCount++;
-
-                //    if (enroll.EnrollmentID == enrollId)
-                //    {
-                //        volunteersCount.Add(currYear, new List<int> { newCount, recurCount });
-                //    }
-                //}
-
                 return volunteersCount;
             }
             catch (Exception ex)
@@ -269,5 +245,169 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
+        public Dictionary<string, List<decimal>> GetTopVolunteerData()
+        {
+            try
+            {
+                List<decimal> decimalList;
+                decimal count = 0;
+                decimal percentage = 0;
+                Dictionary<string, List<decimal>> data = new Dictionary<string, List<decimal>>();
+                var enrollments = _unitOfWork.Enrollments.GetEnrollments();
+                decimal enrollmentsCount = enrollments.Count();
+
+                if (enrollments != null)
+                {
+                    var buGroup = enrollments.GroupBy(enroll => enroll.Associates.BusinessUnit)
+                                                   .Select(group => new { bu = group.Key, count = group.Count() })
+                                                   .OrderByDescending(o => o.count).Take(1).ToList();
+                    if (buGroup != null)
+                    {
+                        decimalList = new List<decimal>();
+                        var buData = buGroup.First();
+                        count = buData.count;
+                        percentage = (count / enrollmentsCount)*100;
+                        decimalList.Add(count);
+                        decimalList.Add(percentage);
+                        data.Add(buData.bu, decimalList);
+                    }
+
+                    var designGroup = enrollments.GroupBy(enroll => enroll.Associates.Designation)
+                                                  .Select(group => new { design = group.Key, count = group.Count() })
+                                                  .OrderByDescending(o => o.count).Take(1).ToList();
+                    if (designGroup != null)
+                    {
+                        decimalList = new List<decimal>();
+                        var designData = designGroup.First();
+                        count = designData.count;
+                        percentage = (count / enrollmentsCount) * 100;
+                        decimalList.Add(count);
+                        decimalList.Add(percentage);
+                        data.Add(designData.design, decimalList);
+                    }
+
+                    var locationGroup = enrollments.GroupBy(enroll => enroll.Associates.BaseLocation)
+                                                 .Select(group => new { location = group.Key, count = group.Count() })
+                                                 .OrderByDescending(o => o.count).Take(1).ToList();
+                    if (locationGroup != null)
+                    {
+                        decimalList = new List<decimal>();
+                        var locationData = locationGroup.First();
+                        count = locationData.count;
+                        percentage = (count / enrollmentsCount) * 100;
+                        decimalList.Add(count);
+                        decimalList.Add(percentage);
+                        data.Add(locationData.location, decimalList);
+                    }
+
+                    var yearlyGroup = enrollments.GroupBy(enroll => enroll.EventDate.Year)
+                                                .Select(group => new { year = group.Key, count = group.Count() })
+                                                .OrderByDescending(o => o.count).Take(1).ToList();
+                    if (yearlyGroup != null)
+                    {
+                        decimalList = new List<decimal>();
+                        var yearlyData = yearlyGroup.First();
+                        count = yearlyData.count;
+                        percentage = (count / enrollmentsCount) * 100;
+                        decimalList.Add(count);
+                        decimalList.Add(percentage);
+                        data.Add(yearlyData.year.ToString(), decimalList);
+                    }
+                }
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public Dictionary<DateTime, List<int>> GetMonthWiseVolunteersCount()
+        {
+            try
+            {
+                var enrollments = _unitOfWork.Enrollments.GetEnrolledAssociates();
+
+                var groupedData = enrollments.GroupBy(enroll => enroll.EventDate)
+                //.Select(group => group);
+                .Select(group => new
+                {
+                    eventyear = group.Select(s => s.EventDate).FirstOrDefault(),
+                    enrollments = group
+                })
+                .OrderBy(x => x.eventyear);
+
+                var volunteersCount = new Dictionary<DateTime, List<int>>();
+                int recurCount = 0;
+                int newCount = 0;
+                var tmpVolunteerIds = new List<int>();
+                var recurVolunteers = new List<Enrollment>();
+                foreach (var enrollment in groupedData)
+                {
+                    recurCount = 0;
+                    newCount = 0;
+                    foreach (var enroll in enrollment.enrollments)
+                    {
+                        if (tmpVolunteerIds.Any(a => a == enroll.AssociateID))
+                            recurCount++;
+                        else newCount++;
+
+                        tmpVolunteerIds.Add(enroll.AssociateID);
+                    }
+                    volunteersCount.Add(enrollment.enrollments.Select(s => s.EventDate).First(), new List<int> { newCount, recurCount });
+                }
+                return volunteersCount;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        //public Dictionary<string, List<int>> GetDesignationWiseVolunteersAndAssociateCount()
+        //{
+        //    try
+        //    {
+        //        var associates = _unitOfWork.Associates.GetAll();
+        //        var enrollments = _unitOfWork.Enrollments.GetEnrollments();
+
+        //        List<Associates>
+
+        //        foreach (var enrollment in enrollments)
+        //        {
+        //            if (enrollment.EventDate.Month <= 3)
+        //            {
+        //                //q1
+        //            }
+        //            else if (enrollment.EventDate.Month <= 6)
+        //            {
+        //                //q2
+        //            }
+        //            else if (enrollment.EventDate.Month <= 9)
+        //            {
+        //                //q3
+        //            }
+        //            else
+        //            {
+        //                //q4
+        //            }
+        //        }
+
+        //        var groupedData = enrolledAssociates.GroupBy(enroll => enroll.Designation)
+        //                                       .Select(group => group);
+
+        //        Dictionary<string, int> designationCount = new Dictionary<string, int>();
+
+        //        foreach (var enroll in groupedData)
+        //        {
+        //            designationCount.Add(enroll.Key, enroll.Count());
+        //        }
+
+        //        return designationCount;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //}
     }
 }

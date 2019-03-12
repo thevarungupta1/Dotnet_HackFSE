@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Outreach.Reporting.Entity.Entities
 {
-    public class Events
+    public class Event
     {
         [Key]
         //[MaxLength(50)]
@@ -16,8 +16,6 @@ namespace Outreach.Reporting.Entity.Entities
         public string Description { get; set; }
         [Required]
         public DateTime Date { get; set; }//datetime
-                                        //[ForeignKey("Locations")]
-                                        //public int LocationID { get; set; }
         public int TotalVolunteers { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal TotalVolunteerHours { get; set; }

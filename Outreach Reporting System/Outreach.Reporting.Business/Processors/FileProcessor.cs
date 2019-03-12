@@ -70,11 +70,11 @@ namespace Outreach.Reporting.Business.Processors
 
         static void AssociatesDataProcess(DataTable dtContent)
         {
-            List<Associates> modelList = new List<Associates>();
-            Associates model;
+            List<Associate> modelList = new List<Associate>();
+            Associate model;
             foreach(DataRow dr in dtContent.Rows)
             {
-                model = new Associates();
+                model = new Associate();
                 model.ID = dr["Associate ID"] != null ? Convert.ToInt32(dr["Associate ID"]) : 0;
                 model.Name = Convert.ToString(dr["Name"]);
                 model.Designation = Convert.ToString(dr["Designation"]);

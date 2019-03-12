@@ -20,7 +20,7 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<ApplicationUsers> GetAll()
+        public IEnumerable<ApplicationUser> GetAll()
         {
             try
             {
@@ -31,7 +31,7 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public bool SaveUser(IEnumerable<ApplicationUsers> users)
+        public bool SaveUser(IEnumerable<ApplicationUser> users)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Outreach.Reporting.Business.Processors
                 return false;
             }
         }
-        public IEnumerable<UserRoles> GetRoles()
+        public IEnumerable<UserRole> GetRoles()
         {
             try
             {

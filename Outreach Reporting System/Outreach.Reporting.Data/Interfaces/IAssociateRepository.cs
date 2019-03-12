@@ -6,8 +6,8 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Interfaces
 {
-    public interface IAssociateRepository : IRepository<Associates>
+    public interface IAssociateRepository : IRepository<Associate>
     {
-        IEnumerable<Associates> GetAssociatesRelatedData();
+        IEnumerable<Associate> GetAssociatesRelatedData();
     }
 }

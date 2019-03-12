@@ -6,8 +6,8 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Interfaces
 {
-    public interface IUserRepository : IRepository<ApplicationUsers>
+    public interface IUserRepository : IRepository<ApplicationUser>
     {
-        IEnumerable<UserRoles> GetRoles();
+        IEnumerable<UserRole> GetRoles();
     }
 }

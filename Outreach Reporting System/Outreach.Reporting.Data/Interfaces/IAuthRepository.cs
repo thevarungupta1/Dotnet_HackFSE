@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Interfaces
 {
-    public interface IAuthRepository : IRepository<ApplicationUsers>
+    public interface IAuthRepository : IRepository<ApplicationUser>
     {
         
     }

@@ -15,7 +15,7 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Events> GetAll()
+        public IEnumerable<Event> GetAll()
         {
             try
             {
@@ -31,7 +31,7 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public IEnumerable<Events> GetEventsRelatedData()
+        public IEnumerable<Event> GetEventsRelatedData()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public bool SaveEvents(IEnumerable<Events> events)
+        public bool SaveEvents(IEnumerable<Event> events)
         {
             foreach (var row in events)
             {

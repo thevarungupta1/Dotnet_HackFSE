@@ -25,20 +25,20 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/User
         [HttpGet]
-        public ActionResult<IEnumerable<ApplicationUsers>> Get()
+        public ActionResult<IEnumerable<ApplicationUser>> Get()
         {
             return Ok(_userProcessor.GetAll());
         }
         [HttpGet]
         [Route("GetRoles")]
-        public ActionResult<IEnumerable<UserRoles>> GetRoles()
+        public ActionResult<IEnumerable<UserRole>> GetRoles()
         {
             return Ok(_userProcessor.GetRoles());
         }
 
         // POST api/User
         [HttpPost]
-        public void Post([FromBody] IEnumerable<ApplicationUsers> applicationUsers)
+        public void Post([FromBody] IEnumerable<ApplicationUser> applicationUsers)
         {
             _userProcessor.SaveUser(applicationUsers);
         }

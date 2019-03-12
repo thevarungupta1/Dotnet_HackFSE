@@ -9,18 +9,18 @@ using System.Linq;
 
 namespace Outreach.Reporting.Data.Repository
 {
-    public class AssociateRepository : Repository<Associates>, IAssociateRepository
+    public class AssociateRepository : Repository<Associate>, IAssociateRepository
     {
-        public AssociateRepository(ReportContext context) : base(context)
+        public AssociateRepository(ReportDBContext context) : base(context)
         {
         }
 
-        public ReportContext ReportContext
+        public ReportDBContext ReportContext
         {
-            get { return Context as ReportContext; }
+            get { return Context as ReportDBContext; }
         }
 
-        public IEnumerable<Associates> GetAssociatesRelatedData()
+        public IEnumerable<Associate> GetAssociatesRelatedData()
         {
             return ReportContext.Associates.ToList();
         }

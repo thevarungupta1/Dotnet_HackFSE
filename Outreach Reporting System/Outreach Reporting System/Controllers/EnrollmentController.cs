@@ -37,7 +37,7 @@ namespace Outreach.Reporting.Service.Controllers
        
         // GET api/AllEnrollments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Enrollments>>> GetAsync()
+        public async Task<ActionResult<IEnumerable<Enrollment>>> GetAsync()
         {
            return Ok(_enrollmentProcessor.GetAll());
         }
@@ -45,9 +45,16 @@ namespace Outreach.Reporting.Service.Controllers
         // GET api/GetWithRelatedData
         [HttpGet]
         [Route("GetEnrolledAssociates")]
-        public ActionResult<IEnumerable<Enrollments>> GetEnrolledAssociates()
+        public ActionResult<IEnumerable<Associate>> GetEnrolledAssociates()
         {
             return Ok(_enrollmentProcessor.GetEnrolledAssociates());
+        }
+
+        [HttpGet]
+        [Route("GetEnrolledUniqueAssociates")]
+        public ActionResult<IEnumerable<Associate>> GetEnrolledUniqueAssociates()
+        {
+            return Ok(_enrollmentProcessor.GetEnrolledUniqueAssociates());
         }
         // GET api/GetEnrolledAssociates
         [HttpGet]
@@ -55,6 +62,13 @@ namespace Outreach.Reporting.Service.Controllers
         public IActionResult GetTopFrequentVolunteers(int count)
         {
             return Ok(_enrollmentProcessor.GetTopFrequentVolunteers(count));
+        }
+
+        [HttpGet]
+        [Route("GetTopVolunteerData")]
+        public IActionResult GetTopVolunteerData()
+        {
+            return Ok(_enrollmentProcessor.GetTopVolunteerData());
         }
 
         [HttpGet]
@@ -99,7 +113,7 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] IEnumerable<Enrollments> enrollments)
+        public void Post([FromBody] IEnumerable<Enrollment> enrollments)
         {
             _enrollmentProcessor.SaveEnrollments(enrollments);
         }

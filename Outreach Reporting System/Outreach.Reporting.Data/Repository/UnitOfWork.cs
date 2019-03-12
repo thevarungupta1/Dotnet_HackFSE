@@ -8,7 +8,7 @@ namespace Outreach.Reporting.Data.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly ReportContext _context;
+        private readonly ReportDBContext _context;
 
         public IAssociateRepository Associates { get; private set; }
         public IEventRepository Events { get; private set; }
@@ -17,7 +17,7 @@ namespace Outreach.Reporting.Data.Repository
         public IAuthRepository Auth { get; private set; }
         public IFileRepository File { get; private set; }
 
-        public UnitOfWork(ReportContext context)
+        public UnitOfWork(ReportDBContext context)
         {
             _context = context;
             Associates = new AssociateRepository(_context);

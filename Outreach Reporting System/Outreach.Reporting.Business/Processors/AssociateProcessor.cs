@@ -15,7 +15,7 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Associates> GetAll()
+        public IEnumerable<Associate> GetAll()
         {
             try
             {
@@ -26,7 +26,7 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public bool SaveAssociates(IEnumerable<Associates> associates)
+        public bool SaveAssociates(IEnumerable<Associate> associates)
         {
             try
             {

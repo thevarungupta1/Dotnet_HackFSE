@@ -7,8 +7,8 @@ namespace Outreach.Reporting.Business.Interfaces
 {
     public interface IEventProcessor
     {
-        bool SaveEvents(IEnumerable<Events> events);
-        IEnumerable<Events> GetAll();
-        IEnumerable<Events> GetEventsRelatedData();
+        bool SaveEvents(IEnumerable<Event> events);
+        IEnumerable<Event> GetAll();
+        IEnumerable<Event> GetEventsRelatedData();
     }
 }

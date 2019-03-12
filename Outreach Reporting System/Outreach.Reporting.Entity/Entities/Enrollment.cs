@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Outreach.Reporting.Entity.Entities
 {
-    public class Enrollments
+    public class Enrollment
     {
         [Key]
         public int EnrollmentID { get; set; }
@@ -36,8 +36,8 @@ namespace Outreach.Reporting.Entity.Entities
         public DateTime? ModifiedOn { get; set; }
 
         //Navigation properties
-        public Associates Associates { get; set; }
-        public Events Events { get; set; }
+        public Associate Associates { get; set; }
+        public Event Events { get; set; }
 
     }
 }

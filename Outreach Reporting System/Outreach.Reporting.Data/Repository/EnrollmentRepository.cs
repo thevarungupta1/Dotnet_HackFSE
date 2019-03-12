@@ -9,25 +9,25 @@ using System.Linq;
 
 namespace Outreach.Reporting.Data.Repository
 {
-    public class EnrollmentRepository : Repository<Enrollments>, IEnrollmentRepository
+    public class EnrollmentRepository : Repository<Enrollment>, IEnrollmentRepository
     {
-        public EnrollmentRepository(ReportContext context) : base(context)
+        public EnrollmentRepository(ReportDBContext context) : base(context)
         {
         }
 
-        public ReportContext ReportContext
+        public ReportDBContext ReportContext
         {
-            get { return Context as ReportContext; }
+            get { return Context as ReportDBContext; }
         }
 
-        public IEnumerable<Enrollments> GetEnrolledAssociates()
+        public IEnumerable<Enrollment> GetEnrolledAssociates()
         {
             return ReportContext.Enrollments
                                             //.Include(e => e.Events)
                                             .Include(a => a.Associates).ToList();
         }
 
-        public IEnumerable<Associates> GetTopFrequentVolunteers(int count)
+        public IEnumerable<Associate> GetTopFrequentVolunteers(int count)
         {
             var enrollments = ReportContext.Enrollments
                                     .Include(a => a.Associates);
@@ -43,7 +43,7 @@ namespace Outreach.Reporting.Data.Repository
 
         }
 
-        public IEnumerable<Enrollments> GetYearlyVolunteersCount(int yearsCount=100)
+        public IEnumerable<Enrollment> GetYearlyVolunteersCount(int yearsCount=100)
         {
             var enrollments = ReportContext.Enrollments
                                     .Include(a => a.Associates);
@@ -60,7 +60,7 @@ namespace Outreach.Reporting.Data.Repository
             return groupedData.SelectMany(group => group.enrollments.Select(s=> s));
         }
 
-        public IQueryable<Enrollments> GetEnrollments()
+        public IQueryable<Enrollment> GetEnrollments()
         {
             var enrollments = ReportContext.Enrollments
                                     .Include(a => a.Associates);

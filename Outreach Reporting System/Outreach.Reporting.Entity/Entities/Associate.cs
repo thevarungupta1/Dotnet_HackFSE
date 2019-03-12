@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Outreach.Reporting.Entity.Entities
 {
-    public class Associates
+    public class Associate
     {
         [Key]
        // [MaxLength(6)]

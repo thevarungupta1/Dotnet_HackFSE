@@ -26,7 +26,7 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/AllEvents
         [HttpGet]
-        public ActionResult<IEnumerable<Events>> Get()
+        public ActionResult<IEnumerable<Event>> Get()
         {
             return Ok(_eventProcessor.GetAll());
         }
@@ -34,7 +34,7 @@ namespace Outreach.Reporting.Service.Controllers
         // GET api/GetWithRelatedData
         [HttpGet]
         [Route("GetWithRelatedData")]
-        public ActionResult<IEnumerable<Enrollments>> GetWithRelatedData()
+        public ActionResult<IEnumerable<Enrollment>> GetWithRelatedData()
         {
             return Ok(_eventProcessor.GetEventsRelatedData());
         }
@@ -48,7 +48,7 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] IEnumerable<Events> events)
+        public void Post([FromBody] IEnumerable<Event> events)
         {
             _eventProcessor.SaveEvents(events);
         }

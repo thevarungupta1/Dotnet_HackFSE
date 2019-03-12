@@ -7,14 +7,16 @@ namespace Outreach.Reporting.Business.Interfaces
 {
     public interface IEnrollmentProcessor
     {
-        IEnumerable<Enrollments> GetAll();
-        bool SaveEnrollments(IEnumerable<Enrollments> associates);
-        IEnumerable<Enrollments> GetEnrolledAssociates();
-        IEnumerable<Associates> GetTopFrequentVolunteers(int count);
+        IEnumerable<Enrollment> GetAll();
+        bool SaveEnrollments(IEnumerable<Enrollment> associates);
+        IEnumerable<Associate> GetEnrolledAssociates();
+        IEnumerable<Associate> GetEnrolledUniqueAssociates();
+        IEnumerable<Associate> GetTopFrequentVolunteers(int count);
         Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount);
-        IEnumerable<Enrollments> GetAllNewVolunteers();
+        IEnumerable<Enrollment> GetAllNewVolunteers();
         Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount();
         List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount);
         Dictionary<string, int> GetDesignationWiseVolunteersCount();
+        Dictionary<string, List<decimal>> GetTopVolunteerData();
     }
 }

@@ -8,10 +8,12 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Outreach.Reporting.Entity.Entities
 {
-    public class ApplicationUsers
+    public class ApplicationUser
     {
         [Key]
         public int ID { get; set; }
+        [ForeignKey("Associates")]
+        public int AssociateID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -22,6 +24,7 @@ namespace Outreach.Reporting.Entity.Entities
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedOn { get; set; }
         //Navigation properties
-        public UserRoles UserRoles { get; set; }
+        public Associate Associates { get; set; }
+        public UserRole UserRoles { get; set; }
     }
 }

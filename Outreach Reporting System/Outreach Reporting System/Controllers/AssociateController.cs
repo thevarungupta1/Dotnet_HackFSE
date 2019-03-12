@@ -14,7 +14,7 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin, PMO, POC")]
+   // [Authorize(Roles = "Admin, PMO, POC")]
     public class AssociateController : ControllerBase
     {
         private readonly IAssociateProcessor _associateProcessor;
@@ -27,7 +27,7 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/AllAssociates
         [HttpGet]
-        public ActionResult<IEnumerable<Associates>> Get()
+        public ActionResult<IEnumerable<Associate>> Get()
         {
             return Ok(_associateProcessor.GetAll());
         }
@@ -41,7 +41,7 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] IEnumerable<Associates> associates)
+        public void Post([FromBody] IEnumerable<Associate> associates)
         {
             _associateProcessor.SaveAssociates(associates);
         }

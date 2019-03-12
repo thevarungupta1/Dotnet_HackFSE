@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Outreach.Reporting.Entity.Entities
 {
-    public class Configurations
+    public class Configuration
     {
         [Key]
         public int ID { get; set; }

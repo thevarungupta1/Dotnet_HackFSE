@@ -9,13 +9,13 @@ namespace Outreach.Reporting.Data.Repository
 {
     public class FileRepository : Repository<File>, IFileRepository
     {
-        public FileRepository(ReportContext context) : base(context)
+        public FileRepository(ReportDBContext context) : base(context)
         {
         }
 
-        public ReportContext ReportContext
+        public ReportDBContext ReportContext
         {
-            get { return Context as ReportContext; }
+            get { return Context as ReportDBContext; }
         }
     }
 }

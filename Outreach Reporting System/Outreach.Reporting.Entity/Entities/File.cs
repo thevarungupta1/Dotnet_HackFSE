@@ -15,6 +15,6 @@ namespace Outreach.Reporting.Entity.Entities
         public int CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
 
-        public Associates Associates { get; set; }
+        public Associate Associates { get; set; }
     }
 }

@@ -41,7 +41,7 @@ namespace Outreach_Reporting_System
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<ReportContext>();
+                    var context = services.GetRequiredService<ReportDBContext>();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

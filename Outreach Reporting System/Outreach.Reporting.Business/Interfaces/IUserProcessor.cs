@@ -8,8 +8,8 @@ namespace Outreach.Reporting.Business.Interfaces
 {
     public interface IUserProcessor
     {
-        IEnumerable<ApplicationUsers> GetAll();
-        bool SaveUser(IEnumerable<ApplicationUsers> applicationUsers);
-        IEnumerable<UserRoles> GetRoles();
+        IEnumerable<ApplicationUser> GetAll();
+        bool SaveUser(IEnumerable<ApplicationUser> applicationUsers);
+        IEnumerable<UserRole> GetRoles();
     }
 }

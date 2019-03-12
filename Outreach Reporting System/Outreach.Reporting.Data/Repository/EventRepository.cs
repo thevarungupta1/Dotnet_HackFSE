@@ -9,17 +9,17 @@ using System.Linq;
 
 namespace Outreach.Reporting.Data.Repository
 {
-    public class EventRepository : Repository<Events>, IEventRepository
+    public class EventRepository : Repository<Event>, IEventRepository
     {
-        public EventRepository(ReportContext context) : base(context)
+        public EventRepository(ReportDBContext context) : base(context)
         {
         }
 
-        public ReportContext ReportContext
+        public ReportDBContext ReportContext
         {
-            get { return Context as ReportContext; }
+            get { return Context as ReportDBContext; }
         }
-        public IEnumerable<Events> GetEventsRelatedData()
+        public IEnumerable<Event> GetEventsRelatedData()
         {
             return ReportContext.Events.ToList();
         }

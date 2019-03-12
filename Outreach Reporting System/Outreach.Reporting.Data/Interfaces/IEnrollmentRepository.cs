@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Interfaces
 {
-    public interface IEnrollmentRepository : IRepository<Enrollments>
+    public interface IEnrollmentRepository : IRepository<Enrollment>
     {
-        IEnumerable<Enrollments> GetEnrolledAssociates();
-        IEnumerable<Associates> GetTopFrequentVolunteers(int count);
-        IEnumerable<Enrollments> GetYearlyVolunteersCount(int yearsCount);
-        IQueryable<Enrollments> GetEnrollments();
+        IEnumerable<Enrollment> GetEnrolledAssociates();
+        IEnumerable<Associate> GetTopFrequentVolunteers(int count);
+        IEnumerable<Enrollment> GetYearlyVolunteersCount(int yearsCount);
+        IQueryable<Enrollment> GetEnrollments();
     }
 }
