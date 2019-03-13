@@ -1,5 +1,6 @@
 ﻿using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Data.Interfaces;
+using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public bool AuthenticateUser(string email)
+        public bool AuthenticateUser(ApplicationUser user)
         {
-            var user = _unitOfWork.Auth.Find(x => x.Email == email).FirstOrDefault();
+            user = _unitOfWork.Auth.Find(x => x.AssociateID == user.AssociateID && x.Email == user.Email).FirstOrDefault();
             return user != null;
         }
     }

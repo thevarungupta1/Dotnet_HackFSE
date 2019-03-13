@@ -27,9 +27,9 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/AllAssociates
         [HttpGet]
-        public ActionResult<IEnumerable<Associate>> Get()
+        public async Task<ActionResult<IEnumerable<Associate>>> Get()
         {
-            return Ok(_associateProcessor.GetAll());
+            return await Task.FromResult(Ok(_associateProcessor.GetAll()));
         }
 
         // GET api/values/5

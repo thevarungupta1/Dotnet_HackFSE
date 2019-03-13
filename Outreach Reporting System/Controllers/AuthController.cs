@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Outreach.Reporting.Business.Interfaces;
+using Outreach.Reporting.Entity.Entities;
 
 namespace Outreach.Reporting.Service.Controllers
 {
@@ -28,23 +29,16 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/GetToken/{email_id}
         [HttpPost]
-        public IActionResult Authenticate([FromBody]string email)
+        public async Task<IActionResult> Authenticate([FromBody]string email)
         {
-            if (_authProcessor.AuthenticateUser(email))
+            if (_authProcessor.AuthenticateUser(new ApplicationUser()))
             {
                 IActionResult response = Unauthorized();
                
                     var tokenString = GenerateJSONWebToken();
-                    response = Ok(new { token = tokenString });
+                   // response = Ok(new { token = tokenString });
 
-                return response;
-
-                ////signing credentials
-                //var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
-
-              
-                ////return token
-                //return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+                return await Task.FromResult(Ok(new { token = tokenString }));
             }
             else
                 return Unauthorized();
@@ -77,9 +71,9 @@ namespace Outreach.Reporting.Service.Controllers
         // POST api/GetToken/{email_id}
         [HttpPost]
         [Route("Refresh")]
-        public IActionResult Refresh([FromBody]string email)
+        public IActionResult Refresh([FromBody]ApplicationUser user)
         {
-            if (_authProcessor.AuthenticateUser(email))
+            if (_authProcessor.AuthenticateUser(user))
             {
                 IActionResult response = Unauthorized();
 
