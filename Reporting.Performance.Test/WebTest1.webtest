@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest1" Id="1235bc99-af1b-4340-9482-a839d6438d79" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.1702debd-7d65-449a-a672-ffc3470153e2.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="010599f3-1c69-458c-a3ce-72bc51a28497" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="ww" RecordedValue="ww" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS02" RecordedValue="IESS02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="en-US" RecordedValue="en-US" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="acf0745d-d99d-41ca-ac56-c55567b4dec7" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="www" RecordedValue="www" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS02" RecordedValue="IESS02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="en-US" RecordedValue="en-US" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="d164d8de-6635-4a1a-b5f9-9cf4c83cb246" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="www." RecordedValue="www." CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS02" RecordedValue="IESS02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="en-US" RecordedValue="en-US" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="055620f7-4376-4a51-967e-82fba76c34b3" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="www.h" RecordedValue="www.h" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS02" RecordedValue="IESS02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="en-US" RecordedValue="en-US" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="16164995-dd2b-4e1f-9ca7-087a48097215" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="www.ht" RecordedValue="www.ht" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS02" RecordedValue="IESS02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="en-US" RecordedValue="en-US" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="9c6235a6-46e8-4310-be60-04802f078503" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="www.hdf" RecordedValue="www.hdf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS02" RecordedValue="IESS02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="en-US" RecordedValue="en-US" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="a0681d38-bb22-4e81-bcf8-09b28762919f" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam24.c_encoding" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ing=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; ?&gt;&lt;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="www.hdfc" RecordedValue="www.hdfc" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="20" RecordedValue="20" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="160" RecordedValue="160" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESS02" RecordedValue="IESS02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="en-US" RecordedValue="en-US" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="881304a5-a4a7-4c04-b867-960a1a10b85d" Version="1.1" Url="http://www.bing.com/search" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam148.IG" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;IG=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam149.Type" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;Type=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="3" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam220.IG" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;IG=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam221.Type" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;Type=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="6" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam280.IG" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;IG=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam21.c_host" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&#xD;&#xA;  " />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam22.c_hostname" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&#xD;&#xA;  " />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam23.c_sampleRate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="gth=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; tit" />
+            <RuleParameter Name="Index" Value="1" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="q" Value="www.hdfcbank.com" RecordedValue="www.hdfcbank.com" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="src" Value="IE-SearchBox" RecordedValue="IE-SearchBox" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="IESR02" RecordedValue="IESR02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="78131b24-ae1e-4189-84d6-3f991fded5c1" Version="1.1" Url="http://www.bing.com/fd/ls/l" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="IG" Value="BB23759912D042EA9449A89347BB9189" RecordedValue="BB23759912D042EA9449A89347BB9189" CorrelationBinding="{{QueryStringParam148.IG}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Type" Value="Event.CPT" RecordedValue="Event.CPT" CorrelationBinding="{{QueryStringParam149.Type}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="DATA" Value="{%22pp%22:{%22S%22:%22L%22,%22FC%22:59,%22BC%22:236,%22SE%22:-1,%22TC%22:-1,%22H%22:369,%22BP%22:453,%22CT%22:462,%22IL%22:10},%22ad%22:[-1,-1,558,520,1089,2437,1]}" RecordedValue="{%22pp%22:{%22S%22:%22L%22,%22FC%22:59,%22BC%22:236,%22SE%22:-1,%22TC%22:-1,%22H%22:369,%22BP%22:453,%22CT%22:462,%22IL%22:10},%22ad%22:[-1,-1,558,520,1089,2437,1]}" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="P" Value="SERP" RecordedValue="SERP" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="DA" Value="HK2" RecordedValue="HK2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="a7604999-37bb-4ecd-bd05-dd5b9c4c02aa" Version="1.1" Url="http://www.bing.com/fd/ls/lsp.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="text/xml" InsertByteOrderMark="False">PABDAGwAaQBlAG4AdABJAG4AcwB0AFIAZQBxAHUAZQBzAHQAPgA8AEUAdgBlAG4AdABzAD4APABFAD4APABUAD4ARQB2AGUAbgB0AC4AQwBsAGkAZQBuAHQASQBuAHMAdAA8AC8AVAA+ADwASQBHAD4AQgBCADIAMwA3ADUAOQA5ADEAMgBEADAANAAyAEUAQQA5ADQANAA5AEEAOAA5ADMANAA3AEIAQgA5ADEAOAA5ADwALwBJAEcAPgA8AFQAUwA+ADEANQA1ADEANwA5ADYAOQA2ADkAOAAwADUAPAAvAFQAUwA+ADwARAA+ADwAIQBbAEMARABBAFQAQQBbAHsAaQBkADoAOQAxADYANgAsAFAAOgAiADcAOgAxACwANQA6ADEALAAxADUAOgBsAGcALAAxADQAOgBrAHUALAAxADMAOgBrAHUALAAxADIAOgBrAHUALAAxADEAOgA2AHIALAA0ADoAMQAsADMAOgAxACwAMgA6ADEALAAxADcAOgBtADgALAAxADYAOgBtADgALAAyADQAOgBhAGEALAA4ADoANgBvACwAMQAwADoAawBvACwAOQA6ADYAcgAiACwAUwA6ACIAbgBhAHYAOgAwACIALAB2ADoAMQAuADEALABUADoAIgBDAEkALgBQAGUAcgBmACIALABGAEkARAA6ACIAQwBJACIALABOAGEAbQBlADoAIgBQAGUAcgBmAFYAMgAiAH0AXQBdAD4APAAvAEQAPgA8AC8ARQA+ADwALwBFAHYAZQBuAHQAcwA+ADwAUwBUAFMAPgAxADUANQAxADcAOQA2ADkANgA5ADgAMAA1ADwALwBTAFQAUwA+ADwALwBDAGwAaQBlAG4AdABJAG4AcwB0AFIAZQBxAHUAZQBzAHQAPgA=</StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="8dbf01ff-c4ab-409a-973f-97dc0d13737c" Version="1.1" Url="http://www.bing.com/images/sbi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="mmasync" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ig" Value="BB23759912D042EA9449A89347BB9189" RecordedValue="BB23759912D042EA9449A89347BB9189" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="iid" Value=".5056" RecordedValue=".5056" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ptn" Value="Web" RecordedValue="Web" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="8f113b7a-6100-4b23-81d2-71cd278dc025" Version="1.1" Url="http://www.bing.com/fd/ls/l" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="IG" Value="BB23759912D042EA9449A89347BB9189" RecordedValue="BB23759912D042EA9449A89347BB9189" CorrelationBinding="{{QueryStringParam220.IG}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Type" Value="Event.PPT" RecordedValue="Event.PPT" CorrelationBinding="{{QueryStringParam221.Type}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="DATA" Value="{%22S%22:580,%22E%22:1292,%22T%22:0,%22I%22:0,%22N%22:{%22TP%22:{%22S%22:722,%22E%22:724,%22T%22:2}},%22M%22:{}}" RecordedValue="{%22S%22:580,%22E%22:1292,%22T%22:0,%22I%22:0,%22N%22:{%22TP%22:{%22S%22:722,%22E%22:724,%22T%22:2}},%22M%22:{}}" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="P" Value="SERP" RecordedValue="SERP" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="DA" Value="HK2" RecordedValue="HK2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="054df7b1-9e40-4b7e-9392-87b9815a31d0" Version="1.1" Url="http://www.bing.com/fd/ls/lsp.aspx" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <StringHttpBody ContentType="text/xml" InsertByteOrderMark="False">PABDAGwAaQBlAG4AdABJAG4AcwB0AFIAZQBxAHUAZQBzAHQAPgA8AEUAdgBlAG4AdABzAD4APABFAD4APABUAD4ARQB2AGUAbgB0AC4AQwBsAGkAZQBuAHQASQBuAHMAdAA8AC8AVAA+ADwASQBHAD4AQgBCADIAMwA3ADUAOQA5ADEAMgBEADAANAAyAEUAQQA5ADQANAA5AEEAOAA5ADMANAA3AEIAQgA5ADEAOAA5ADwALwBJAEcAPgA8AFQAUwA+ADEANQA1ADEANwA5ADYAOQA3ADAAOAA5ADcAPAAvAFQAUwA+ADwARAA+ADwAIQBbAEMARABBAFQAQQBbAFsAewAiAFQAIgA6ACIAQwBJAC4AQgBvAHgATQBvAGQAZQBsACIALAAiAEYASQBEACIAOgAiAEMASQAiACwAIgBOAGEAbQBlACIAOgAiAHYAMgAuADgAIgAsACIAUwBWACIAOgAiADQAIgAsACIAUAAiADoAewAiAEMAIgA6ADYANgAsACIATgAiADoAMQAsACIASQAiADoAIgA1ADEAZAAiACwAIgBTACIAOgAiAFQAIgAsACIATQAiADoAIgBWACsATAArAE0AKwBNAFQAKwBFACsATgArAEMAKwBLACsAQgBEACIALAAiAFQAIgA6ADEAOQAwADMALAAiAEsAIgA6ACIAMQA4ADkAKwBTAFAAQQBOAC4AZgB0AHIAQgArAEwASQAuAGIAXwBhAGwAZwBvACsATABJAC4AYgBfAGEAbgBzACsAMQB2AHAAKwAxAHYAbwArAFMARQBSAFAALAA1ADAAMgAyAC4AMQArAFMARQBSAFAALAA1ADEAOQAwAC4AMQArAFMARQBSAFAALAA1ADEAMAAzAC4AMQArAEQASQBWAC4AcgBtAHMAXwBpAG0AZwAgAHIAbQBzAF8AcgBtAHMAYQBuAHMAdwBlAHIAcwBNAHUAbAB0AGkAbQBlAGQAaQBhAFYAaQBkAGUAbwBBAG4AcwB3AGUAcgBfAFAAbABhAHkAIAByAG0AcwBfAHIAbQBzAGEAbgBzAHcAZQByAHMATQB1AGwAdABpAG0AZQBkAGkAYQBWAGkAZABlAG8AQQBuAHMAdwBlAHIAXwBCAHUAbgBkAGwAZQArAFMARQBSAFAALAA1ADQAOQA4AC4AMQArAEkATQBHAC4AcgBtAHMAXwBpAG0AZwArAEQASQBWAC4AcgBtAHMAXwBpAG0AZwArAHcAdwB3AC4AYgBpAG4AZwAuAGMAbwBtACsAaAB0AHQAcAArAGMAcwBzACsAaQBtAGcAKwAxADIAcwArADEAYgA3AGQAZgBiADgAOAAlADIARgBjAGMAOAA0ADMANwBhAGQALgBqAHMAKwBzAGMAcgBpAHAAdAArADEAYgBlAGMAZQBlAGQAYQAlADIARgAzAGIAYQBhADkAYQBmADcALgBqAHMAKwB4AG0AbABoAHQAdABwAHIAZQBxAHUAZQBzAHQAKwAxADIAdAArADUAOQA4ADMAYQBhADUAMAAlADIARgBmADgAYwA2AGQAZAA0ADQALgBqAHMAKwA0AGMANwAzADYANABjADUAJQAyAEYANAAwAGUAMQBiADQAMgA1AC4AagBzACsANQA3ADAAMQAzAGMANAA3ACUAMgBGADEAYQBkAGIANQBkAGIAYQAuAGoAcwArAGIAYQBiADUANwBlADEAMgAlADIARgBlAGEAOABmAGUAMwAwADAALgBqAHMAKwAzADQANwBhAGYAZQBlADIAJQAyAEYAMwAzADAAMwA2AGUAYQAxAC4AagBzACsANwA2AGUAZgBlADIAMwAxACUAMgBGAGMANgAzADcANgBlADUAMwAuAGoAcwArAGUAOQAwADQAMwAxAGUAZAAlADIARgBiADIAZgBlADUAMABiAGUALgBqAHMAKwBkADUANwAxADIAZgAxAGEAJQAyAEYAZQA1ADgAZQA1ADAAOAAzAC4AagBzACsAZQBmADAANgA5ADAAOABiACUAMgBGADAAMwA1ADAAMgA4ADMAMgAuAGoAcwArADgAYgBmADUAYwAyADUANgAlADIARgBkAGIANAA3ADUAYwA5ADcALgBqAHMAKwBhADMAOQA5ADkAOABlADQAJQAyAEYANgA3ADkAOABhADMAMgAyAC4AagBzACsAYgA1ADUAOQBiADAAYwBhACUAMgBGAGMANgBmADYAZQA1ADYANgAuAGoAcwArAGQANAA4ADgAZQBjADgAOAAlADIARgAxADgAMgA4ADAAMABkAGMALgBqAHMAKwAxADAAZQArAGQAYgA4ADYANwA3AGEAMgAlADIARgAwADcAMQA2AGMAOQBmADQALgBqAHMAKwAxADAAbAArADUANwBiADkAMgBkAGEAZgAlADIARgBiAGYAOQA3ADUAOABiADQALgBqAHMAKwAxADAAdAArADUAYQA5ADQAZgBkADAAMwAlADIARgA0ADIAMQBhADAAYwAwADkALgBqAHMAKwAxADEAMAArADcAZAAyADIAMQBkADUANQAlADIARgBlAGUAOABkADcAOQBlADEALgBqAHMAKwAxADEAYwArADEAYwAyAGYANgAyADYAYwAlADIARgBjADkAOQA2ADkANwA1ADIALgBqAHMAKwAxADEAawArADEANgBiAGUAMgBhADMANAAlADIARgA2ADMAMgAzAGMAZQA0ADIALgBqAHMAKwAxADEAcgArADEAMgBjACsAMQAyAGoAKwAxADMAbwArADEAMwBzACsAMQAzAHkAKwAxADQAOQArADEANAByACsAMQA0AHgAKwAxADUANAArADEANgAyACsAMQA5AGsAKwAxADkAbwAiACwAIgBGACIAOgAwAH0ALAAiAFYAIgA6ACIAYgA5AC8AMAAvADAALwBmAHoALwBlAHgALwB1ADkALwAzAGIALwAxAC8AZAAvAHYAaQBzAGkAYgBsAGUALwBkAGUAZgBhAHUAbAB0ACsAagA5AC8ALwAvAC8ALwAvAEAANAAvAC8ALwAvACsAQAAwAC8ALwAvAC8ALwAvAEAANQAvAC8ALwAvACIALAAiAEwAIgA6ACIAYgBhAC8AMAAvAE4AQQBWAC4AYgBfAHMAYwBvAHAAZQBiAGEAcgAvAFMARQBSAFAALAA1ADAAMQA2AC4AMQAvADIAcwAvADIANwAvAHIAaAAvADEAMwAvADIALwBUAC8ALQAxACsAYgBhAC8AMQAvAEgAMQAuAGIAXwBsAG8AZwBvAC8ALwAxAG0ALwBnAC8AcwAvADEAMAAvADQALwBUAC8ALQAxACsAYgBhAC8AMgAvAEQASQBWAC4AYgBfAHMAZQBhAHIAYwBoAGIAbwB4AEYAbwByAG0ALwAvADIAcwAvAGUALwBpADAALwAxADQALwAzAC8AVAAvAC0AMQArAGIAYQAvADMALwBEAEkAVgAjAGkAZABfAGgALwBAADYALwBxADEALwBhAC8ANAA4AC8AMQBlAC8AMgAvAFQALwAyACsAQAAwAC8AMwAvAC8ALwBuAGoALwAvADYAcQAvAC8ALwBUAC8AKwBqAGcALwA0AC8AUwBQAEEATgAuAHMAYgBfAGMAbwB1AG4AdAAvAC8AMwBjAC8AMwBvAC8AMwBlAC8AdQAvADQALwBUAC8ALQAxACsAagBnAC8ANQAvAEAAMQAvAFMARQBSAFAALAA1ADMANAA4AC4AMQAvADYAcQAvADMAbwAvADIAcQAvAHUALwA0AC8AVAAvAC0AMQArAGoAZwAvADYALwBAADEALwBTAEUAUgBQACwANQAzADUANwAuADEALwA5AGcALwAzAG8ALwAzAGkALwB1AC8ANAAvAFQALwAtADEAKwBqAGcALwA3AC8AQAAxAC8AUwBFAFIAUAAsADUAMwA2ADEALgAxAC8AYwB5AC8AMwBvAC8AMgBlAC8AdQAvADQALwBUAC8ALQAxACsAagBnAC8AOAAvAEAAMgAvAFMARQBSAFAALAA1ADEAMwA3AC4AMQAvADIAcwAvADQAaQAvAGkAMAAvAGUAaQAvADQALwBUAC8ALQAxACsAagBnAC8AOQAvAEAAMgAvAEAANwAvADIAcwAvAGoAMgAvAGkAMAAvADkAZwAvADQALwBUAC8ALQAxACsAagBnAC8AYQAvAEwASQAuAGIAXwBhAG4AcwAgAGIAXwBtAG8AcAAvAEAAOAAvADIAcwAvAHMAawAvAGkAMAAvADcAaAAvADQALwBUAC8ALQAxACsAagBnAC8AYgAvAEAAMgAvAFMARQBSAFAALAA1ADIAMAA0AC4AMQAvADIAcwAvADEAMAAzAC8AaQAwAC8AMgBzAC8ANAAvAFQALwAtADEAKwBAADAALwBiAC8ALwAvAC8AMQAwADIALwAvAC8ALwBUAC8AKwBqAGcALwBjAC8AQAAyAC8AUwBFAFIAUAAsADUAMgAxADgALgAxAC8AMgBzAC8AMQAyAHgALwBpADAALwAzAGEALwA0AC8AVAAvAC0AMQArAEAAMAAvAGMALwAvAC8ALwAxADIAdwAvAC8ALwAvAFQALwArAGoAZwAvAGQALwBAADIALwBTAEUAUgBQACwANQAyADMAMwAuADEALwAyAHMALwAxADYAOQAvAGkAMAAvADIAcwAvADQALwBUAC8ALQAxACsAQAAwAC8AZAAvAC8ALwAvADEANgA4AC8ALwAvAC8AVAAvACsAagBnAC8AZQAvAEAAMgAvAFMARQBSAFAALAA1ADIANAA4AC4AMQAvADIAcwAvADEAOQAzAC8AaQAwAC8AMgBzAC8ANAAvAFQALwAtADEAKwBAADAALwBlAC8ALwAvAC8AMQA5ADIALwAvAC8ALwBUAC8AKwBqAGcALwBmAC8AQAAyAC8AUwBFAFIAUAAsADUAMgA2ADEALgAxAC8AMgBzAC8AMQBiAHgALwBpADAALwAyAGEALwA0AC8AVAAvAC0AMQArAEAAMAAvAGYALwAvAC8ALwAxAGIAdwAvAC8ALwAvAFQALwArAGoAZwAvAGcALwBAADIALwBTAEUAUgBQACwANQAyADcANgAuADEALwAyAHMALwAxAGUAOQAvAGkAMAAvADMAYQAvADQALwBUAC8ALQAxACsAQAAwAC8AZwAvAC8ALwAvADEAZQA4AC8ALwAvAC8AVAAvACsAagBnAC8AaAAvAEAAMgAvAFMARQBSAFAALAA1ADIAOAA3AC4AMQAvADIAcwAvADEAaABsAC8AaQAwAC8AMgBhAC8ANAAvAFQALwAtADEAKwBAADAALwBoAC8ALwAvAC8AMQBoAGsALwAvAC8ALwBUAC8AKwBqAGcALwBpAC8AQAAyAC8AUwBFAFIAUAAsADUAMwAwADIALgAxAC8AMgBzAC8AMQBqAHgALwBpADAALwAyAHMALwA0AC8AVAAvAC0AMQArAEAAMAAvAGkALwAvAC8ALwAxAGoAdwAvAC8ALwAvAFQALwArAGoAZwAvAGoALwBAADMALwBTAEUAUgBQACwANQA0ADgANgAuADEALwAyAHMALwAxAG0AcgAvAGkAMAAvADUAaQAvADQALwBUAC8ALQAxACsAQAAwAC8AagAvAC8ALwAvADEAbQBxAC8ALwAvAC8AVAAvACsAagBnAC8AawAvAEwASQAuAGIAXwBwAGEAZwAvAFMARQBSAFAALAA1ADUAMwA2AC4AMQAvADIAcwAvADEAcwBiAC8AaQAwAC8AMgBzAC8ANAAvAFQALwAtADEAKwBAADAALwBrAC8ALwAvAC8AMQBzAGEALwAvAC8ALwBUAC8AKwBqAGcALwBsAC8AQAAzAC8AQABhAC8AbAB3AC8ANABpAC8AOAA4AC8AawBhAC8ANAAvAFQALwAtADEAKwBqAGcALwBtAC8ARgBPAE8AVABFAFIAIwBiAF8AZgBvAG8AdABlAHIALwBTAEUAUgBQACwANQAwADQAOQAuADEALwAwAC8AQAA0AC8AdQA5AC8AMQBjAC8AMQAvAFQALwAtADEAKwBAADAALwBtAC8ALwAvAC8AQAA1AC8ALwAvAC8AVAAvACsAYgBhAC8AbgAvAEkATQBHAC8ALwAxAG0ALwBnAC8AbQB0AC8AMQBxAC8ANQAvAFQALwAtADEAKwBAADAALwBvAC8ASQBNAEcAIwBzAGIAaQBfAGIALwAvAGkAdwAvAG8ALwBrAC8AawAvADcALwBUAC8AMgArAEAAMAAvAHAALwBJAE0ARwAuAGkAbgBmAGIAdABuAGkAbQBnACAAcgBtAHMAXwBpAG0AZwAvAC8AMAAvADAALwAwAC8AMAAvADkALwBUAC8AMgArAEAAMAAvAHEALwBJAE0ARwAuAGMAbABzAGIAdABuAGkAbQBnACAAcgBtAHMAXwBpAG0AZwAvAC8AMAAvADAALwAwAC8AMAAvADkALwBUAC8AMgArAEAAMAAvAHIALwBJAE0ARwAuAGMAbABzAG8AcAB0AGIAdABuAGkAbQBnACAAcgBtAHMAXwBpAG0AZwAvAC8AMAAvADAALwAwAC8AMAAvADkALwBUAC8AMgArAEAAMAAvAHMALwBJAE0ARwAuAHAAcwB0AGkAYwBvAG4AIAByAG0AcwBfAGkAbQBnAC8ALwAwAC8AMAAvADAALwAwAC8AYwAvAFQALwAyACsAQAAwAC8AdAAvAEkATQBHAC4AdABwAGkAYwBvAG4AIAByAG0AcwBfAGkAbQBnAC8ALwAwAC8AMAAvADAALwAwAC8AYgAvAFQALwAyACsAQAAwAC8AdQAvAEkATQBHAC4AZABwAGkAYwBvAG4AIAByAG0AcwBfAGkAbQBnAC8ALwAwAC8AMAAvADAALwAwAC8AYwAvAFQALwAyACsAYgBhAC8AdgAvAEkATQBHACMAaQBkAF8AcAAvAEAANgAvADAALwAwAC8AMAAvADAALwA0AC8AVAAvADIAKwBqAGcALwB3AC8ASQBNAEcAIwBlAG0AYgAzADMANwAxADUAOQBEADIALwBAADcALwAzAGMALwBrAHgALwA1AGgALwAyAHMALwBsAC8AVAAvADIAKwBqAGcALwB4AC8ASQBNAEcAIwBlAG0AYgAxADIAOAAyAEMAMQBGAEUAMQAvAEAANwAvAGUAcQAvAGsAeAAvADUAaAAvADIAcwAvAGwALwBUAC8AMgArAGoAZwAvAHkALwBJAE0ARwAjAGUAbQBiADIAMABGADYANwBEADIARgBFAC8AQAA4AC8AMwBjAC8AdQA1AC8ANQBmAC8AMwAwAC8AYwAvAFQALwAtADEAKwBqAGcALwB6AC8AQAA5AC8AQAA4AC8AMwBrAC8AdwByAC8ANwAvADgALwBlAC8AVAAvAC0AMQArAEAAMAAvAHoALwAvAC8ALwB3AHEALwAvAC8ALwBUAC8AKwBqAGcALwAxADAALwBJAE0ARwAjAGUAbQBiADMANABGAEQARQBBADcAMwA3AC8AQAA4AC8AOAB6AC8AdQA1AC8ANQBmAC8AMwAwAC8AYwAvAFQALwAtADEAKwBqAGcALwAxADEALwBAADkALwBAADgALwA5ADcALwB3AHIALwA3AC8AOAAvAGUALwBUAC8ALQAxACsAQAAwAC8AMQAxAC8ALwAvAC8AdwBxAC8ALwAvAC8AVAAvACsAagBnAC8AMQAyAC8ASQBNAEcAIwBlAG0AYgA0ADIAOABFADMANwA3ADUANwAvAEAAOAAvAGUAbQAvAHUANQAvADUAZgAvADMAMAAvAGMALwBUAC8ALQAxACsAagBnAC8AMQAzAC8AQAA5AC8AQAA4AC8AZQB1AC8AdwByAC8ANwAvADgALwBlAC8AVAAvAC0AMQArAEAAMAAvADEAMwAvAC8ALwAvAHcAcQAvAC8ALwAvAFQALwArAEAAMAAvADEANAAvAEAAYgAvAEAAYQAvAG0AZgAvADYAZgAvADMAMgAvADMAMgAvAGIALwBUAC8ALQAxACsAagBnAC8AMQA1AC8AQABiAC8AQABhAC8AbQB3AC8AOQByAC8AdwAvAHcALwBkAC8AVAAvAC0AMQArAGoAZwAvADEANgAvAEAAYgAvAEAAYQAvAHAANAAvADkAcgAvAHcALwB3AC8AZAAvAFQALwAtADEAKwBqAGcALwAxADcALwBAAGIALwBAAGEALwByAGMALwA5AHIALwB3AC8AdwAvAGQALwBUAC8ALQAxACsAagBnAC8AMQA4AC8AQABjAC8AQABhAC8AbQBmAC8AaQBhAC8AMgAzAC8AMgAzAC8AYwAvAFQALwAtADEAKwBAADAALwAxADkALwBAAGIALwBAAGEALwBtAGMALwBpADcALwA2AGwALwAyADkALwBkAC8AVAAvAC0AMQArAGoAZwAvADEAYQAvAEAAYwAvAEAAYQAvAG8AcwAvAGkAYQAvADIAMwAvADIAMwAvAGMALwBUAC8ALQAxACsAQAAwAC8AMQBiAC8AQABiAC8AQABhAC8AbQBqAC8AaQA3AC8ANgBsAC8AMgA5AC8AZAAvAFQALwAtADEAKwBqAGcALwAxAGMALwBAAGMALwBAAGEALwByADUALwBpAGEALwAyADMALwAyADMALwBjAC8AVAAvAC0AMQArAEAAMAAvADEAZAAvAEAAYgAvAEAAYQAvAG0AcQAvAGkANwAvADYAbAAvADIAOQAvAGQALwBUAC8ALQAxACIALAAiAEUAIgA6ACIAMQBnAGUALwBsAC8AWAAvADIANgAvACIALAAiAE4AIgA6ACIALQAxAC8AMAAvAC8ALwBkAG8AYwB1AG0AZQBuAHQALwAvAG0AOAAvAC8AMQAvAC0AMQAvADEALwA2AG8ALwA2AHIALwBrAG8AKwBhADQALwAxAC8AbgAvAEAAZAAvAHMAaQBtAGcAJQAyAEYAUwBoAGEAcgBlAGQAUwBwAHIAaQB0AGUARABlAHMAawB0AG8AcABSAGUAdwBhAHIAZABzAF8AMAAyADIAMQAxADgALgBwAG4AZwAvAEAAZwAvADgALwBAAGUALwBhADgALwAtADEALwBhADgALwBhADgALwBhADgALwBhAGQAKwBoAG8ALwAyAC8ALwBAAGQALwBlAGEAZAA3ADcANAAxADUAJQAyAEYAMwA5ADMAOABmAGQAMAA4AC4AcABuAGcALwBAAGYALwA4AC8AQABlAC8AaAB1AC8ALQAxAC8AaAB1AC8AaAB1AC8AaAB1AC8AaAB4ACsAagBnAC8AMwAvAC8AQABkAC8ANgAxADUAMAA1AGQAOQAyACUAMgBGADIANQBkAGQAZgAyADgAOAAuAHAAbgBnAC8AQABmAC8ANgAvAEAAZQAvAGoAagAvAC0AMQAvAGoAagAvAGoAagAvAGoAagAvAGoAbQArAG0AagAvADQALwAvAEAAZAAvAGMAcAB0AC8AQABnAC8AMwBpAC8AQABlAC8AbQBsAC8ALQAxAC8AbQBsAC8AbQBtAC8ALQAxAC8AcQAyACsAbQB3AC8ANQAvAC8AQABkAC8AbABzACUAMgBGAGwAcwBwAC4AYQBzAHAAeAAvAEAAbAAvAGYAdgAvAEAAZQAvAG8AaQAvAC0AMQAvAG8AaQAvAG8AawAvAEAAaAAvAEAAaAArAG0AegAvADYALwAvAEAAZAAvAEIAaQBuAGcAQwBvAHIAZQAuAEIAdQBuAGQAbABlAC8AQABqAC8AMQAwAC8AQABlAC8AbgB3AC8ALQAxAC8AbgB3AC8AbgB3AC8AbgB3AC8AbwAwACsAcQAyAC8ANwAvADEANAAvAEAAZAAvAHQAaAAvAEAAZwAvADkALwBAAGUALwBxADcALwAtADEALwBxADcALwBxADcALwBxADcALwBxAGIAKwBxADgALwA4AC8AMQA5AC8AQABkAC8AdABoAC8AQABnAC8AawAvAEAAZQAvAHEAawAvAC0AMQAvAHEAawAvAHEAawAvAHEAawAvAHEAdAArAHEAbQAvADkALwAvAEAAZAAvAEAAaQAvAEAAZwAvAGEALwBAAGUALwBxAHIALwAtADEALwBxAHIALwBxAHIALwBxAHIALwBxAHcAKwBxAHgALwBhAC8ALwBAAGQALwBAAGsALwBAAGcALwA0AC8AQABlAC8AcgAxAC8ALQAxAC8AcgAxAC8AcgAxAC8AcgAxAC8AcgAyACsAcgAzAC8AYgAvAC8AQABkAC8AQABuAC8AQABnAC8ANAAvAEAAZQAvAHIANwAvAC0AMQAvAHIANwAvAHIANwAvAHIANwAvAHIANwArAHIAOQAvAGMALwAvAEAAZAAvAEAAbwAvAEAAZwAvADMALwBAAGUALwByAGMALwAtADEALwByAGMALwByAGMALwByAGMALwByAGQAKwByAGQALwBkAC8ALwBAAGQALwBAAHAALwBAAGcALwAzAC8AQABlAC8AcgBnAC8ALQAxAC8AcgBnAC8AcgBnAC8AcgBnAC8AcgBoACsAcgBoAC8AZQAvAC8AQABkAC8AQABxAC8AQABnAC8ANAAvAEAAZQAvAHIAbAAvAC0AMQAvAHIAbAAvAHIAbAAvAHIAbAAvAHIAbQArAHIAbgAvAGYALwAvAEAAZAAvAEAAcgAvAEAAZwAvADUALwBAAGUALwByAHMALwAtADEALwByAHMALwByAHMALwByAHMALwByAHMAKwByAHQALwBnAC8ALwBAAGQALwBAAHMALwBAAGcALwAzAC8AQABlAC8AcgB4AC8ALQAxAC8AcgB4AC8AcgB4AC8AcgB4AC8AcgB4ACsAcgB5AC8AaAAvAC8AQABkAC8AQAB0AC8AQABnAC8AMwAvAEAAZQAvAHMAMQAvAC0AMQAvAHMAMQAvAHMAMQAvAHMAMQAvAHMAMgArAHMAMwAvAGkALwAvAEAAZAAvAEAAdQAvAEAAZwAvADMALwBAAGUALwBzADYALwAtADEALwBzADYALwBzADYALwBzADYALwBzADcAKwBzADcALwBqAC8ALwBAAGQALwBAAHYALwBAAGcALwAzAC8AQABlAC8AcwBhAC8ALQAxAC8AcwBhAC8AcwBhAC8AcwBhAC8AcwBiACsAcwBiAC8AawAvAC8AQABkAC8AQAB3AC8AQABnAC8ANAAvAEAAZQAvAHMAZgAvAC0AMQAvAHMAZgAvAHMAZgAvAHMAZgAvAHMAZgArAHMAaAAvAGwALwAvAEAAZAAvAEAAeAAvAEAAZwAvADYALwBAAGUALwBzAG0ALwAtADEALwBzAG0ALwBzAG0ALwBzAG0ALwBzAG4AKwBzAG8ALwBtAC8ALwBAAGQALwBAAHkALwBAAGcALwAzAC8AQABlAC8AcwByAC8ALQAxAC8AcwByAC8AcwByAC8AcwByAC8AcwBzACsAcwB0AC8AbgAvAC8AQABkAC8AQAB6AC8AQABnAC8AMwAvAEAAZQAvAHMAdwAvAC0AMQAvAHMAdwAvAHMAdwAvAHMAdwAvAHMAdwArAHMAeQAvAG8ALwAvAEAAZAAvAEAAMQAxAC8AQABnAC8AMwAvAEAAZQAvAHQAMQAvAC0AMQAvAHQAMQAvAHQAMQAvAHQAMQAvAHQAMQArAHQAMgAvAHAALwAvAEAAZAAvAEAAMQAzAC8AQABnAC8AMwAvAEAAZQAvAHQANQAvAC0AMQAvAHQANQAvAHQANQAvAHQANQAvAHQANgArAHQANgAvAHEALwAvAEAAZAAvAEAAMQA1AC8AQABnAC8AMwAvAEAAZQAvAHQAOQAvAC0AMQAvAHQAOQAvAHQAOQAvAHQAOQAvAHQAYQArAHQAYgAvAHIALwAvAEAAZAAvAEAAMQA3AC8AQABnAC8AMwAvAEAAZQAvAHQAZQAvAC0AMQAvAHQAZQAvAHQAZQAvAHQAZQAvAHQAZgArAHQAZwAvAHMALwAvAEAAZAAvAEAAMQA5AC8AQABnAC8AMwAvAEAAZQAvAHQAagAvAC0AMQAvAHQAagAvAHQAagAvAHQAagAvAHQAawArAHQAawAvAHQALwAvAEAAZAAvAEAAMQBiAC8AQABnAC8AMwAvAEAAZQAvAHQAbgAvAC0AMQAvAHQAbgAvAHQAbgAvAHQAbgAvAHQAbwArAHQAdgAvAHUALwAvAEAAZAAvAEAAaQAvAEAAagAvADQALwBAAGUALwB0AHkALwAtADEALwB0AHkALwB0AHkALwB0AHkALwB0AHoAKwB1AGMALwB2AC8ALwBAAGQALwBAAGsALwBAAGoALwA1AC8AQABlAC8AdQBnAC8ALQAxAC8AdQBnAC8AdQBnAC8AdQBnAC8AdQBoACsAdQBsAC8AdwAvAC8AQABkAC8AaQBtAGEAZwBlAHMAJQAyAEYAcwBiAGkALwBAAGwALwA4AGoALwBAAGUALwBAAG0ALwAtADEALwBAAG0ALwBAAG0ALwAxADIAdQAvADEAMwA1ACsAdQBvAC8AeAAvAC8AQABkAC8AQABuAC8AQABqAC8ANAAvAEAAZQAvAHUAcwAvAC0AMQAvAHUAcwAvAHUAcwAvAHUAcwAvAHUAdAArAHUAdwAvAHkALwAvAEAAZAAvAEAAbwAvAEAAagAvADMALwBAAGUALwB1AHoALwAtADEALwB1AHoALwB1AHoALwB1AHoALwB2ADAAKwB2ADQALwB6AC8ALwBAAGQALwBAAHAALwBAAGoALwA0AC8AQABlAC8AdgA4AC8ALQAxAC8AdgA4AC8AdgA4AC8AdgA4AC8AdgA4ACsAdgBqAC8AMQAwAC8ALwBAAGQALwBAAHEALwBAAGoALwA0AC8AQABlAC8AdgBuAC8ALQAxAC8AdgBuAC8AdgBuAC8AdgBuAC8AdgBuACsAdwA2AC8AMQAxAC8ALwBAAGQALwBAAHIALwBAAGoALwA0AC8AQABlAC8AdwA5AC8ALQAxAC8AdwA5AC8AdwA5AC8AdwA5AC8AdwBhACsAeAA3AC8AMQAyAC8ALwBAAGQALwBAAHMALwBAAGoALwA1AC8AQABlAC8AeABiAC8ALQAxAC8AeABiAC8AeABiAC8AeABiAC8AeABjACsAeAB2AC8AMQAzAC8ALwBAAGQALwBAAHQALwBAAGoALwA1AC8AQABlAC8AeAB6AC8ALQAxAC8AeAB6AC8AeAB6AC8AeAB6AC8AeQAwACsAeQA4AC8AMQA0AC8ALwBAAGQALwBAAHUALwBAAGoALwBjAC8AQABlAC8AeQBnAC8ALQAxAC8AeQBnAC8AeQBnAC8AeQBnAC8AeQBrACsAeQBwAC8AMQA1AC8ALwBAAGQALwBAAHYALwBAAGoALwA1AC8AQABlAC8AeQB0AC8ALQAxAC8AeQB0AC8AeQB0AC8AeQB0AC8AeQB1ACsAeQB6AC8AMQA2AC8ALwBAAGQALwBAAHcALwBAAGoALwA2AC8AQABlAC8AegA1AC8ALQAxAC8AegA1AC8AegA1AC8AegA1AC8AegA2ACsAegA5AC8AMQA3AC8ALwBAAGQALwBAAHgALwBAAGoALwA0AC8AQABlAC8AegBkAC8ALQAxAC8AegBkAC8AegBkAC8AegBkAC8AegBlACsAegBpAC8AMQA4AC8ALwBAAGQALwBAAHkALwBAAGoALwA0AC8AQABlAC8AegBtAC8ALQAxAC8AegBtAC8AegBtAC8AegBtAC8AegBuACsAMQAwAGEALwAxADkALwAvAEAAZAAvAEAAegAvAEAAagAvADQALwBAAGUALwBAADEAMAAvAC0AMQAvAEAAMQAwAC8AQAAxADAALwBAADEAMAAvAEAAMQAwACsAMQAwAGkALwAxAGEALwAvAEAAZAAvAEAAMQAxAC8AQABqAC8AMwAvAEAAZQAvAEAAMQAyAC8ALQAxAC8AQAAxADIALwBAADEAMgAvAEAAMQAyAC8AQAAxADIAKwAxADAAcQAvADEAYgAvAC8AQABkAC8AQAAxADMALwBAAGoALwAzAC8AQABlAC8AQAAxADQALwAtADEALwBAADEANAAvAEAAMQA0AC8AQAAxADQALwBAADEANAArADEAMAB5AC8AMQBjAC8ALwBAAGQALwBAADEANQAvAEAAagAvADMALwBAAGUALwBAADEANgAvAC0AMQAvAEAAMQA2AC8AQAAxADYALwBAADEANgAvADEAMQAxACsAMQAxADkALwAxAGQALwAvAEAAZAAvAEAAMQA3AC8AQABqAC8ANAAvAEAAZQAvAEAAMQA4AC8ALQAxAC8AQAAxADgALwBAADEAOAAvAEAAMQA4AC8AMQAxAGQAKwAxADEAaAAvADEAZQAvAC8AQABkAC8AQAAxADkALwBAAGoALwAzAC8AQABlAC8AQAAxAGEALwAtADEALwBAADEAYQAvAEAAMQBhAC8AQAAxAGEALwAxADEAbAArADEAMQBvAC8AMQBmAC8ALwBAAGQALwBAADEAYgAvAEAAagAvADQALwBAAGUALwBAADEAYwAvAC0AMQAvAEAAMQBjAC8AQAAxAGMALwBAADEAYwAvADEAMQBzACsAMQAyADkALwAxAGcALwB3AC8AQABkAC8AdABoAC8AQABnAC8AOAAvAEAAZQAvAEAAMQBkAC8ALQAxAC8AQAAxAGQALwBAADEAZAAvAEAAMQBkAC8AMQAyAGgAKwAxADIAZAAvADEAaAAvAHgALwBAAGQALwB0AGgALwBAAGcALwBkAC8AQABlAC8AQAAxAGUALwAtADEALwBAADEAZQAvAEAAMQBlAC8AQAAxAGUALwAxADIAcQArADEAMwBnAC8AMQBpAC8AbwAvAEAAZAAvADYAOABlADkANABhADEAYgAlADIARgBkADcAZgBmAGQAMgBmAGQALgBzAHYAZwAvAEAAZwAvADkALwBAAGUALwBAADEAZgAvAC0AMQAvAEAAMQBmAC8AQAAxAGYALwBAADEAZgAvADEAMwBxACsAMQAzAHAALwAxAGoALwBwAC8AQABkAC8AYgA3ADQANgAwAGEAMQBhACUAMgBGAGMAYgAzAGQAZAA2ADYAZgAuAHMAdgBnAC8AQABnAC8ANwAvAEAAZQAvAEAAMQBnAC8ALQAxAC8AQAAxAGcALwBAADEAZwAvAEAAMQBnAC8AMQAzAHcAKwAxADMAdAAvADEAawAvAHEALwBAAGQALwBjADQAYQA2ADQAMAAwADMAJQAyAEYANgA0AGMAMgA3AGQAZAAzAC4AcwB2AGcALwBAAGcALwA2AC8AQABlAC8AQAAxAGgALwAtADEALwBAADEAaAAvAEAAMQBoAC8AQAAxAGgALwAxADQAMAArADEAMwB6AC8AMQBsAC8AcgAvAEAAZAAvAGUAMgA0ADMAZgA0ADkAOAAlADIARgA3AGYANwAxADEAMQBiAGYALgBzAHYAZwAvAEAAZwAvAGsALwBAAGUALwBAADEAaQAvAC0AMQAvAEAAMQBpAC8AQAAxAGkALwBAADEAaQAvADEANABrACsAMQA0AGEALwAxAG0ALwBzAC8AQABkAC8AOAA3ADgAYwBhADAAYwBkACUAMgBGAGIAOAAzAGQANQA3AGMAMAAuAHMAdgBnAC8AQABnAC8AagAvAEAAZQAvAEAAMQBqAC8ALQAxAC8AQAAxAGoALwBAADEAagAvAEAAMQBqAC8AMQA0AHUAKwAxADQAdAAvADEAbgAvAHQALwBAAGQALwAyADAANwA2ADMAOABkADEAJQAyAEYANwA2ADUAMABhADMAYQA4AC4AcwB2AGcALwBAAGcALwA3AC8AQABlAC8AQAAxAGsALwAtADEALwBAADEAawAvAEAAMQBrAC8AQAAxAGsALwAxADUAMAArADEANAB5AC8AMQBvAC8AdQAvAEAAZAAvADYAMQA2AGQAZgA1ADIAZgAlADIARgA5ADcANgBjAGIAZgBiADgALgBzAHYAZwAvAEAAZwAvADgALwBAAGUALwBAADEAbAAvAC0AMQAvAEAAMQBsAC8AQAAxAGwALwBAADEAbAAvADEANQA2ACsAMQA2ADAALwAxAHAALwAvAEAAZAAvAHMAYgBpAHcAZQBiAGMAYQBtAC8AQABnAC8AMwBrAC8AQABlAC8AQAAxAG0ALwAtADEALwBAADEAbQAvAEAAMQBtAC8ALQAxAC8AQAAxAG4AKwBAADEAbgAvADEAcQAvAC8AQABkAC8AcABwAHQALwBAAGcALwA0AGEALwBAAGUALwBAADEAbwAvAC0AMQAvAEAAMQBvAC8AMQA5AHAALwAtADEALwAxAGQAdQAiAH0AXQBdAF0APgA8AC8ARAA+ADwALwBFAD4APAAvAEUAdgBlAG4AdABzAD4APABTAFQAUwA+ADEANQA1ADEANwA5ADYAOQA3ADAAOAA5ADcAPAAvAFMAVABTAD4APAAvAEMAbABpAGUAbgB0AEkAbgBzAHQAUgBlAHEAdQBlAHMAdAA+AA==</StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="a29d14dd-5c11-43a1-9812-c793d9bef058" Version="1.1" Url="https://www.hdfcbank.com/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam319.src" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?src=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam340.src" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?src=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="4" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.d_nsid" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="der=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; alt" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.d_URL" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="l&quot;: &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;, &#xA;&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.c_cookieUpdate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ent=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;&lt;me" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.c_legacyHistoryImport" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ent=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;&lt;me" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5.c_allowLinker" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ent=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;&lt;me" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6.c_allowAnchor" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ent=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;&lt;me" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam7.c_alwaysSendReferrer" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ync=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; src" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam8.c_storeGac" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ent=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;&lt;me" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam9.c_location" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="l&quot;: &quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;, &#xA;&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam10.c_javaEnabled" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ent=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;&lt;me" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam11.c_dimension18" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ent=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;&lt;me" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam12.c_dcLoaded" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="ent=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;&lt;me" />
+            <RuleParameter Name="Index" Value="5" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="bd933948-ac92-429e-8831-612ddd43293b" Version="1.1" Url="http://www2.bing.com/ipv6test/test" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="FORM" Value="MONITR" RecordedValue="MONITR" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="6a842734-bf4a-49a8-b332-d3f9dd416745" Version="1.1" Url="http://www.bing.com/ipv6test/test" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="FORM" Value="MONITR" RecordedValue="MONITR" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="68992b9d-84cf-492b-b309-75e509d1ddab" Version="1.1" Url="http://www.bing.com/fd/ls/GLinkPing.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="IG" Value="BB23759912D042EA9449A89347BB9189" RecordedValue="BB23759912D042EA9449A89347BB9189" CorrelationBinding="{{QueryStringParam280.IG}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ID" Value="SERP,5137.1" RecordedValue="SERP,5137.1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="url" Value="https%3A%2F%2Fwww.hdfcbank.com%2F" RecordedValue="https%3A%2F%2Fwww.hdfcbank.com%2F" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="a6c69d89-7874-46e6-b729-d5d50eeb5774" Version="1.1" Url="http://www.bing.com/fd/ls/lsp.aspx" ThinkTime="12" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" />
+      </Headers>
+      <StringHttpBody ContentType="text/xml" InsertByteOrderMark="False">PABDAGwAaQBlAG4AdABJAG4AcwB0AFIAZQBxAHUAZQBzAHQAPgA8AEUAdgBlAG4AdABzAD4APABFAD4APABUAD4ARQB2AGUAbgB0AC4AQwBsAGkAZQBuAHQASQBuAHMAdAA8AC8AVAA+ADwASQBHAD4AQgBCADIAMwA3ADUAOQA5ADEAMgBEADAANAAyAEUAQQA5ADQANAA5AEEAOAA5ADMANAA3AEIAQgA5ADEAOAA5ADwALwBJAEcAPgA8AFQAUwA+ADEANQA1ADEANwA5ADYAOQA3ADMANwAxADYAPAAvAFQAUwA+ADwARAA+ADwAIQBbAEMARABBAFQAQQBbAFsAewAiAFQAIgA6ACIAQwBJAC4AQgBvAHgATQBvAGQAZQBsACIALAAiAEYASQBEACIAOgAiAEMASQAiACwAIgBOAGEAbQBlACIAOgAiAHYAMgAuADgAIgAsACIAUwBWACIAOgAiADQAIgAsACIAUAAiADoAewAiAEMAIgA6ADEAOAAsACIATgAiADoAMgAsACIASQAiADoAIgA1ADEAZAAiACwAIgBTACIAOgAiAEMAKwBCAEQAKwBVACIALAAiAE0AIgA6ACIAVgArAEwAKwBNACsATQBUACsARQArAE4AKwBDACsASwArAEIARAAiACwAIgBUACIAOgA0ADcAMwAyACwAIgBLACIAOgAiADMAbgA4ACsAMQBoAHMAKwBpAHAAdgA2AHQAZQBzAHQAJQAyAEYAdABlAHMAdAArADEAeQByACsAYQBwAGMAJQAyAEYAdAByAGEAbgBzAC4AZwBpAGYAKwAzAGgAeQArADMAaQBzACsAMgB6ADAAKwBwAG8AaQBuAHQAZQByAG0AbwB2AGUAIgAsACIARgAiADoAMQB9ACwAIgBNACIAOgAiADEANAB5ACsAMgB6ADAAKwBhAGEAKwAzAG4AOAArADEAeQArADIAKwAwACsAMQArADAAKwA3AGIAKwAxACIALAAiAEUAIgA6ACIAQAAxAHAALwBsAC8AWAAvADIANgAvACIALAAiAE4AIgA6ACIAMQBoADgALwAxAHIALwAvAEAAZAAvAGwAcwAlADIARgBsAHMAcAAuAGEAcwBwAHgALwBAAGwALwA0ADgALwBAAGUALwBAADEAcQAvAC0AMQAvAEAAMQBxAC8AMQBoAHQALwAxAGwAZgAvADEAbABoACsAMQBvAGQALwAxAHMALwAvADkAMQAwADQAMABhAGQAMwAyAGYAMAA5ADIANAA5ADYAYwBiAGIAYwAyAGMAMQBkADIAYQA4ADMAZABiADkAYwAuAGMAbABvAC4AZgBvAG8AdABwAHIAaQBuAHQAZABuAHMALgBjAG8AbQAvAEAAMQB0AC8AQABnAC8AMAAvAEAAZQAvAC0AMQAvAC0AMQAvAC0AMQAvAC0AMQAvAC0AMQAvAC0AMQArADEAeQBnAC8AMQB0AC8ALwB3AHcAdwAyAC4AYgBpAG4AZwAuAGMAbwBtAC8AQAAxAHIALwBAAGoALwA0ADkALwBAAGUALwAtADEALwAtADEALwAtADEALwAtADEALwAtADEALwAyADIAcQArADEAeQBsAC8AMQB1AC8ALwBAAGQALwBAADEAcgAvAEAAbAAvADQAcgAvAEAAZQAvAEAAMQBzAC8ALQAxAC8AQAAxAHMALwBAADEAcwAvADIAMwBjAC8AMgAzAGQAKwAzADgANQAvADEAdgAvAC8AMABmAGUANwA2ADQAZQBmADUAYQAyADEAMwA3ADgAZABmADMAYgA3ADEAYgBmAGEANQA2ADMAZAA0AGYAOABhAC4AYwBsAG8ALgBmAG8AbwB0AHAAcgBpAG4AdABkAG4AcwAuAGMAbwBtAC8AQAAxAHQALwBAAGcALwBhAG0ALwBAAGUALwAtADEALwAtADEALwAtADEALwAtADEALwAtADEALwBAADEAdgArADMAaAB2AC8AMQB3AC8ALwBAAGQALwBsAHMAJQAyAEYARwBMAGkAbgBrAFAAaQBuAGcALgBhAHMAcAB4AC8AQABnAC8AMwBqAC8AQABlAC8AQAAxAHUALwAtADEALwBAADEAdQAvAEAAMQB1AC8ALQAxAC8AMwBsAGYAKwBAADEAdgAvADEAeAAvAC8AMgAwAGMAZABlAGEAZAAzADcAYgA5ADIAZQA4ADQANAA2ADAAMQBmAGYAMQBlADYAZQA5ADUANQA3ADMAMABkAC4AYwBsAG8ALgBmAG8AbwB0AHAAcgBpAG4AdABkAG4AcwAuAGMAbwBtAC8AQAAxAHQALwBAAGcALwAwAC8AQABlAC8ALQAxAC8ALQAxAC8ALQAxAC8ALQAxAC8ALQAxAC8ALQAxACIALAAiAEMAIgA6ACIAQAAxAHcALwAvAEAAMQB4AC8AbQBvAHUAcwBlAC8ALQAxAC8AMwAvADUAYgAvADAAKwAyAHoAMwAvAC8ALwAvAC8AZQAvADUAZQAvACsAMgB6AGYALwAvAC8ALwAvAG0ALwA1AG0ALwArADIAegB3AC8ALwAvAC8ALwAxADMALwA1AHIALwArADMAMAAzAC8ALwAvAC8ALwAxAGQALwA1AHQALwArADMAMABpAC8ALwAvAC8ALwAxAG8ALwA1AHcALwArADMAMABxAC8ALwAvAC8ALwAyADIALwA2ADcALwArADMAMQA3AC8ALwAvAC8ALwAyAGcALwA2ADkALwArADMAMQBuAC8AOAAvAC8ALwAvADIAdQAvADYAZAAvACsAMwAyADcALwAvAC8ALwAvADMAZQAvADYAZQAvACsAMwAyAGwALwAvAC8ALwAvADMAcwAvAC8AKwAzADIAegAvAC8ALwAvAC8ANABiAC8ALwArADMAMwAxAC8ALwAvAC8ALwA0AG4ALwAvACsAMwAzAHAALwAvAC8ALwAvADUAMQAvADYAYgAvACsAMwA0AGsALwAvAC8ALwAvADUAagAvADYANQAvACsAMwA1AGgALwAvAC8ALwAvADUAdQAvADYAMQAvACsAMwA2AHIALwAvAC8ALwAvADYANAAvADUAcwAvACsAMwA3AG8ALwAvAC8ALwAvADYAZAAvADUAbAAvACsAMwA5AGEALwAvAC8ALwAvADYAbQAvADUAZAAvACsAMwBoAHQALwAvAHAAbwBpAG4AdABlAHIAZABvAHcAbgAvAC8AMAAvADYAdAAvADUAOQAvADEAKwAzAGoAdQAvAC8AcABvAGkAbgB0AGUAcgB1AHAALwAvAC8ALwAvADAAKwAzAGoAeAAvAC8AYwBsAGkAYwBrAC8ALwAvAC8ALwAiACwAIgBCAEQAIgA6ACIAQAAxAHcALwBAADEAeAAvADEANQA1ADEANwA5ADYAOQA3ADMAIgB9AF0AXQBdAD4APAAvAEQAPgA8AC8ARQA+ADwALwBFAHYAZQBuAHQAcwA+ADwAUwBUAFMAPgAxADUANQAxADcAOQA2ADkANwAzADcAMQA2ADwALwBTAFQAUwA+ADwALwBDAGwAaQBlAG4AdABJAG4AcwB0AFIAZQBxAHUAZQBzAHQAPgA=</StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="629d27dd-531f-4e9a-a1c8-b7ac3448e0b1" Version="1.1" Url="https://8328018.fls.doubleclick.net/activityi;src=8328018;type=testr0;cat=hdfcb0;ord=5959044307031;gtm=2wg241;auiddc=1268362540.1551796986;u6=https%3A//www.hdfcbank.com/;~oref=https%3A//www.hdfcbank.com/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://8328018.fls.doubleclick.net/activityi;src=8328018;type=testr0;cat=hdfcb0;ord=5959044307031;gtm=2wg241;auiddc=1268362540.1551796986;u6=https%3A%2F%2Fwww.hdfcbank.com%2F;~oref=https%3A%2F%2Fwww.hdfcbank.com%2F?" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="d53db8b7-b828-4589-a819-b8f142745a5b" Version="1.1" Url="https://adservice.google.com/ddm/fls/i/src=8328018;type=testr0;cat=hdfcb0;ord=5959044307031;gtm=2wg241;auiddc=1268362540.1551796986;u6=https%3A//www.hdfcbank.com/;_dc_1=1;~oref=https%3A//www.hdfcbank.com/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://adservice.google.com/ddm/fls/i/src=8328018;type=testr0;cat=hdfcb0;ord=5959044307031;gtm=2wg241;auiddc=1268362540.1551796986;u6=https%3A%2F%2Fwww.hdfcbank.com%2F;_dc_1=1;~oref=https%3A%2F%2Fwww.hdfcbank.com%2F" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://8328018.fls.doubleclick.net/activityi;src=8328018;type=testr0;cat=hdfcb0;ord=5959044307031;gtm=2wg241;auiddc=1268362540.1551796986;u6=https%3A%2F%2Fwww.hdfcbank.com%2F;~oref=https%3A%2F%2Fwww.hdfcbank.com%2F?" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="16bc8c72-9435-4f50-8a24-295b1931bb80" Version="1.1" Url="https://adservice.google.co.in/ddm/fls/i/src=8328018;type=testr0;cat=hdfcb0;ord=5959044307031;gtm=2wg241;auiddc=1268362540.1551796986;u6=https%3A//www.hdfcbank.com/;_dc_1=3;~oref=https%3A//www.hdfcbank.com/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://adservice.google.co.in/ddm/fls/i/src=8328018;type=testr0;cat=hdfcb0;ord=5959044307031;gtm=2wg241;auiddc=1268362540.1551796986;u6=https%3A%2F%2Fwww.hdfcbank.com%2F;_dc_1=3;~oref=https%3A%2F%2Fwww.hdfcbank.com%2F" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://adservice.google.com/ddm/fls/i/src=8328018;type=testr0;cat=hdfcb0;ord=5959044307031;gtm=2wg241;auiddc=1268362540.1551796986;u6=https%3A%2F%2Fwww.hdfcbank.com%2F;_dc_1=1;~oref=https%3A%2F%2Fwww.hdfcbank.com%2F" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="ed60bb99-f25f-44e5-9d4e-5e37762b60e7" Version="1.1" Url="http://offers.smartbuy.hdfcbank.com/" ThinkTime="12" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="src" Value="hp_nav" RecordedValue="hp_nav" CorrelationBinding="{{QueryStringParam319.src}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_ga" Value="2.41605479.497966783.1551796986-252543771.1551796986" RecordedValue="2.41605479.497966783.1551796986-252543771.1551796986" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="3a5075af-8f71-4588-a48d-2afd80d921f8" Version="1.1" Url="http://offers.smartbuy.hdfcbank.com/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="src" Value="hp_nav" RecordedValue="hp_nav" CorrelationBinding="{{QueryStringParam340.src}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_ga" Value="2.41605479.497966783.1551796986-252543771.1551796986" RecordedValue="2.41605479.497966783.1551796986-252543771.1551796986" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="41f6b902-1c7e-4dab-b091-e2477195413f" Version="1.1" Url="https://dpm.demdex.net/id" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Content-Type" Value="application/x-www-form-urlencoded" />
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="d_visid_ver" Value="3.4.0" RecordedValue="3.4.0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="d_fieldgroup" Value="MC" RecordedValue="MC" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="d_rtbd" Value="json" RecordedValue="json" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="d_ver" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="d_orgid" Value="3817033753EE89720A490D4D%40AdobeOrg" RecordedValue="3817033753EE89720A490D4D%40AdobeOrg" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="d_nsid" Value="0" RecordedValue="0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ts" Value="1551796984633" RecordedValue="1551796984633" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody />
+    </Request>
+    <Request Method="GET" Guid="2d671205-0025-4685-9fb1-d0b888dcc001" Version="1.1" Url="https://hdfcbank.tt.omtrdc.net/m2/hdfcbank/mbox/json" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="mbox" Value="target-global-mbox" RecordedValue="target-global-mbox" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxSession" Value="e2f9988530ed479595730c80e2d4b629" RecordedValue="e2f9988530ed479595730c80e2d4b629" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxPC" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxPage" Value="4a7f1eeedbdf463c892ed0b10e9e8c0e" RecordedValue="4a7f1eeedbdf463c892ed0b10e9e8c0e" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxRid" Value="79a4da716ae54d5ab2b601f5030ad0fa" RecordedValue="79a4da716ae54d5ab2b601f5030ad0fa" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxVersion" Value="1.6.0" RecordedValue="1.6.0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxCount" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxTime" Value="1551816784764" RecordedValue="1551816784764" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxHost" Value="www.hdfcbank.com" RecordedValue="www.hdfcbank.com" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxURL" Value="https%3A%2F%2Fwww.hdfcbank.com%2F" RecordedValue="https%3A%2F%2Fwww.hdfcbank.com%2F" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxReferrer" Value="http%3A%2F%2Fwww.bing.com%2Fsearch%3Fq%3Dwww.hdfcbank.com%26src%3DIE-SearchBox%26FORM%3DIESR02" RecordedValue="http%3A%2F%2Fwww.bing.com%2Fsearch%3Fq%3Dwww.hdfcbank.com%26src%3DIE-SearchBox%26FORM%3DIESR02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="browserHeight" Value="537" RecordedValue="537" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="browserWidth" Value="575" RecordedValue="575" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="browserTimeOffset" Value="330" RecordedValue="330" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="screenHeight" Value="768" RecordedValue="768" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="screenWidth" Value="1366" RecordedValue="1366" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="colorDepth" Value="24" RecordedValue="24" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="devicePixelRatio" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="screenOrientation" Value="landscape" RecordedValue="landscape" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="webGLRenderer" Value="Microsoft%20Basic%20Render%20Driver" RecordedValue="Microsoft%20Basic%20Render%20Driver" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="entity.id" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Poduct_side" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="Product_page" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mboxMCSDID" Value="10752A0A3F696BFB-6F9FB18209EA5F63" RecordedValue="10752A0A3F696BFB-6F9FB18209EA5F63" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="bb5c8a25-3f72-440d-8347-cdb8089df520" Version="1.1" Url="https://hdfcbank.demdex.net/dest5.html" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam13.d_jsonv" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dp&quot;,&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;,1,&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam14.d_dst" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dp&quot;,&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;,1,&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam15.c_protocol" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="COL:&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;==do" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam16.c_cookiePath" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&quot;,1,&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;,thi" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam17.c_siteSpeedSampleRate" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dp&quot;,&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;,1,&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam18.c_apiVersion" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dp&quot;,&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;,1,&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam19.c_dimension4" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="COL:&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;==do" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam20.c_page" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&quot;,1,&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;,thi" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="d_nsid" Value="0" RecordedValue="0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="ab71d699-8dfd-451a-8cec-082aa938070d" Version="1.1" Url="https://www.google-analytics.com/r/collect" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://www.google.co.in/ads/ga-audiences?v=1&amp;aip=1&amp;t=sr&amp;_r=4&amp;tid=UA-23795917-13&amp;cid=252543771.1551796986&amp;jid=929941645&amp;_v=j73&amp;z=1365180885&amp;slf_rd=1&amp;random=1683317034" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_v" Value="j73" RecordedValue="j73" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="a" Value="89641333" RecordedValue="89641333" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="t" Value="event" RecordedValue="event" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ni" Value="0" RecordedValue="0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_s" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="dl" Value="https%3A%2F%2Fwww.hdfcbank.com%2F" RecordedValue="https%3A%2F%2Fwww.hdfcbank.com%2F" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="dr" Value="http%3A%2F%2Fwww.bing.com%2Fsearch%3Fq%3Dwww.hdfcbank.com%26src%3DIE-SearchBox%26FORM%3DIESR02" RecordedValue="http%3A%2F%2Fwww.bing.com%2Fsearch%3Fq%3Dwww.hdfcbank.com%26src%3DIE-SearchBox%26FORM%3DIESR02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ul" Value="en-us" RecordedValue="en-us" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="de" Value="utf-8" RecordedValue="utf-8" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="dt" Value="HDFC%20Bank%3A%20Personal%20Banking%20Services" RecordedValue="HDFC%20Bank%3A%20Personal%20Banking%20Services" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sd" Value="24-bit" RecordedValue="24-bit" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sr" Value="1366x768" RecordedValue="1366x768" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="vp" Value="558x520" RecordedValue="558x520" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="je" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="fl" Value="18.0%20r0" RecordedValue="18.0%20r0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ec" Value="Top%20Navigation%20Menu%20-%20Main%20Website" RecordedValue="Top%20Navigation%20Menu%20-%20Main%20Website" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ea" Value="undefined" RecordedValue="undefined" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="el" Value="%2F" RecordedValue="%2F" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_u" Value="aGDACEQAB~" RecordedValue="aGDACEQAB~" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="jid" Value="929941645" RecordedValue="929941645" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="gjid" Value="1516347630" RecordedValue="1516347630" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cid" Value="252543771.1551796986" RecordedValue="252543771.1551796986" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="tid" Value="UA-23795917-13" RecordedValue="UA-23795917-13" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_gid" Value="497966783.1551796986" RecordedValue="497966783.1551796986" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="_r" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="gtm" Value="2wg241K7RG59" RecordedValue="2wg241K7RG59" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="z" Value="1365180885" RecordedValue="1365180885" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="a3c6d5b7-ba7b-46d3-8545-06558970b02b" Version="1.1" Url="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1056451846/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="random" Value="1551796999104" RecordedValue="1551796999104" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cv" Value="9" RecordedValue="9" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="fst" Value="1551796999104" RecordedValue="1551796999104" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="num" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="guid" Value="ON" RecordedValue="ON" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="resp" Value="GooglemKTybQhCsO" RecordedValue="GooglemKTybQhCsO" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="eid" Value="376635471" RecordedValue="376635471" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_h" Value="768" RecordedValue="768" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_w" Value="1366" RecordedValue="1366" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_ah" Value="728" RecordedValue="728" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_aw" Value="1366" RecordedValue="1366" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_cd" Value="24" RecordedValue="24" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_his" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_tz" Value="330" RecordedValue="330" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_java" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_nplug" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_nmime" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="gtm" Value="2wg241" RecordedValue="2wg241" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="frm" Value="0" RecordedValue="0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="url" Value="https%3A%2F%2Fwww.hdfcbank.com%2F" RecordedValue="https%3A%2F%2Fwww.hdfcbank.com%2F" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ref" Value="http%3A%2F%2Fwww.bing.com%2Fsearch%3Fq%3Dwww.hdfcbank.com%26src%3DIE-SearchBox%26FORM%3DIESR02" RecordedValue="http%3A%2F%2Fwww.bing.com%2Fsearch%3Fq%3Dwww.hdfcbank.com%26src%3DIE-SearchBox%26FORM%3DIESR02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="tiba" Value="HDFC%20Bank%3A%20Personal%20Banking%20Services" RecordedValue="HDFC%20Bank%3A%20Personal%20Banking%20Services" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="async" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rfmt" Value="3" RecordedValue="3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="fmt" Value="4" RecordedValue="4" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="5fa5b530-25d8-4e90-ab0b-81b0bcba2090" Version="1.1" Url="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1064886967/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="random" Value="1551796999130" RecordedValue="1551796999130" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cv" Value="9" RecordedValue="9" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="fst" Value="1551796999130" RecordedValue="1551796999130" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="num" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="guid" Value="ON" RecordedValue="ON" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="resp" Value="GooglemKTybQhCsO" RecordedValue="GooglemKTybQhCsO" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="eid" Value="376635471" RecordedValue="376635471" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_h" Value="768" RecordedValue="768" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_w" Value="1366" RecordedValue="1366" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_ah" Value="728" RecordedValue="728" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_aw" Value="1366" RecordedValue="1366" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_cd" Value="24" RecordedValue="24" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_his" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_tz" Value="330" RecordedValue="330" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_java" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_nplug" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="u_nmime" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="gtm" Value="2wg241" RecordedValue="2wg241" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="frm" Value="0" RecordedValue="0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="url" Value="https%3A%2F%2Fwww.hdfcbank.com%2F" RecordedValue="https%3A%2F%2Fwww.hdfcbank.com%2F" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="ref" Value="http%3A%2F%2Fwww.bing.com%2Fsearch%3Fq%3Dwww.hdfcbank.com%26src%3DIE-SearchBox%26FORM%3DIESR02" RecordedValue="http%3A%2F%2Fwww.bing.com%2Fsearch%3Fq%3Dwww.hdfcbank.com%26src%3DIE-SearchBox%26FORM%3DIESR02" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="tiba" Value="HDFC%20Bank%3A%20Personal%20Banking%20Services" RecordedValue="HDFC%20Bank%3A%20Personal%20Banking%20Services" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="async" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rfmt" Value="3" RecordedValue="3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="fmt" Value="4" RecordedValue="4" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="ae60dadf-d72b-487f-ab58-c335485aaf67" Version="1.1" Url="https://connect.facebook.net/signals/config/353555438406160" ThinkTime="9" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2.8.42" RecordedValue="2.8.42" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="r" Value="stable" RecordedValue="stable" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="b3c7ab57-7af8-4387-9c6c-20089761fe66" Version="1.1" Url="https://offers.smartbuy.hdfcbank.com/ram/checkcaptcha/captcha" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://offers.smartbuy.hdfcbank.com/?src=hp_nav&amp;_ga=2.41605479.497966783.1551796986-252543771.1551796986" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="rand" Value="1030281168" RecordedValue="1030281168" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="635565d4-58ac-4880-8c44-4a8c9ed6fa2c" Version="1.1" Url="https://www.hdfcbank.com/assets/fonts/opensans-semibold-webfont.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="ea11ed7b-45c1-441e-a5d7-3f9b3aa51b01" Version="1.1" Url="https://www.hdfcbank.com/assets/fonts/opensans-regular-webfont.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="a73bd923-a49c-4a1a-b74d-a5e23a90b3b8" Version="1.1" Url="https://www.hdfcbank.com/assets/fonts/helveticabold-webfont.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="bd9e5f70-5bb6-4b57-add3-423c33aba0fe" Version="1.1" Url="https://www.hdfcbank.com/assets/fonts/OpenSans-Semibold.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="8467368c-e113-4bd4-b876-27a97f5e4811" Version="1.1" Url="https://www.hdfcbank.com/assets/fonts/OpenSans.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+    </Request>
+    <Request Method="POST" Guid="8a30ccaf-6824-4bb0-acea-f0d561d9c2ff" Version="1.1" Url="https://hdfcbank.demdex.net/event" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="_ts" Value="1551796999634" RecordedValue="1551796999634" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <FormPostHttpBody>
+        <FormPostParameter Name="d_mid" Value="35778183650259235682535538252077900943" RecordedValue="35778183650259235682535538252077900943" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="d_nsid" Value="0" RecordedValue="0" CorrelationBinding="{{FormPostParam1.d_nsid}}" UrlEncode="True" />
+        <FormPostParameter Name="d_ld" Value="_ts=1551796999632" RecordedValue="_ts=1551796999632" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="d_rtbd" Value="json" RecordedValue="json" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="d_jsonv" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam13.d_jsonv}}" UrlEncode="True" />
+        <FormPostParameter Name="d_dst" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam14.d_dst}}" UrlEncode="True" />
+        <FormPostParameter Name="c_hash" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_host" Value="www.hdfcbank.com" RecordedValue="www.hdfcbank.com" CorrelationBinding="{{FormPostParam21.c_host}}" UrlEncode="True" />
+        <FormPostParameter Name="c_hostname" Value="www.hdfcbank.com" RecordedValue="www.hdfcbank.com" CorrelationBinding="{{FormPostParam22.c_hostname}}" UrlEncode="True" />
+        <FormPostParameter Name="c_pathname" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_protocol" Value="https:" RecordedValue="https:" CorrelationBinding="{{FormPostParam15.c_protocol}}" UrlEncode="True" />
+        <FormPostParameter Name="d_URL" Value="https://www.hdfcbank.com/" RecordedValue="https://www.hdfcbank.com/" CorrelationBinding="{{FormPostParam2.d_URL}}" UrlEncode="True" />
+        <FormPostParameter Name="d_referer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" RecordedValue="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_.event" Value="gtm.js|gtm.click|gtm.linkClick" RecordedValue="gtm.js|gtm.click|gtm.linkClick" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_.eventcallback" Value="function(){}" RecordedValue="function(){}" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_.eventtimeout" Value="2000" RecordedValue="2000" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_name" Value="gtm12" RecordedValue="gtm12" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_trackingId" Value="UA-23795917-13" RecordedValue="UA-23795917-13" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_cookieName" Value="_ga" RecordedValue="_ga" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_cookieDomain" Value="hdfcbank.com" RecordedValue="hdfcbank.com" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_cookiePath" Value="/" RecordedValue="/" CorrelationBinding="{{FormPostParam16.c_cookiePath}}" UrlEncode="True" />
+        <FormPostParameter Name="c_cookieExpires" Value="63072000" RecordedValue="63072000" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_cookieUpdate" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam3.c_cookieUpdate}}" UrlEncode="True" />
+        <FormPostParameter Name="c_legacyHistoryImport" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam4.c_legacyHistoryImport}}" UrlEncode="True" />
+        <FormPostParameter Name="c_allowLinker" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam5.c_allowLinker}}" UrlEncode="True" />
+        <FormPostParameter Name="c_allowAnchor" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam6.c_allowAnchor}}" UrlEncode="True" />
+        <FormPostParameter Name="c_sampleRate" Value="100" RecordedValue="100" CorrelationBinding="{{FormPostParam23.c_sampleRate}}" UrlEncode="True" />
+        <FormPostParameter Name="c_siteSpeedSampleRate" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam17.c_siteSpeedSampleRate}}" UrlEncode="True" />
+        <FormPostParameter Name="c_alwaysSendReferrer" Value="false" RecordedValue="false" CorrelationBinding="{{FormPostParam7.c_alwaysSendReferrer}}" UrlEncode="True" />
+        <FormPostParameter Name="c_storage" Value="cookie" RecordedValue="cookie" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_storeGac" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam8.c_storeGac}}" UrlEncode="True" />
+        <FormPostParameter Name="c_apiVersion" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam18.c_apiVersion}}" UrlEncode="True" />
+        <FormPostParameter Name="c_clientVersion" Value="j73" RecordedValue="j73" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_referrer" Value="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" RecordedValue="http://www.bing.com/search?q=www.hdfcbank.com&amp;src=IE-SearchBox&amp;FORM=IESR02" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_location" Value="https://www.hdfcbank.com/" RecordedValue="https://www.hdfcbank.com/" CorrelationBinding="{{FormPostParam9.c_location}}" UrlEncode="True" />
+        <FormPostParameter Name="c_screenResolution" Value="1366x768" RecordedValue="1366x768" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_screenColors" Value="24-bit" RecordedValue="24-bit" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_viewportSize" Value="558x520" RecordedValue="558x520" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_flashVersion" Value="18.0 r0" RecordedValue="18.0 r0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_encoding" Value="utf-8" RecordedValue="utf-8" CorrelationBinding="{{FormPostParam24.c_encoding}}" UrlEncode="True" />
+        <FormPostParameter Name="c_javaEnabled" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam10.c_javaEnabled}}" UrlEncode="True" />
+        <FormPostParameter Name="c_language" Value="en-us" RecordedValue="en-us" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_clientId" Value="252543771.1551796986" RecordedValue="252543771.1551796986" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_adSenseId" Value="89641333" RecordedValue="89641333" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_dimension4" Value="https:" RecordedValue="https:" CorrelationBinding="{{FormPostParam19.c_dimension4}}" UrlEncode="True" />
+        <FormPostParameter Name="c_dimension17" Value="Not Exposed to Start Doing" RecordedValue="Not Exposed to Start Doing" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="c_dimension18" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam11.c_dimension18}}" UrlEncode="True" />
+        <FormPostParameter Name="c_page" Value="/" RecordedValue="/" CorrelationBinding="{{FormPostParam20.c_page}}" UrlEncode="True" />
+        <FormPostParameter Name="c_dcLoaded" Value="true" RecordedValue="true" CorrelationBinding="{{FormPostParam12.c_dcLoaded}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="bfe3d748-3600-4150-8788-af74ddcf40d3" Version="1.1" Url="https://hbchat.senseforth.com/HDFC_Chat/assets/fonts/OpenSans-Regular.eot" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.hdfcbank.com/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>
