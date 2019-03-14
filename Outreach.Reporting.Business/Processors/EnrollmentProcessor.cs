@@ -409,5 +409,39 @@ namespace Outreach.Reporting.Business.Processors
         //        return null;
         //    }
         //}
+
+        public Dictionary<string, int> GetDesignationWiseVolunteersByYear(int years)
+        {
+            try
+            {
+                int lastFiveYear = DateTime.Now.AddYears(-years).Year;
+
+                var allEnrollments = _unitOfWork.Enrollments.GetAll();
+                var yearlyFilteredEnrollments = allEnrollments.Where(x => x.EventDate.Year > years).OrderByDescending(o => o.EventDate.Year);
+
+                var newVolunteers = new List<Enrollment>();
+                var repeatedVolunteers = new List<Enrollment>();
+                //var item = new Tuple<int, int, int>();
+
+                foreach(var enroll in yearlyFilteredEnrollments)
+                {
+                   if(allEnrollments.Any(x=> x.AssociateID == enroll.AssociateID && x.EventDate < enroll.EventDate))
+                    {
+                        newVolunteers.Add(enroll);
+                    }
+                    else
+                    {
+                        if (!repeatedVolunteers.Any(x => x.AssociateID == enroll.AssociateID))
+                            repeatedVolunteers.Add(enroll);
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

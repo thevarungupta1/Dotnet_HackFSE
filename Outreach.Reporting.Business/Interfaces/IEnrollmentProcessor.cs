@@ -18,5 +18,6 @@ namespace Outreach.Reporting.Business.Interfaces
         List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount);
         Dictionary<string, int> GetDesignationWiseVolunteersCount();
         Dictionary<string, List<decimal>> GetTopVolunteerData();
+        Dictionary<string, int> GetDesignationWiseVolunteersByYear(int years);
     }
 }
