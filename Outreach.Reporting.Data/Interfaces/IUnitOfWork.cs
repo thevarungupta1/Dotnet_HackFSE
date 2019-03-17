@@ -10,7 +10,7 @@ namespace Outreach.Reporting.Data.Interfaces
         IEventRepository Events { get; }
         IEnrollmentRepository Enrollments { get; }
         IUserRepository ApplicationUsers { get; }
-        IAuthRepository Auth { get; }
+        IPocRepository PointOfContacts { get; }
         IFileRepository File { get; }
         int Complete();
     }

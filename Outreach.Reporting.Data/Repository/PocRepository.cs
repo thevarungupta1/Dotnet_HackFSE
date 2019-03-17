@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Outreach.Reporting.Data.Repository
 {
-    public class AuthRepository : Repository<ApplicationUser>, IAuthRepository
+    public class PocRepository : Repository<PointOfContact>, IPocRepository
     {
-        public AuthRepository(ReportDBContext context) : base(context)
+        public PocRepository(ReportDBContext context) : base(context)
         {
         }
 
@@ -17,12 +17,5 @@ namespace Outreach.Reporting.Data.Repository
         {
             get { return Context as ReportDBContext; }
         }
-
-        //public bool Get(ApplicationUser user)
-        //{
-        //    user = _unitOfWork.Auth.Find(x => x.AssociateID == user.AssociateID && x.Email == user.Email).FirstOrDefault();
-        //    return user.ero;
-        //}
-
     }
 }

@@ -20,6 +20,7 @@ namespace Outreach.Reporting.Data.Entities
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Configuration> Configurations { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<PointOfContact> PointOfContact { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

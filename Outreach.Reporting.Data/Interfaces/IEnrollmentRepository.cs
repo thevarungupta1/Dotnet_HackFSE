@@ -12,5 +12,6 @@ namespace Outreach.Reporting.Data.Interfaces
         IEnumerable<Associate> GetTopFrequentVolunteers(int count);
         IEnumerable<Enrollment> GetYearlyVolunteersCount(int yearsCount);
         IQueryable<Enrollment> GetEnrollments();
+        IQueryable<Enrollment> GetEnrollmentsByYears(int yearFrom);
     }
 }

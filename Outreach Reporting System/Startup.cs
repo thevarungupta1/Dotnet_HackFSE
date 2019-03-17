@@ -69,8 +69,8 @@ namespace Outreach_Reporting_System
                     ValidateAudience = true,
                     ValidateIssuerSigningKey = true,
                     //setup validate data
-                    ValidIssuer = "smesk.in",
-                    ValidAudience = "readers",
+                    ValidIssuer = "outreachReportingSystem",
+                    ValidAudience = "reportUsers",
                     IssuerSigningKey = symmetricSecurityKey
                 };
             });

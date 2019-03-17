@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -26,31 +27,26 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/AllEvents
         [HttpGet]
-        public ActionResult<IEnumerable<Event>> Get()
+        public async Task<ActionResult<IEnumerable<Event>>> Get()
         {
-            return Ok(_eventProcessor.GetAll());
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_eventProcessor.GetAll(userId)));
         }
 
         // GET api/GetWithRelatedData
         [HttpGet]
         [Route("GetWithRelatedData")]
-        public ActionResult<IEnumerable<Enrollment>> GetWithRelatedData()
+        public async Task<ActionResult<IEnumerable<Enrollment>>> GetWithRelatedData()
         {
-            return Ok(_eventProcessor.GetEventsRelatedData());
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_eventProcessor.GetEventsRelatedData(userId)));
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] IEnumerable<Event> events)
+        public async Task<IActionResult> Post([FromBody] IEnumerable<Event> events)
         {
-            _eventProcessor.SaveEvents(events);
+           return await Task.FromResult(Ok(_eventProcessor.SaveEvents(events)));
         }
 
         // PUT api/values/5
@@ -63,6 +59,25 @@ namespace Outreach.Reporting.Service.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        private int GetCurrentUserId()
+        {
+            int userId = 0;
+            try
+            {
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                if (identity != null)
+                {
+                    if (identity.FindFirst(ClaimTypes.Role).Value == "POC")
+                        int.TryParse(identity.FindFirst("UserId").Value, out userId);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return userId;
         }
     }
 }

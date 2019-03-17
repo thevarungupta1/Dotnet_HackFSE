@@ -55,6 +55,7 @@ namespace Outreach.Reporting.Entity.Entities
         public DateTime? ModifiedOn { get; set; }
 
         //Navigation properties
+        public ICollection<PointOfContact> PointOfContacts { get; set; }
        // public Locations Locations { get; set; }
         //public ICollection<Enrollments> Enrollments { get; set; }
     }

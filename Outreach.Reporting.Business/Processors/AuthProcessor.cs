@@ -16,10 +16,29 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public bool AuthenticateUser(ApplicationUser user)
+        public bool AuthenticateUser(int associateID)
         {
-            user = _unitOfWork.Auth.Find(x => x.AssociateID == user.AssociateID && x.Email == user.Email).FirstOrDefault();
+            var user = _unitOfWork.ApplicationUsers.Find(x => x.AssociateID == associateID).FirstOrDefault();
             return user != null;
+        }
+
+        public string GetUserRoleById(int id)
+        {
+            try
+            {
+                return _unitOfWork.ApplicationUsers.GetUserRoleById(id);
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+
+        public bool CheckPocById(int userId)
+        {
+            var poc = _unitOfWork.PointOfContacts.Find(x => x.AssociateID == userId).FirstOrDefault();
+            return poc != null;
         }
     }
 }

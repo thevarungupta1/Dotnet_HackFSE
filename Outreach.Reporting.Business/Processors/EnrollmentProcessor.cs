@@ -1,4 +1,5 @@
-﻿using Outreach.Reporting.Business.Interfaces;
+﻿using Outreach.Reporting.Business.BusinessEntities;
+using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Data.Interfaces;
 using Outreach.Reporting.Entity.Entities;
 using System;
@@ -16,11 +17,13 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Enrollment> GetAll()
+        public IEnumerable<Enrollment> GetAll(int userId)
         {
             try
             {
-                return _unitOfWork.Enrollments.GetAll();
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
+                return _unitOfWork.Enrollments.GetAll().Where(x => eventIds == null || eventIds.Contains(x.EventID));
             }
             catch (Exception ex)
             {
@@ -28,11 +31,12 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Associate> GetEnrolledAssociates()
+        public IEnumerable<Associate> GetEnrolledAssociates(int userId)
         {
             try
             {
-                return _unitOfWork.Enrollments.GetEnrolledAssociates().Select(s => s.Associates).ToList();
+                List<string> eventIds = GetEventIdsByUserId(userId);
+                return _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => s.Associates).ToList();
             }
             catch (Exception ex)
             {
@@ -40,11 +44,12 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Associate> GetEnrolledUniqueAssociates()
+        public IEnumerable<Associate> GetEnrolledUniqueAssociates(int userId)
         {
             try
             {
-                return _unitOfWork.Enrollments.GetEnrolledAssociates().Select(s => s.Associates).Distinct().ToList();
+                List<string> eventIds = GetEventIdsByUserId(userId);
+                return _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => s.Associates).Distinct().ToList();
             }
             catch (Exception ex)
             {
@@ -62,10 +67,11 @@ namespace Outreach.Reporting.Business.Processors
             _unitOfWork.Complete();
             return true;
         }
-        public IEnumerable<Associate> GetTopFrequentVolunteers(int count)
+        public IEnumerable<Associate> GetTopFrequentVolunteers(int count, int userId)
         {
             try
             {
+                List<string> eventIds = GetEventIdsByUserId(userId);
                 return _unitOfWork.Enrollments.GetTopFrequentVolunteers(count);
             }
             catch (Exception ex)
@@ -74,12 +80,14 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount)
+        public Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount, int userId)
         {
             try
             {
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
                 var allEnrollments = _unitOfWork.Enrollments.GetEnrolledAssociates().Select(s => new { s.EventDate.Year, s.AssociateID });
-                var enrollments = _unitOfWork.Enrollments.GetYearlyVolunteersCount(yearsCount).Select(s => new { s.EventDate.Year, s.AssociateID, s.EnrollmentID });
+                var enrollments = _unitOfWork.Enrollments.GetYearlyVolunteersCount(yearsCount).Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => new { s.EventDate.Year, s.AssociateID, s.EnrollmentID });
 
                 var volunteersCount = new Dictionary<int, List<int>>();
                 int prevYear = 0;
@@ -121,11 +129,13 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Enrollment> GetAllNewVolunteers()
+        public IEnumerable<Enrollment> GetAllNewVolunteers(int userId)
         {
             try
             {
-                var allVolunteers = _unitOfWork.Enrollments.GetEnrolledAssociates().OrderBy(o => o.EventDate);
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
+                var allVolunteers = _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID)).OrderBy(o => o.EventDate);
 
                 var newVolunteers = new List<Enrollment>();
                 foreach(var volunteer in allVolunteers)
@@ -141,11 +151,13 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount()
+        public Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount(int userId)
         {
             try
             {
-                var enrollments = _unitOfWork.Enrollments.GetEnrolledAssociates();
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
+                var enrollments = _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID));
 
                 var groupedData = enrollments.GroupBy(enroll => enroll.EventDate)
                 //.Select(group => group);
@@ -183,12 +195,14 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount)
+        public List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount, int userId)
         {
             try
             {
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
                 var businessUnits = _unitOfWork.Associates.GetAll().Select(s => s.BusinessUnit).Distinct();// .GroupBy(g=> g.BusinessUnit)
-                var enrollments = _unitOfWork.Enrollments.GetEnrollments();
+                var enrollments = _unitOfWork.Enrollments.GetEnrollments().Where(x => eventIds == null || eventIds.Contains(x.EventID));
 
                 var groupedData = enrollments.GroupBy(enroll => enroll.EventDate.Year)
                                                .Select(group => new
@@ -221,11 +235,13 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public Dictionary<string, int> GetDesignationWiseVolunteersCount()
+        public Dictionary<string, int> GetDesignationWiseVolunteersCount(int userId)
         {
             try
             {
-                var enrolledAssociates = _unitOfWork.Enrollments.GetEnrollments().Select(s => s.Associates).Distinct();
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
+                var enrolledAssociates = _unitOfWork.Enrollments.GetEnrollments().Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => s.Associates).Distinct();
 
                 var groupedData = enrolledAssociates.GroupBy(enroll => enroll.Designation)
                                                .Select(group => group);
@@ -245,15 +261,17 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public Dictionary<string, List<decimal>> GetTopVolunteerData()
+        public Dictionary<string, List<decimal>> GetTopVolunteerData(int userId)
         {
             try
             {
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
                 List<decimal> decimalList;
                 decimal count = 0;
                 decimal percentage = 0;
                 Dictionary<string, List<decimal>> data = new Dictionary<string, List<decimal>>();
-                var enrollments = _unitOfWork.Enrollments.GetEnrollments();
+                var enrollments = _unitOfWork.Enrollments.GetEnrollments().Where(x => eventIds == null || eventIds.Contains(x.EventID));
                 decimal enrollmentsCount = enrollments.Count();
 
                 if (enrollments != null)
@@ -321,11 +339,13 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public Dictionary<DateTime, List<int>> GetMonthWiseVolunteersCount()
+        public Dictionary<DateTime, List<int>> GetMonthWiseVolunteersCount(int userId)
         {
             try
             {
-                var enrollments = _unitOfWork.Enrollments.GetEnrolledAssociates();
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
+                var enrollments = _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID));
 
                 var groupedData = enrollments.GroupBy(enroll => enroll.EventDate)
                 //.Select(group => group);
@@ -410,38 +430,121 @@ namespace Outreach.Reporting.Business.Processors
         //    }
         //}
 
-        public Dictionary<string, int> GetDesignationWiseVolunteersByYear(int years)
+        public List<NewRepeatedVolunteersByYear> GetDesignationWiseNewRepeatedVolunteersCountByYear(int years, int userId)
         {
             try
             {
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
+                var newRepeatedVolunteersByYear = new List<NewRepeatedVolunteersByYear>();
                 int lastFiveYear = DateTime.Now.AddYears(-years).Year;
 
-                var allEnrollments = _unitOfWork.Enrollments.GetAll();
-                var yearlyFilteredEnrollments = allEnrollments.Where(x => x.EventDate.Year > years).OrderByDescending(o => o.EventDate.Year);
+                var allEnrollments = _unitOfWork.Enrollments.GetAll().Where(x => eventIds == null || eventIds.Contains(x.EventID));
+                var yearlyFilteredEnrollments = allEnrollments.Where(x => x.EventDate.Year > lastFiveYear).OrderBy(o => o.EventDate.Year);
 
-                var newVolunteers = new List<Enrollment>();
                 var repeatedVolunteers = new List<Enrollment>();
-                //var item = new Tuple<int, int, int>();
-
+                int year = 0;
+                int newVolunteersCount = 0;
+                int repeatedVolunteersCount = 0;
+                               
                 foreach(var enroll in yearlyFilteredEnrollments)
                 {
-                   if(allEnrollments.Any(x=> x.AssociateID == enroll.AssociateID && x.EventDate < enroll.EventDate))
+                    if (year == 0)
+                        year = enroll.EventDate.Year;
+
+                    if(year != enroll.EventDate.Year)
                     {
-                        newVolunteers.Add(enroll);
+                        newRepeatedVolunteersByYear.Add(new NewRepeatedVolunteersByYear { Year = year, NewVolunteers = newVolunteersCount, RepeatedVolunteers = repeatedVolunteersCount });
+                        year = enroll.EventDate.Year;
+                        newVolunteersCount = 0;
+                        repeatedVolunteersCount = 0;
+                    }
+
+                   if(!allEnrollments.Any(x=> x.AssociateID == enroll.AssociateID && x.EventDate < enroll.EventDate))
+                    {
+                        newVolunteersCount++;
                     }
                     else
                     {
-                        if (!repeatedVolunteers.Any(x => x.AssociateID == enroll.AssociateID))
+                        if (!repeatedVolunteers.Any(x => x.AssociateID == enroll.AssociateID && x.EventDate.Year == enroll.EventDate.Year))
+                        {
+                            repeatedVolunteersCount++;
                             repeatedVolunteers.Add(enroll);
-                    }
+                        }
+                    }                   
                 }
+                newRepeatedVolunteersByYear.Add(new NewRepeatedVolunteersByYear { Year = year, NewVolunteers = newVolunteersCount, RepeatedVolunteers = repeatedVolunteersCount });
 
-                return null;
+
+                return newRepeatedVolunteersByYear;
             }
             catch (Exception ex)
             {
                 return null;
             }
+        }
+
+        public List<NewRepeatedVolunteersByYear> GetBusinessUnitWiseNewRepeatedVolunteersCountByYear(int years, int userId)
+        {
+            try
+            {
+                List<string> eventIds = GetEventIdsByUserId(userId);
+
+                var newRepeatedVolunteersByYear = new List<NewRepeatedVolunteersByYear>();
+                int lastFiveYear = DateTime.Now.AddYears(-years).Year;
+
+                var allEnrollments = _unitOfWork.Enrollments.GetAll().Where(x => eventIds == null || eventIds.Contains(x.EventID));
+                var yearlyFilteredEnrollments = allEnrollments.Where(x => x.EventDate.Year > lastFiveYear).OrderBy(o => o.EventDate.Year);
+
+                var repeatedVolunteers = new List<Enrollment>();
+                int year = 0;
+                int newVolunteersCount = 0;
+                int repeatedVolunteersCount = 0;
+
+
+
+                foreach (var enroll in yearlyFilteredEnrollments)
+                {
+                    if (year == 0)
+                        year = enroll.EventDate.Year;
+
+                    if (year != enroll.EventDate.Year)
+                    {
+                        newRepeatedVolunteersByYear.Add(new NewRepeatedVolunteersByYear { Year = year, NewVolunteers = newVolunteersCount, RepeatedVolunteers = repeatedVolunteersCount });
+                        year = enroll.EventDate.Year;
+                        newVolunteersCount = 0;
+                        repeatedVolunteersCount = 0;
+                    }
+
+                    if (!allEnrollments.Any(x => x.AssociateID == enroll.AssociateID && x.EventDate < enroll.EventDate))
+                    {
+                        newVolunteersCount++;
+                    }
+                    else
+                    {
+                        if (!repeatedVolunteers.Any(x => x.AssociateID == enroll.AssociateID && x.EventDate.Year == enroll.EventDate.Year))
+                        {
+                            repeatedVolunteersCount++;
+                            repeatedVolunteers.Add(enroll);
+                        }
+                    }
+                }
+                newRepeatedVolunteersByYear.Add(new NewRepeatedVolunteersByYear { Year = year, NewVolunteers = newVolunteersCount, RepeatedVolunteers = repeatedVolunteersCount });
+
+
+                return newRepeatedVolunteersByYear;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        private List<string> GetEventIdsByUserId(int userId)
+        {
+            if (userId == 0)
+                return null;
+            return _unitOfWork.PointOfContacts.GetAll().Where(x => x.AssociateID == userId).Select(s => s.EventID).ToList();
         }
     }
 }

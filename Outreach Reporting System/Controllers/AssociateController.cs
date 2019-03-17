@@ -9,6 +9,8 @@ using Outreach.Reporting.Business.Interfaces;
 using Microsoft.Extensions.Logging;
 using Outreach.Reporting.Entity.Entities;
 using Microsoft.AspNetCore.Authorization;
+using System.Net.Mail;
+using System.Net;
 
 namespace Outreach.Reporting.Service.Controllers
 {
@@ -29,6 +31,7 @@ namespace Outreach.Reporting.Service.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Associate>>> Get()
         {
+
             return await Task.FromResult(Ok(_associateProcessor.GetAll()));
         }
 
@@ -41,9 +44,9 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] IEnumerable<Associate> associates)
+        public async Task<IActionResult> Post([FromBody] IEnumerable<Associate> associates)
         {
-            _associateProcessor.SaveAssociates(associates);
+          return await Task.FromResult(Ok(_associateProcessor.SaveAssociates(associates)));
         }
 
         // PUT api/values/5
@@ -57,5 +60,7 @@ namespace Outreach.Reporting.Service.Controllers
         public void Delete(int id)
         {
         }
+
+
     }
 }

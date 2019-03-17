@@ -60,5 +60,6 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
+
     }
 }

@@ -68,5 +68,13 @@ namespace Outreach.Reporting.Data.Repository
             return enrollments;//.SelectMany(group => group.enrollments.Select(s=> s));
         }
 
+        public IQueryable<Enrollment> GetEnrollmentsByYears(int yearFrom)
+        {
+            var enrollments = ReportContext.Enrollments.Where(x => x.EventDate.Year > yearFrom);
+
+            return enrollments;
+        }
+
+
     }
 }

@@ -14,7 +14,7 @@ namespace Outreach.Reporting.Data.Repository
         public IEventRepository Events { get; private set; }
         public IEnrollmentRepository Enrollments { get; private set; }
         public IUserRepository ApplicationUsers { get; private set; }
-        public IAuthRepository Auth { get; private set; }
+        public IPocRepository PointOfContacts { get; private set; }
         public IFileRepository File { get; private set; }
 
         public UnitOfWork(ReportDBContext context)
@@ -24,7 +24,7 @@ namespace Outreach.Reporting.Data.Repository
             Events = new EventRepository(_context);
             Enrollments = new EnrollmentRepository(_context);
             ApplicationUsers = new UserRepository(_context);
-            Auth = new AuthRepository(_context);
+            PointOfContacts = new PocRepository(_context);
             File = new FileRepository(_context);
         }
 

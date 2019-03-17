@@ -26,7 +26,7 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public bool SaveAssociates(IEnumerable<Associate> associates)
+        public  bool SaveAssociates(IEnumerable<Associate> associates)
         {
             try
             {

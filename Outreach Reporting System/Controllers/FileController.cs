@@ -24,9 +24,9 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/File
         [HttpGet]
-        public ActionResult<IEnumerable<File>> Get()
+        public async Task<ActionResult<IEnumerable<File>>> Get()
         {
-            return Ok(_fileProcessor.GetAll());
+            return await Task.FromResult(Ok(_fileProcessor.GetAll()));
         }
 
         // GET api/File/5
@@ -38,9 +38,9 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/File
         [HttpPost]
-        public void Post([FromBody] IEnumerable<File> files)
+        public async Task<ActionResult> Post([FromBody] IEnumerable<File> files)
         {
-            _fileProcessor.SaveFiles(files);
+            return await Task.FromResult(Ok( _fileProcessor.SaveFiles(files)));
         }
 
         // PUT api/values/5

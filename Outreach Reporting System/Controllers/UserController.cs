@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -25,22 +27,24 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/User
         [HttpGet]
-        public ActionResult<IEnumerable<ApplicationUser>> Get()
+        public async Task<ActionResult<IEnumerable<ApplicationUser>>> Get()
         {
-            return Ok(_userProcessor.GetAll());
+           
+            return await Task.FromResult(Ok(_userProcessor.GetAll()));
         }
         [HttpGet]
         [Route("GetRoles")]
-        public ActionResult<IEnumerable<UserRole>> GetRoles()
+        public async Task<ActionResult<IEnumerable<UserRole>>> GetRoles()
         {
-            return Ok(_userProcessor.GetRoles());
+            
+            return await Task.FromResult(Ok(_userProcessor.GetRoles()));
         }
 
         // POST api/User
         [HttpPost]
-        public void Post([FromBody] IEnumerable<ApplicationUser> applicationUsers)
+        public async Task<IActionResult> Post([FromBody] IEnumerable<ApplicationUser> applicationUsers)
         {
-            _userProcessor.SaveUser(applicationUsers);
+           return await Task.FromResult(Ok( _userProcessor.SaveUser(applicationUsers)));
         }
     }
 }

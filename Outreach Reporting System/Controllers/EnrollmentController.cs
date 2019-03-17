@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -32,77 +34,94 @@ namespace Outreach.Reporting.Service.Controllers
             _enrollmentProcessor = enrollmentProcessor;
             _logger = logger;
             _hostingEnvironment = hostingEnvironment;
-        }
-     
+        }     
        
         // GET api/AllEnrollments
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Enrollment>>> GetAsync()
         {
-           return Ok(_enrollmentProcessor.GetAll());
+            int userId = GetCurrentUserId();
+          return await Task.FromResult( Ok(_enrollmentProcessor.GetAll(userId)));
         }
 
         // GET api/GetWithRelatedData
         [HttpGet]
         [Route("GetEnrolledAssociates")]
-        public ActionResult<IEnumerable<Associate>> GetEnrolledAssociates()
+        public async Task<ActionResult<IEnumerable<Associate>>> GetEnrolledAssociates()
         {
-            return Ok(_enrollmentProcessor.GetEnrolledAssociates());
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrolledAssociates(userId)));
         }
 
         [HttpGet]
         [Route("GetEnrolledUniqueAssociates")]
-        public ActionResult<IEnumerable<Associate>> GetEnrolledUniqueAssociates()
+        public async Task<ActionResult<IEnumerable<Associate>>> GetEnrolledUniqueAssociates()
         {
-            return Ok(_enrollmentProcessor.GetEnrolledUniqueAssociates());
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrolledUniqueAssociates(userId)));
         }
         // GET api/GetEnrolledAssociates
         [HttpGet]
         [Route("GetTopFrequentVolunteers")]
-        public IActionResult GetTopFrequentVolunteers(int count)
+        public async Task<IActionResult> GetTopFrequentVolunteers(int count)
         {
-            return Ok(_enrollmentProcessor.GetTopFrequentVolunteers(count));
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetTopFrequentVolunteers(count, userId)));
         }
 
         [HttpGet]
         [Route("GetTopVolunteerData")]
-        public IActionResult GetTopVolunteerData()
+        public async Task<IActionResult> GetTopVolunteerData()
         {
-            return Ok(_enrollmentProcessor.GetTopVolunteerData());
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetTopVolunteerData(userId)));
         }
 
         [HttpGet]
         [Route("GetYearlyVolunteersCount")]
-        public IActionResult GetYearlyVolunteersCount(int years)
+        public async Task<IActionResult> GetYearlyVolunteersCount(int years)
         {
-            return Ok(_enrollmentProcessor.GetYearlyVolunteersCount(years));
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetYearlyVolunteersCount(years, userId)));
         }
         [HttpGet]
         [Route("GetYearlyBuWiseVolunteersCount")]
-        public IActionResult GetYearlyBuWiseVolunteersCount(int years)
+        public async Task<IActionResult> GetYearlyBuWiseVolunteersCount(int years)
         {
-            return Ok(_enrollmentProcessor.GetYearlyBuWiseVolunteersCount(years));
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetYearlyBuWiseVolunteersCount(years, userId)));
         }
 
         [HttpGet]
         [Route("GetDesignationWiseVolunteersCount")]
-        public IActionResult GetDesignationWiseVolunteersCount()
+        public async Task<IActionResult> GetDesignationWiseVolunteersCount()
         {
-            return Ok(_enrollmentProcessor.GetDesignationWiseVolunteersCount());
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetDesignationWiseVolunteersCount(userId)));
+        }
+
+        [HttpGet]
+        [Route("GetDesignationWiseVolunteersByYear")]
+        public async Task<IActionResult> GetDesignationWiseVolunteersByYear(int years)
+        {
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetDesignationWiseNewRepeatedVolunteersCountByYear(years, userId)));
         }
 
         [HttpGet]
         [Route("GetAllNewVolunteers")]
-        public IActionResult GetAllNewVolunteers()
+        public async Task<IActionResult> GetAllNewVolunteers()
         {
-            return Ok(_enrollmentProcessor.GetAllNewVolunteers());
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetAllNewVolunteers(userId)));
         }
 
         [HttpGet]
         [Route("GetDateWiseVolunteersCount")]
-        public IActionResult GetDateWiseVolunteersCount()
+        public async Task<IActionResult> GetDateWiseVolunteersCount()
         {
-            return Ok(_enrollmentProcessor.GetDateWiseVolunteersCount());
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetDateWiseVolunteersCount(userId)));
         }
         // GET api/values/5
         [HttpGet("{id}")]
@@ -113,9 +132,9 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] IEnumerable<Enrollment> enrollments)
+        public async Task<IActionResult> Post([FromBody] IEnumerable<Enrollment> enrollments)
         {
-            _enrollmentProcessor.SaveEnrollments(enrollments);
+           return await Task.FromResult(Ok( _enrollmentProcessor.SaveEnrollments(enrollments)));
         }
        
         // PUT api/values/5
@@ -132,7 +151,7 @@ namespace Outreach.Reporting.Service.Controllers
        
         [HttpGet]
         [Route("ExcelExport")]
-        public IActionResult ExcelExport(string fileName="Report Data")
+        public async Task<IActionResult> ExcelExport(string fileName="Report Data")
         {
             DataTable table = new DataTable();
             //Fill datatable
@@ -155,11 +174,30 @@ namespace Outreach.Reporting.Service.Controllers
                 worksheet.Cells["A1"].LoadFromDataTable(table, true);
                 fileContents = package.GetAsByteArray();
             }
-            return File(
+            return await Task.FromResult( File(
                 fileContents: fileContents,
                 contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 fileDownloadName: fileName + ".xlsx"
-            );
+            ));
+        }
+
+        private int GetCurrentUserId()
+        {
+            int userId = 0;
+            try
+            {
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                if (identity != null)
+                {
+                    if (identity.FindFirst(ClaimTypes.Role).Value == "POC")
+                        int.TryParse(identity.FindFirst("UserId").Value, out userId);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return userId;
         }
     }
 }

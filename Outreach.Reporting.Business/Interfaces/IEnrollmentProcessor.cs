@@ -1,4 +1,5 @@
-﻿using Outreach.Reporting.Entity.Entities;
+﻿using Outreach.Reporting.Business.BusinessEntities;
+using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,17 +8,17 @@ namespace Outreach.Reporting.Business.Interfaces
 {
     public interface IEnrollmentProcessor
     {
-        IEnumerable<Enrollment> GetAll();
+        IEnumerable<Enrollment> GetAll(int userId);
         bool SaveEnrollments(IEnumerable<Enrollment> associates);
-        IEnumerable<Associate> GetEnrolledAssociates();
-        IEnumerable<Associate> GetEnrolledUniqueAssociates();
-        IEnumerable<Associate> GetTopFrequentVolunteers(int count);
-        Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount);
-        IEnumerable<Enrollment> GetAllNewVolunteers();
-        Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount();
-        List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount);
-        Dictionary<string, int> GetDesignationWiseVolunteersCount();
-        Dictionary<string, List<decimal>> GetTopVolunteerData();
-        Dictionary<string, int> GetDesignationWiseVolunteersByYear(int years);
+        IEnumerable<Associate> GetEnrolledAssociates(int userId);
+        IEnumerable<Associate> GetEnrolledUniqueAssociates(int userId);
+        IEnumerable<Associate> GetTopFrequentVolunteers(int count, int userId);
+        Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount, int userId);
+        IEnumerable<Enrollment> GetAllNewVolunteers(int userId);
+        Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount(int userId);
+        List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount, int userId);
+        Dictionary<string, int> GetDesignationWiseVolunteersCount(int userId);
+        Dictionary<string, List<decimal>> GetTopVolunteerData(int userId);
+        List<NewRepeatedVolunteersByYear> GetDesignationWiseNewRepeatedVolunteersCountByYear(int years, int userId);
     }
 }

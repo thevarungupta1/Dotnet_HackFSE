@@ -29,13 +29,17 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/GetToken/{email_id}
         [HttpPost]
-        public async Task<IActionResult> Authenticate([FromBody]string email)
+        public async Task<IActionResult> Authenticate([FromBody]int userId)
         {
-            if (_authProcessor.AuthenticateUser(new ApplicationUser()))
+            if (userId == 0)
+                return BadRequest("Email should not be empty");
+
+            if (_authProcessor.AuthenticateUser(userId) || _authProcessor.CheckPocById(userId))
             {
+                string userRole = _authProcessor.GetUserRoleById(userId);
                 IActionResult response = Unauthorized();
                
-                    var tokenString = GenerateJSONWebToken();
+                    var tokenString = GenerateJSONWebToken(userId, userRole);
                    // response = Ok(new { token = tokenString });
 
                 return await Task.FromResult(Ok(new { token = tokenString }));
@@ -43,19 +47,20 @@ namespace Outreach.Reporting.Service.Controllers
             else
                 return Unauthorized();
         }
-        private string GenerateJSONWebToken()
+        private string GenerateJSONWebToken(int userId, string userRole = "POC")
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_our_supper_long_security_key_for_token_validation_project_2018_09_07$smesk.in"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Role, "Admin"));
-
+            claims.Add(new Claim(ClaimTypes.Role, userRole));
+            claims.Add(new Claim("UserId", userId.ToString()));
+            
             var token = new JwtSecurityToken(
-                issuer: "smesk.in",
-              audience: "readers",
+                issuer: "outreachReportingSystem",
+              audience: "reportUsers",
               claims: claims,
-              expires: DateTime.Now.AddMinutes(10),
+              expires: DateTime.Now.AddMinutes(60),
               signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
@@ -68,22 +73,22 @@ namespace Outreach.Reporting.Service.Controllers
             return Ok();
         }
 
-        // POST api/GetToken/{email_id}
-        [HttpPost]
-        [Route("Refresh")]
-        public IActionResult Refresh([FromBody]ApplicationUser user)
-        {
-            if (_authProcessor.AuthenticateUser(user))
-            {
-                IActionResult response = Unauthorized();
+        //// POST api/GetToken/{email_id}
+        //[HttpPost]
+        //[Route("Refresh")]
+        //public IActionResult Refresh([FromBody]ApplicationUser user)
+        //{
+        //    if (_authProcessor.AuthenticateUser(user))
+        //    {
+        //        IActionResult response = Unauthorized();
 
-                var tokenString = GenerateJSONWebToken();
-                response = Ok(new { token = tokenString });
+        //        var tokenString = GenerateJSONWebToken();
+        //        response = Ok(new { token = tokenString });
 
-                return response;
-            }
-            else
-                return Unauthorized();
-        }
+        //        return response;
+        //    }
+        //    else
+        //        return Unauthorized();
+        //}
     }
 }
