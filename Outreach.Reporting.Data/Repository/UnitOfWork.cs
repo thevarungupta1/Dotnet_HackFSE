@@ -16,6 +16,7 @@ namespace Outreach.Reporting.Data.Repository
         public IUserRepository ApplicationUsers { get; private set; }
         public IPocRepository PointOfContacts { get; private set; }
         public IFileRepository File { get; private set; }
+        public IReportFilterRepository ReportFilter { get; private set; }
 
         public UnitOfWork(ReportDBContext context)
         {
@@ -26,6 +27,7 @@ namespace Outreach.Reporting.Data.Repository
             ApplicationUsers = new UserRepository(_context);
             PointOfContacts = new PocRepository(_context);
             File = new FileRepository(_context);
+            ReportFilter = new ReportFilterRepository(_context);
         }
 
         public int Complete()

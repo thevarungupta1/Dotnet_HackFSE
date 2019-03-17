@@ -75,6 +75,14 @@ namespace Outreach.Reporting.Data.Repository
             return enrollments;
         }
 
+        public IEnumerable<string> GetBusinessUnits()
+        {
+            return ReportContext.Enrollments.Select(s => s.BusinessUnit).Distinct().ToList();
+        }
+        public IEnumerable<string> GetBaseLocations()
+        {
+            return ReportContext.Enrollments.Select(s => s.BaseLocation).Distinct().ToList();
+        }
 
     }
 }

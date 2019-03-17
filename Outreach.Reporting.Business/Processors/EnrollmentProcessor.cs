@@ -59,12 +59,20 @@ namespace Outreach.Reporting.Business.Processors
 
         public bool SaveEnrollments(IEnumerable<Enrollment> enrollments)
         {
-            foreach (var row in enrollments)
+            try
             {
-                row.CreatedOn = DateTime.Now;
+                foreach (var row in enrollments)
+                {
+                    row.CreatedOn = DateTime.Now;
+                }
+                _unitOfWork.Enrollments.AddRange(enrollments);
+                _unitOfWork.Complete();
             }
-            _unitOfWork.Enrollments.AddRange(enrollments);
-            _unitOfWork.Complete();
+            catch (Exception ex)
+            {
+                return false;
+            }
+            
             return true;
         }
         public IEnumerable<Associate> GetTopFrequentVolunteers(int count, int userId)
@@ -538,6 +546,34 @@ namespace Outreach.Reporting.Business.Processors
             {
                 return null;
             }
+        }
+
+        public IEnumerable<Enrollment> GetEnrollmentsByFilter(int userId, ReportFilter filters)
+        {
+            try
+            {
+                var bus = filters.BusinessUnits.Split(',');
+                var bl = filters.BaseLocations.Split(',');
+                var res = _unitOfWork.Enrollments.GetAll()
+                                                .Where(x => 
+                                                (bus == null || bus.Contains(x.BusinessUnit)) && (bl == null || bl.Contains(x.BaseLocation)) 
+                                                && ((filters.FromDate == null || x.EventDate >= filters.FromDate) 
+                                                && (filters.ToDate == null || x.EventDate <= filters.ToDate)));
+                return res;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public IEnumerable<string> GetBusinessUnits()
+        {
+            return _unitOfWork.Enrollments.GetBusinessUnits();
+        }
+        public IEnumerable<string> GetBaseLocations()
+        {
+            return _unitOfWork.Enrollments.GetBaseLocations();
         }
 
         private List<string> GetEventIdsByUserId(int userId)

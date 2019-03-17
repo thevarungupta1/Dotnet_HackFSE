@@ -15,6 +15,9 @@ namespace Outreach.Reporting.Entity.Entities
         [ForeignKey("Events")]
         [Required]
         public string EventID { get; set; }//not null 
+        public string BaseLocation { get; set; }
+        public string BusinessUnit { get; set; }
+
         [Required]
         public DateTime EventDate { get; set; }
         [Column(TypeName = "decimal(18,2)")]
@@ -25,8 +28,6 @@ namespace Outreach.Reporting.Entity.Entities
         public string Status { get; set; }//50 null
         [MaxLength(100)]
         public string IIEPCategory { get; set; }//null 100
-        //[Required]
-        public bool IsPOC { get; set; }//not null
         [MaxLength(50)]
         [Required]
         public string CreatedBy { get; set; }

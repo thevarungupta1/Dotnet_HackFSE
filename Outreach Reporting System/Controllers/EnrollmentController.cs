@@ -136,7 +136,28 @@ namespace Outreach.Reporting.Service.Controllers
         {
            return await Task.FromResult(Ok( _enrollmentProcessor.SaveEnrollments(enrollments)));
         }
-       
+
+        [HttpPost]
+        [Route("GetEnrollmentsByFilter")]
+        public async Task<IActionResult> GetEnrollmentsByFilter([FromBody] ReportFilter filters)
+        {
+            int userId = GetCurrentUserId();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrollmentsByFilter(userId, filters)));
+        }
+
+        [HttpGet]
+        [Route("GetBusinessUnits")]
+        public async Task<IActionResult> GetBusinessUnits()
+        {
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetBusinessUnits()));
+        }
+
+        [HttpGet]
+        [Route("GetBaseLocations")]
+        public async Task<IActionResult> GetBaseLocations()
+        {
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetBaseLocations()));
+        }
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)

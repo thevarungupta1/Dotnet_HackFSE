@@ -12,6 +12,7 @@ namespace Outreach.Reporting.Data.Interfaces
         IUserRepository ApplicationUsers { get; }
         IPocRepository PointOfContacts { get; }
         IFileRepository File { get; }
+        IReportFilterRepository ReportFilter { get; }
         int Complete();
     }
 }

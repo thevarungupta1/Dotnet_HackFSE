@@ -13,5 +13,7 @@ namespace Outreach.Reporting.Data.Interfaces
         IEnumerable<Enrollment> GetYearlyVolunteersCount(int yearsCount);
         IQueryable<Enrollment> GetEnrollments();
         IQueryable<Enrollment> GetEnrollmentsByYears(int yearFrom);
+        IEnumerable<string> GetBusinessUnits();
+        IEnumerable<string> GetBaseLocations();
     }
 }

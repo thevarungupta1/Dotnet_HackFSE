@@ -37,23 +37,26 @@ namespace Outreach.Reporting.Service.Controllers
             if (_authProcessor.AuthenticateUser(userId) || _authProcessor.CheckPocById(userId))
             {
                 string userRole = _authProcessor.GetUserRoleById(userId);
+                if (string.IsNullOrEmpty(userRole))
+                    userRole = "POC";//if authenticated user role is null then set POC role
+
                 IActionResult response = Unauthorized();
                
                     var tokenString = GenerateJSONWebToken(userId, userRole);
                    // response = Ok(new { token = tokenString });
 
-                return await Task.FromResult(Ok(new { token = tokenString }));
+                return await Task.FromResult(Ok(new { token = tokenString, role = userRole }));
             }
             else
                 return Unauthorized();
         }
-        private string GenerateJSONWebToken(int userId, string userRole = "POC")
+        private string GenerateJSONWebToken(int userId, string userRole)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_our_supper_long_security_key_for_token_validation_project_2018_09_07$smesk.in"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Role, userRole));
+            claims.Add(new Claim(ClaimTypes.Role, userRole)); 
             claims.Add(new Claim("UserId", userId.ToString()));
             
             var token = new JwtSecurityToken(

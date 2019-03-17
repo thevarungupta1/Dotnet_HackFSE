@@ -20,5 +20,10 @@ namespace Outreach.Reporting.Business.Interfaces
         Dictionary<string, int> GetDesignationWiseVolunteersCount(int userId);
         Dictionary<string, List<decimal>> GetTopVolunteerData(int userId);
         List<NewRepeatedVolunteersByYear> GetDesignationWiseNewRepeatedVolunteersCountByYear(int years, int userId);
+
+        IEnumerable<Enrollment> GetEnrollmentsByFilter(int userId, ReportFilter filters);
+
+        IEnumerable<string> GetBusinessUnits();
+        IEnumerable<string> GetBaseLocations();
     }
 }
