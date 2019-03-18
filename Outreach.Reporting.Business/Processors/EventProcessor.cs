@@ -62,5 +62,17 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             return _unitOfWork.PointOfContacts.GetAll().Where(x => x.AssociateID == userId).Select(s => s.EventID).ToList();
         }
+
+        public IEnumerable<string> GetAllFocusArea()
+        {
+            try
+            {
+                return _unitOfWork.Events.GetAll().Select(s => s.Project + " - " + s.Category).Distinct().ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

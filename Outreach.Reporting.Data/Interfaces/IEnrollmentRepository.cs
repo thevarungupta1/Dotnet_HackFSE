@@ -15,5 +15,6 @@ namespace Outreach.Reporting.Data.Interfaces
         IQueryable<Enrollment> GetEnrollmentsByYears(int yearFrom);
         IEnumerable<string> GetBusinessUnits();
         IEnumerable<string> GetBaseLocations();
+        IQueryable<Enrollment> GetEnrollmentsWithRelatedTable();
     }
 }

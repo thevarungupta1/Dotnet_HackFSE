@@ -79,5 +79,12 @@ namespace Outreach.Reporting.Service.Controllers
             }
             return userId;
         }
+
+        [HttpGet]
+        [Route("GetAllFocusArea")]
+        public async Task<ActionResult<IEnumerable<string>>> GetAllFocusArea()
+        {
+            return await Task.FromResult(Ok(_eventProcessor.GetAllFocusArea()));
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Outreach.Reporting.Entity.Entities
@@ -8,6 +9,7 @@ namespace Outreach.Reporting.Entity.Entities
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public int AssociateID { get; set; }
         public string BaseLocations { get; set; }
         public string BusinessUnits { get; set; }
         public string FocusAreas { get; set; }

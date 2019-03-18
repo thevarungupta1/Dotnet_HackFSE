@@ -98,6 +98,7 @@ namespace Outreach_Reporting_System
             services.AddTransient<IUserProcessor, UserProcessor>();
             services.AddTransient<IAuthProcessor, AuthProcessor>();
             services.AddTransient<IFileProcessor, FileProcessor>();
+            services.AddTransient<IReportFilterProcessor, ReportFilterProcessor>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 

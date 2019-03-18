@@ -10,5 +10,6 @@ namespace Outreach.Reporting.Business.Interfaces
         bool SaveEvents(IEnumerable<Event> events);
         IEnumerable<Event> GetAll(int userId);
         IEnumerable<Event> GetEventsRelatedData(int userId);
+        IEnumerable<string> GetAllFocusArea();
     }
 }

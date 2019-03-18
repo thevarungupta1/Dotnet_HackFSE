@@ -84,5 +84,14 @@ namespace Outreach.Reporting.Data.Repository
             return ReportContext.Enrollments.Select(s => s.BaseLocation).Distinct().ToList();
         }
 
+        public IQueryable<Enrollment> GetEnrollmentsWithRelatedTable()
+        {
+            var enrollments = ReportContext.Enrollments
+                                    .Include(a => a.Associates)
+                                    .Include(e => e.Events);
+
+            return enrollments;//.SelectMany(group => group.enrollments.Select(s=> s));
+        }
+
     }
 }

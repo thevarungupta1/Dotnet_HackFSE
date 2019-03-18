@@ -552,13 +552,35 @@ namespace Outreach.Reporting.Business.Processors
         {
             try
             {
-                var bus = filters.BusinessUnits.Split(',');
-                var bl = filters.BaseLocations.Split(',');
-                var res = _unitOfWork.Enrollments.GetAll()
-                                                .Where(x => 
-                                                (bus == null || bus.Contains(x.BusinessUnit)) && (bl == null || bl.Contains(x.BaseLocation)) 
-                                                && ((filters.FromDate == null || x.EventDate >= filters.FromDate) 
-                                                && (filters.ToDate == null || x.EventDate <= filters.ToDate)));
+                var bus = filters.BusinessUnits?.Split(',');
+                var bl = filters.BaseLocations?.Split(',');
+                string[] focusAreas;
+
+                List<string> projects = null;
+                List<string> categories = null;
+                //get focus area by splitting project and category
+                if (!string.IsNullOrEmpty(filters.FocusAreas))
+                {
+                    projects = new List<string>();
+                    categories = new List<string>();
+                    focusAreas = filters.FocusAreas.Split(',');                   
+                    string[] splittedValues;
+                    foreach (var item in focusAreas)
+                    {
+                        splittedValues = item.Split('-');
+                        projects.Add(splittedValues[0].Trim());
+                        categories.Add(splittedValues[1].Trim());
+                    }
+                }
+                
+                var res = _unitOfWork.Enrollments.GetEnrollmentsWithRelatedTable()
+                                                .Where(x =>
+                                                (bus == null || bus.Contains(x.BusinessUnit)) 
+                                                && (bl == null || bl.Contains(x.BaseLocation))
+                                                && (projects == null || projects.Contains(x.Events.Project))
+                                                && (categories == null || categories.Contains(x.Events.Category))
+                                                && ((filters.FromDate == null || x.EventDate >= filters.FromDate)
+                                                && (filters.ToDate == null || x.EventDate <= filters.ToDate))).ToList();
                 return res;
             }
             catch (Exception ex)
