@@ -34,10 +34,10 @@ namespace Outreach.Reporting.Service.Controllers
         }
         [HttpGet]
         [Route("GetRoles")]
-        public async Task<ActionResult<IEnumerable<UserRole>>> GetRoles()
+        public IActionResult GetRoles()
         {
             
-            return await Task.FromResult(Ok(_userProcessor.GetRoles()));
+            return Ok(_userProcessor.GetRoles());
         }
 
         // POST api/User
