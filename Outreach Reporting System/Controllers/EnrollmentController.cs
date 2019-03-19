@@ -147,16 +147,16 @@ namespace Outreach.Reporting.Service.Controllers
 
         [HttpGet]
         [Route("GetBusinessUnits")]
-        public async Task<IActionResult> GetBusinessUnits()
+        public IActionResult GetBusinessUnits()
         {
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetBusinessUnits()));
+            return Ok(_enrollmentProcessor.GetBusinessUnits());
         }
 
         [HttpGet]
         [Route("GetBaseLocations")]
-        public async Task<IActionResult> GetBaseLocations()
+        public IActionResult GetBaseLocations()
         {
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetBaseLocations()));
+            return Ok(_enrollmentProcessor.GetBaseLocations());
         }
         // PUT api/values/5
         [HttpPut("{id}")]
