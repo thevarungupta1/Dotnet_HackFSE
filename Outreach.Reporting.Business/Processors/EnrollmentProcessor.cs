@@ -610,9 +610,25 @@ namespace Outreach.Reporting.Business.Processors
 
         private List<string> GetEventIdsByUserId(int userId)
         {
-            if (userId == 0)
-                return null;
-            return _unitOfWork.PointOfContacts.GetAll().Where(x => x.AssociateID == userId).Select(s => s.EventID).ToList();
+            List<string> eventIds = null;
+            try
+            {
+                if (userId == 0)
+                    return null;
+                var result = _unitOfWork.PointOfContacts.GetAll().Where(x => x.AssociateID == userId).Select(s => s.EventIDs).ToList();
+                if (result != null && result.Any())
+                {
+                    eventIds = new List<string>();
+                    foreach (var eventid in result)
+                    {
+                        eventIds.AddRange(eventid.Split(','));
+                    }
+                }
+            }catch(Exception ex)
+            {
+
+            }
+            return eventIds;
         }
 
         public IEnumerable<Enrollment> GetEnrollmentsByFilterId(int filterId)

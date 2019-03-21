@@ -123,13 +123,6 @@ namespace Outreach.Reporting.Service.Controllers
             int userId = GetCurrentUserId();
             return await Task.FromResult(Ok(_enrollmentProcessor.GetDateWiseVolunteersCount(userId)));
         }
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
         // POST api/values
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] IEnumerable<Enrollment> enrollments)
@@ -164,51 +157,8 @@ namespace Outreach.Reporting.Service.Controllers
         public IActionResult GetBaseLocations()
         {
             return Ok(_enrollmentProcessor.GetBaseLocations());
-        }
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        }    
        
-        [HttpGet]
-        [Route("ExcelExport")]
-        public async Task<IActionResult> ExcelExport(string fileName="Report Data")
-        {
-            DataTable table = new DataTable();
-            //Fill datatable
-            table.Columns.Add("Dosage", typeof(int));
-            table.Columns.Add("Drug", typeof(string));
-            table.Columns.Add("Patient", typeof(string));
-            table.Columns.Add("Date", typeof(DateTime));
-
-            // Here we add five DataRows.
-            table.Rows.Add(25, "Indocin", "David", DateTime.Now);
-            table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now);
-            table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now);
-            table.Rows.Add(21, "Combivent", "Janet", DateTime.Now);
-            table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now);
-
-            byte[] fileContents;
-            using (var package = new ExcelPackage())
-            {
-                var worksheet = package.Workbook.Worksheets.Add(fileName);
-                worksheet.Cells["A1"].LoadFromDataTable(table, true);
-                fileContents = package.GetAsByteArray();
-            }
-            return await Task.FromResult( File(
-                fileContents: fileContents,
-                contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                fileDownloadName: fileName + ".xlsx"
-            ));
-        }
-
         private int GetCurrentUserId()
         {
             int userId = 0;

@@ -11,6 +11,6 @@ namespace Outreach.Reporting.Business.Interfaces
         IEnumerable<ApplicationUser> GetAll();
         bool SaveUser(IEnumerable<ApplicationUser> applicationUsers);
         IEnumerable<UserRole> GetRoles();
-        
+        bool SavePOC(IEnumerable<PointOfContact> poc);
     }
 }

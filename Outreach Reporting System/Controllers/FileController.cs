@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using OfficeOpenXml;
 using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Entity.Entities;
 
@@ -30,31 +32,33 @@ namespace Outreach.Reporting.Service.Controllers
         {
             return await Task.FromResult(Ok(_fileProcessor.GetAll()));
         }
-
-        // GET api/File/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
+        
         // POST api/File
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] IEnumerable<File> files)
         {
             return await Task.FromResult(Ok( _fileProcessor.SaveFiles(files)));
         }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        
+        [HttpGet]
+        [Route("ExcelExport")]
+        public async Task<IActionResult> ExcelExport(string fileName = "Report Data")
         {
+            DataTable table = new DataTable();
+
+            byte[] fileContents;
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add(fileName);
+                worksheet.Cells["A1"].LoadFromDataTable(table, true);
+                fileContents = package.GetAsByteArray();
+            }
+            return await Task.FromResult(File(
+                fileContents: fileContents,
+                contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                fileDownloadName: fileName + ".xlsx"
+            ));
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

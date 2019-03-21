@@ -10,9 +10,11 @@ namespace Outreach.Reporting.Entity.Entities
         [Key]
         public int ID { get; set; }
         public int AssociateID { get; set; }        
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
         public string ContactNumber { get; set; }
-        public string EventID { get; set; }
+        public string EventIDs { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public int ModifiedBy { get; set; }

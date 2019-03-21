@@ -49,6 +49,23 @@ namespace Outreach.Reporting.Business.Processors
                 return false;
             }
         }
+        public bool SavePOC(IEnumerable<PointOfContact> poc)
+        {
+            try
+            {
+                foreach (var row in poc)
+                {
+                    row.CreatedOn = DateTime.Now;
+                }
+                _unitOfWork.PointOfContacts.AddRange(poc);
+                _unitOfWork.Complete();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public IEnumerable<UserRole> GetRoles()
         {
             try

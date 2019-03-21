@@ -28,15 +28,13 @@ namespace Outreach.Reporting.Service.Controllers
         // GET api/User
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ApplicationUser>>> Get()
-        {
-           
+        {           
             return await Task.FromResult(Ok(_userProcessor.GetAll()));
         }
         [HttpGet]
         [Route("GetRoles")]
         public IActionResult GetRoles()
-        {
-            
+        {            
             return Ok(_userProcessor.GetRoles());
         }
 
@@ -44,7 +42,18 @@ namespace Outreach.Reporting.Service.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] IEnumerable<ApplicationUser> applicationUsers)
         {
-           return await Task.FromResult(Ok( _userProcessor.SaveUser(applicationUsers)));
+            if (applicationUsers == null)
+                return BadRequest();
+            return await Task.FromResult(Ok( _userProcessor.SaveUser(applicationUsers)));
+        }
+
+        [HttpPost]
+        [Route("SavePOC")]
+        public async Task<IActionResult> SavePOC([FromBody] IEnumerable<PointOfContact> pocUsers)
+        {
+            if (pocUsers == null)
+                return BadRequest();
+           return await Task.FromResult(Ok( _userProcessor.SavePOC(pocUsers)));
         }
 
     }
