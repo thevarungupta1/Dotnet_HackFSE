@@ -10,7 +10,7 @@ namespace Outreach.Reporting.Business.Interfaces
     {
         IEnumerable<Enrollment> GetAll(int userId);
         bool SaveEnrollments(IEnumerable<Enrollment> associates);
-        IEnumerable<Associate> GetEnrolledAssociates(int userId);
+        IEnumerable<Enrollment> GetEnrolledAssociates(int userId);
         IEnumerable<Associate> GetEnrolledUniqueAssociates(int userId);
         IEnumerable<Associate> GetTopFrequentVolunteers(int count, int userId);
         Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount, int userId);
@@ -22,6 +22,7 @@ namespace Outreach.Reporting.Business.Interfaces
         List<NewRepeatedVolunteersByYear> GetDesignationWiseNewRepeatedVolunteersCountByYear(int years, int userId);
 
         IEnumerable<Enrollment> GetEnrollmentsByFilter(int userId, ReportFilter filters);
+        IEnumerable<Enrollment> GetEnrollmentsByFilterId(int filterId);
 
         IEnumerable<string> GetBusinessUnits();
         IEnumerable<string> GetBaseLocations();

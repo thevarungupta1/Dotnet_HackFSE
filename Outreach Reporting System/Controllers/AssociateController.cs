@@ -16,16 +16,16 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   // [Authorize(Roles = "Admin, PMO, POC")]
+    //[Authorize(Roles = "Admin, PMO, POC")]
     public class AssociateController : ControllerBase
     {
         private readonly IAssociateProcessor _associateProcessor;
-        private readonly ILogger<AssociateController> _logger;
+        //private readonly ILogger<AssociateController> _logger;
 
-        public AssociateController(IAssociateProcessor associateProcessor, ILogger<AssociateController> logger)
+        public AssociateController(IAssociateProcessor associateProcessor)
         {
             _associateProcessor = associateProcessor;
-            _logger = logger;
+            //_logger = logger;
         }
         // GET api/AllAssociates
         [HttpGet]

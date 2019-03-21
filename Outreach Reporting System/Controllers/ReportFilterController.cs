@@ -34,8 +34,12 @@ namespace Outreach_Reporting_System.Controllers
 
             return await Task.FromResult(Ok(_reportFilterProcessor.GetFiltersById(userId)));
         }
-
-        // POST api/ReportFilter
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return await Task.FromResult(Ok(_reportFilterProcessor.GetFiltersById(id)));
+        }        // POST api/ReportFilter
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ReportFilter filter)
         {

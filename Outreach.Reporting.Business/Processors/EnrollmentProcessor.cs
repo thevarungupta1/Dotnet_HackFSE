@@ -4,6 +4,7 @@ using Outreach.Reporting.Data.Interfaces;
 using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -31,12 +32,12 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Associate> GetEnrolledAssociates(int userId)
+        public IEnumerable<Enrollment> GetEnrolledAssociates(int userId)
         {
             try
             {
                 List<string> eventIds = GetEventIdsByUserId(userId);
-                return _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => s.Associates).ToList();
+                return _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID)).ToList();
             }
             catch (Exception ex)
             {
@@ -591,7 +592,16 @@ namespace Outreach.Reporting.Business.Processors
 
         public IEnumerable<string> GetBusinessUnits()
         {
-            return _unitOfWork.Enrollments.GetBusinessUnits();
+            IEnumerable<string> result = null;
+            try
+            {
+                result = _unitOfWork.Enrollments.GetBusinessUnits();
+            }
+            catch(Exception ex)
+            {
+                errorhandle(ex);
+            }
+            return result;
         }
         public IEnumerable<string> GetBaseLocations()
         {
@@ -603,6 +613,75 @@ namespace Outreach.Reporting.Business.Processors
             if (userId == 0)
                 return null;
             return _unitOfWork.PointOfContacts.GetAll().Where(x => x.AssociateID == userId).Select(s => s.EventID).ToList();
+        }
+
+        public IEnumerable<Enrollment> GetEnrollmentsByFilterId(int filterId)
+        {
+            IEnumerable<Enrollment> enrollments = null;
+            try
+            {
+                ReportFilter filters = _unitOfWork.ReportFilter.Get(filterId);
+                if (filters == null)
+                    return enrollments;
+
+                var bus = filters.BusinessUnits?.Split(',');
+                var bl = filters.BaseLocations?.Split(',');
+                string[] focusAreas;
+
+                List<string> projects = null;
+                List<string> categories = null;
+                //get focus area by splitting project and category
+                if (!string.IsNullOrEmpty(filters.FocusAreas))
+                {
+                    projects = new List<string>();
+                    categories = new List<string>();
+                    focusAreas = filters.FocusAreas.Split(',');
+                    string[] splittedValues;
+                    foreach (var item in focusAreas)
+                    {
+                        splittedValues = item.Split('-');
+                        projects.Add(splittedValues[0].Trim());
+                        categories.Add(splittedValues[1].Trim());
+                    }
+                }
+
+                enrollments = _unitOfWork.Enrollments.GetEnrollmentsWithRelatedTable()
+                                                .Where(x =>
+                                                (bus == null || bus.Contains(x.BusinessUnit))
+                                                && (bl == null || bl.Contains(x.BaseLocation))
+                                                && (projects == null || projects.Contains(x.Events.Project))
+                                                && (categories == null || categories.Contains(x.Events.Category))
+                                                && ((filters.FromDate == null || x.EventDate >= filters.FromDate)
+                                                && (filters.ToDate == null || x.EventDate <= filters.ToDate))).ToList();
+                
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return enrollments;
+        }
+
+        private void errorhandle(Exception ex)
+        {
+            string filePath = @"C:\Error.txt";
+
+
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                writer.WriteLine("-----------------------------------------------------------------------------");
+                writer.WriteLine("Date : " + DateTime.Now.ToString());
+                writer.WriteLine();
+
+                while (ex != null)
+                {
+                    writer.WriteLine(ex.GetType().FullName);
+                    writer.WriteLine("Message : " + ex.Message);
+                    writer.WriteLine("StackTrace : " + ex.StackTrace);
+
+                    ex = ex.InnerException;
+                }
+            }
         }
     }
 }

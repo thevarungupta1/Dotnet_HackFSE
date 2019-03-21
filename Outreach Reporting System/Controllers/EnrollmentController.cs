@@ -38,16 +38,16 @@ namespace Outreach.Reporting.Service.Controllers
        
         // GET api/AllEnrollments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Enrollment>>> GetAsync()
+        public IActionResult GetAsync()
         {
-            int userId = GetCurrentUserId();
-          return await Task.FromResult( Ok(_enrollmentProcessor.GetAll(userId)));
+            int userId = 0;// GetCurrentUserId();
+          return Ok(_enrollmentProcessor.GetAll(userId));
         }
 
         // GET api/GetWithRelatedData
         [HttpGet]
         [Route("GetEnrolledAssociates")]
-        public async Task<ActionResult<IEnumerable<Associate>>> GetEnrolledAssociates()
+        public async Task<ActionResult<IEnumerable<Enrollment>>> GetEnrolledAssociates()
         {
             int userId = GetCurrentUserId();
             return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrolledAssociates(userId)));
@@ -138,11 +138,18 @@ namespace Outreach.Reporting.Service.Controllers
         }
 
         [HttpPost]
-        [Route("GetEnrollmentsByFilter")]
+        [Route("EnrollmentsByFilter")]
         public async Task<IActionResult> GetEnrollmentsByFilter([FromBody] ReportFilter filters)
         {
             int userId = GetCurrentUserId();
             return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrollmentsByFilter(userId, filters)));
+        }
+
+        [HttpGet]
+        [Route("EnrollmentsByFilterId")]
+        public async Task<IActionResult> GetEnrollmentsByFilterId(int filterId)
+        {
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrollmentsByFilterId(filterId)));
         }
 
         [HttpGet]

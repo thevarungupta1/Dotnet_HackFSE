@@ -23,7 +23,7 @@ namespace Outreach.Reporting.Data.Repository
         public IEnumerable<Enrollment> GetEnrolledAssociates()
         {
             return ReportContext.Enrollments
-                                            //.Include(e => e.Events)
+                                            .Include(e => e.Events)
                                             .Include(a => a.Associates).ToList();
         }
 

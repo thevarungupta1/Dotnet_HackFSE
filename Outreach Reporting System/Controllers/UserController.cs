@@ -46,5 +46,6 @@ namespace Outreach.Reporting.Service.Controllers
         {
            return await Task.FromResult(Ok( _userProcessor.SaveUser(applicationUsers)));
         }
+
     }
 }

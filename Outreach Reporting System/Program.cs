@@ -51,7 +51,7 @@ namespace Outreach_Reporting_System
                 }
             }
 
-            host.Run();
+            //host.Run();
 
             string directory = @"C:\Project\";
             Program._watcher = new FileSystemWatcher(directory);
@@ -60,7 +60,7 @@ namespace Outreach_Reporting_System
             Program._watcher.EnableRaisingEvents = true;
             Program._watcher.IncludeSubdirectories = true;
             //host.Run();
-            //CreateWebHostBuilder(args).Build().Run();           
+            CreateWebHostBuilder(args).Build().Run();           
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

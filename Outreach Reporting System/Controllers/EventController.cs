@@ -14,7 +14,7 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-   // [Authorize(Roles = "Admin, PMO, POC")]
+    //[Authorize(Roles = "Admin, PMO, POC")]
     public class EventController : ControllerBase
     {
         private readonly IEventProcessor _eventProcessor;
