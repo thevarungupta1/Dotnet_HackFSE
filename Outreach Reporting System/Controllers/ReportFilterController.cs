@@ -36,6 +36,8 @@ namespace Outreach_Reporting_System.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
+            if(id <= 0)
+                return BadRequest();
             return await Task.FromResult(Ok(_reportFilterProcessor.GetFiltersById(id)));
         }        // POST api/ReportFilter
         [HttpPost]
@@ -47,17 +49,6 @@ namespace Outreach_Reporting_System.Controllers
             return await Task.FromResult(Ok(_reportFilterProcessor.SaveFilter(userId, filter)));
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
         private int GetCurrentUserId()
         {
             int userId = 0;

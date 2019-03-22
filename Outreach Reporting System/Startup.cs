@@ -50,7 +50,7 @@ namespace Outreach_Reporting_System
 
             services.AddCors();
 
-            string securityKey = "this_is_our_supper_long_security_key_for_token_validation_project_2018_09_07$smesk.in";
+            string securityKey = "this_is_our_super_long_security_key_for_outreach_reporting_system_project_2019_03_10$";
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
             services.AddAuthentication(x =>
             {

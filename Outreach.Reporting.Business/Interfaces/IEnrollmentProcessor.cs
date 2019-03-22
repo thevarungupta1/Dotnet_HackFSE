@@ -8,20 +8,20 @@ namespace Outreach.Reporting.Business.Interfaces
 {
     public interface IEnrollmentProcessor
     {
-        IEnumerable<Enrollment> GetAll(int userId);
+        IEnumerable<Enrollment> GetAll(IDictionary<string, string> user);
         bool SaveEnrollments(IEnumerable<Enrollment> associates);
-        IEnumerable<Enrollment> GetEnrolledAssociates(int userId);
-        IEnumerable<Associate> GetEnrolledUniqueAssociates(int userId);
-        IEnumerable<Associate> GetTopFrequentVolunteers(int count, int userId);
-        Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount, int userId);
-        IEnumerable<Enrollment> GetAllNewVolunteers(int userId);
-        Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount(int userId);
-        List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount, int userId);
-        Dictionary<string, int> GetDesignationWiseVolunteersCount(int userId);
-        Dictionary<string, List<decimal>> GetTopVolunteerData(int userId);
-        List<NewRepeatedVolunteersByYear> GetDesignationWiseNewRepeatedVolunteersCountByYear(int years, int userId);
+        IEnumerable<Enrollment> GetEnrolledAssociates(IDictionary<string, string> user);
+        IEnumerable<Associate> GetEnrolledUniqueAssociates(IDictionary<string, string> user);
+        IEnumerable<Associate> GetTopFrequentVolunteers(int count, IDictionary<string, string> user);
+        Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount, IDictionary<string, string> user);
+        IEnumerable<Enrollment> GetAllNewVolunteers(IDictionary<string, string> user);
+        Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount(IDictionary<string, string> user);
+        List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount, IDictionary<string, string> user);
+        Dictionary<string, int> GetDesignationWiseVolunteersCount(IDictionary<string, string> user);
+        Dictionary<string, List<decimal>> GetTopVolunteerData(IDictionary<string, string> user);
+        List<NewRepeatedVolunteersByYear> GetDesignationWiseNewRepeatedVolunteersCountByYear(int years, IDictionary<string, string> user);
 
-        IEnumerable<Enrollment> GetEnrollmentsByFilter(int userId, ReportFilter filters);
+        IEnumerable<Enrollment> GetEnrollmentsByFilter(IDictionary<string, string> user, ReportFilter filters);
         IEnumerable<Enrollment> GetEnrollmentsByFilterId(int filterId);
 
         IEnumerable<string> GetBusinessUnits();

@@ -36,8 +36,8 @@ namespace Outreach.Reporting.Service.Controllers
         [HttpGet]
         public IActionResult GetAsync()
         {
-            int userId = 0;// GetCurrentUserId();
-          return Ok(_enrollmentProcessor.GetAll(userId));
+            var user = GetCurrentUser();
+          return Ok(_enrollmentProcessor.GetAll(user));
         }
 
         // GET api/GetWithRelatedData
@@ -45,84 +45,96 @@ namespace Outreach.Reporting.Service.Controllers
         [Route("GetEnrolledAssociates")]
         public async Task<ActionResult<IEnumerable<Enrollment>>> GetEnrolledAssociates()
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrolledAssociates(userId)));
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrolledAssociates(user)));
         }
 
         [HttpGet]
         [Route("GetEnrolledUniqueAssociates")]
         public async Task<ActionResult<IEnumerable<Associate>>> GetEnrolledUniqueAssociates()
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrolledUniqueAssociates(userId)));
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrolledUniqueAssociates(user)));
         }
         // GET api/GetEnrolledAssociates
         [HttpGet]
         [Route("GetTopFrequentVolunteers")]
         public async Task<IActionResult> GetTopFrequentVolunteers(int count)
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetTopFrequentVolunteers(count, userId)));
+            if(count <= 0)
+                return BadRequest();
+
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetTopFrequentVolunteers(count, user)));
         }
 
         [HttpGet]
         [Route("GetTopVolunteerData")]
         public async Task<IActionResult> GetTopVolunteerData()
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetTopVolunteerData(userId)));
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetTopVolunteerData(user)));
         }
 
         [HttpGet]
         [Route("GetYearlyVolunteersCount")]
         public async Task<IActionResult> GetYearlyVolunteersCount(int years)
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetYearlyVolunteersCount(years, userId)));
+            if(years <= 0)
+                return BadRequest();
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetYearlyVolunteersCount(years, user)));
         }
         [HttpGet]
         [Route("GetYearlyBuWiseVolunteersCount")]
         public async Task<IActionResult> GetYearlyBuWiseVolunteersCount(int years)
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetYearlyBuWiseVolunteersCount(years, userId)));
+            if(years <= 0)
+                return BadRequest();
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetYearlyBuWiseVolunteersCount(years, user)));
         }
 
         [HttpGet]
         [Route("GetDesignationWiseVolunteersCount")]
         public async Task<IActionResult> GetDesignationWiseVolunteersCount()
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetDesignationWiseVolunteersCount(userId)));
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetDesignationWiseVolunteersCount(user)));
         }
 
         [HttpGet]
         [Route("GetDesignationWiseVolunteersByYear")]
         public async Task<IActionResult> GetDesignationWiseVolunteersByYear(int years)
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetDesignationWiseNewRepeatedVolunteersCountByYear(years, userId)));
+            if(years <= 0)
+                return BadRequest();
+
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetDesignationWiseNewRepeatedVolunteersCountByYear(years, user)));
         }
 
         [HttpGet]
         [Route("GetAllNewVolunteers")]
         public async Task<IActionResult> GetAllNewVolunteers()
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetAllNewVolunteers(userId)));
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetAllNewVolunteers(user)));
         }
 
         [HttpGet]
         [Route("GetDateWiseVolunteersCount")]
         public async Task<IActionResult> GetDateWiseVolunteersCount()
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetDateWiseVolunteersCount(userId)));
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetDateWiseVolunteersCount(user)));
         }
         // POST api/values
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] IEnumerable<Enrollment> enrollments)
         {
+            if (enrollments == null)
+                return BadRequest();
            return await Task.FromResult(Ok( _enrollmentProcessor.SaveEnrollments(enrollments)));
         }
 
@@ -130,14 +142,18 @@ namespace Outreach.Reporting.Service.Controllers
         [Route("EnrollmentsByFilter")]
         public async Task<IActionResult> GetEnrollmentsByFilter([FromBody] ReportFilter filters)
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrollmentsByFilter(userId, filters)));
+            if (filters == null)
+                return BadRequest();
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrollmentsByFilter(user, filters)));
         }
 
         [HttpGet]
         [Route("EnrollmentsByFilterId")]
         public async Task<IActionResult> GetEnrollmentsByFilterId(int filterId)
         {
+            if (filterId <= 0)
+                return BadRequest();
             return await Task.FromResult(Ok(_enrollmentProcessor.GetEnrollmentsByFilterId(filterId)));
         }
 
@@ -153,25 +169,26 @@ namespace Outreach.Reporting.Service.Controllers
         public IActionResult GetBaseLocations()
         {
             return Ok(_enrollmentProcessor.GetBaseLocations());
-        }    
-       
-        private int GetCurrentUserId()
+        }
+
+        private IDictionary<string, string> GetCurrentUser()
         {
-            int userId = 0;
+            IDictionary<string, string> dict = null;            
             try
             {
                 var identity = HttpContext.User.Identity as ClaimsIdentity;
                 if (identity != null)
                 {
-                    if (identity.FindFirst(ClaimTypes.Role).Value == "POC")
-                        int.TryParse(identity.FindFirst("UserId").Value, out userId);
-                }
+                    dict = new Dictionary<string, string>();
+                    dict.Add("UserId", identity.FindFirst("UserId").Value);
+                    dict.Add("role", identity.FindFirst(ClaimTypes.Role).Value);
+                }                
             }
             catch (Exception ex)
             {
 
             }
-            return userId;
+            return dict;
         }
     }
 }

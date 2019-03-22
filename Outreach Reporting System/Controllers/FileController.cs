@@ -35,6 +35,8 @@ namespace Outreach.Reporting.Service.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] IEnumerable<File> files)
         {
+            if(files == null)
+                return BadRequest();
             return await Task.FromResult(Ok( _fileProcessor.SaveFiles(files)));
         }
         
@@ -63,6 +65,8 @@ namespace Outreach.Reporting.Service.Controllers
         [Route("ReadExcel")]
         public async Task<IActionResult> ReadExcelFromPath([FromBody]string filePath)
         {
+            if(!string.IsNullOrEmpty(filePath))
+                return BadRequest();
             return await Task.FromResult(Ok(_fileProcessor.ReadExcelFile(filePath)));
         }
     }

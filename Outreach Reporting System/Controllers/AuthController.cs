@@ -29,7 +29,7 @@ namespace Outreach.Reporting.Service.Controllers
         public async Task<IActionResult> Authenticate([FromBody]int userId)
         {
             if (userId == 0)
-                return BadRequest("Email should not be empty");
+                return BadRequest();
 
             if (_authProcessor.AuthenticateUser(userId) || _authProcessor.CheckPocById(userId))
             {
@@ -48,7 +48,7 @@ namespace Outreach.Reporting.Service.Controllers
         }
         private string GenerateJSONWebToken(int userId, string userRole)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_our_supper_long_security_key_for_token_validation_project_2018_09_07$smesk.in"));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this_is_our_super_long_security_key_for_outreach_reporting_system_project_2019_03_10$"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>();

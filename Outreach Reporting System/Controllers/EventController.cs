@@ -27,8 +27,8 @@ namespace Outreach.Reporting.Service.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Event>>> Get()
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_eventProcessor.GetAll(userId)));
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_eventProcessor.GetAll(user)));
         }
 
         // GET api/GetWithRelatedData
@@ -36,41 +36,53 @@ namespace Outreach.Reporting.Service.Controllers
         [Route("GetWithRelatedData")]
         public async Task<ActionResult<IEnumerable<Enrollment>>> GetWithRelatedData()
         {
-            int userId = GetCurrentUserId();
-            return await Task.FromResult(Ok(_eventProcessor.GetEventsRelatedData(userId)));
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_eventProcessor.GetEventsRelatedData(user)));
+        }
+        
+        // GET api/GetWithRelatedData
+        [HttpGet]
+        [Route("RecentEvents")]
+        public async Task<IActionResult> GetRecentEvents(int recentCount)
+        {
+            var user = GetCurrentUser();
+            return await Task.FromResult(Ok(_eventProcessor.GetRecentEvents(user, recentCount)));
         }
 
         // POST api/values
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] IEnumerable<Event> events)
         {
-           return await Task.FromResult(Ok(_eventProcessor.SaveEvents(events)));
+            if(events == null)
+                return BadRequest();
+            return await Task.FromResult(Ok(_eventProcessor.SaveEvents(events)));
+        }
+               
+        [HttpGet]
+        [Route("GetAllFocusArea")]
+        public async Task<ActionResult<IEnumerable<string>>> GetAllFocusArea()
+        {
+            return await Task.FromResult(Ok(_eventProcessor.GetAllFocusArea()));
         }
 
-        private int GetCurrentUserId()
+        private IDictionary<string, string> GetCurrentUser()
         {
-            int userId = 0;
+            IDictionary<string, string> dict = null;
             try
             {
                 var identity = HttpContext.User.Identity as ClaimsIdentity;
                 if (identity != null)
                 {
-                    if (identity.FindFirst(ClaimTypes.Role).Value == "POC")
-                        int.TryParse(identity.FindFirst("UserId").Value, out userId);
+                    dict = new Dictionary<string, string>();
+                    dict.Add("UserId", identity.FindFirst("UserId").Value);
+                    dict.Add("role", identity.FindFirst(ClaimTypes.Role).Value);
                 }
             }
             catch (Exception ex)
             {
 
             }
-            return userId;
-        }
-
-        [HttpGet]
-        [Route("GetAllFocusArea")]
-        public async Task<ActionResult<IEnumerable<string>>> GetAllFocusArea()
-        {
-            return await Task.FromResult(Ok(_eventProcessor.GetAllFocusArea()));
+            return dict;
         }
     }
 }

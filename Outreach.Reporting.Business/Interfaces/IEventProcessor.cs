@@ -8,8 +8,9 @@ namespace Outreach.Reporting.Business.Interfaces
     public interface IEventProcessor
     {
         bool SaveEvents(IEnumerable<Event> events);
-        IEnumerable<Event> GetAll(int userId);
-        IEnumerable<Event> GetEventsRelatedData(int userId);
+        IEnumerable<Event> GetAll(IDictionary<string, string> user);
+        IEnumerable<Event> GetEventsRelatedData(IDictionary<string, string> user);
         IEnumerable<string> GetAllFocusArea();
+        IEnumerable<Event> GetRecentEvents(IDictionary<string, string> user, int recentCount);
     }
 }

@@ -47,6 +47,7 @@ namespace Outreach_Reporting_System
             try
             {
                 var url = await SendFilePathAsync(filePath);
+                var test = url;
             }
             catch (Exception ex)
             {

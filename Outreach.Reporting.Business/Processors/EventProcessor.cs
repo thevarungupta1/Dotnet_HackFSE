@@ -16,11 +16,16 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Event> GetAll(int userId)
+        public IEnumerable<Event> GetAll(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
                 var events = _unitOfWork.Events.GetAll().Where(x => eventIds == null || eventIds.Contains(x.ID));
                 foreach (var even in events)
                 {
@@ -33,11 +38,16 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public IEnumerable<Event> GetEventsRelatedData(int userId)
+        public IEnumerable<Event> GetEventsRelatedData(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
                 return _unitOfWork.Events.GetEventsRelatedData().Where(x => eventIds == null || eventIds.Contains(x.ID));
             }
             catch (Exception ex)
@@ -45,6 +55,25 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
+
+        public IEnumerable<Event> GetRecentEvents(IDictionary<string, string> user, int recentCount)
+        {
+            try
+            {
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
+                return _unitOfWork.Events.GetAll().Where(x => eventIds == null || eventIds.Contains(x.ID)).OrderByDescending(o => o.Date).Take(recentCount).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public bool SaveEvents(IEnumerable<Event> events)
         {
             foreach (var row in events)

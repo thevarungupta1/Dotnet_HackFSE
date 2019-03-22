@@ -38,7 +38,6 @@ namespace Outreach.Reporting.Data.Repository
                                             enrollments = group
                                          })
                                          .OrderByDescending(x => x.enrollments.Count()).Take(count);
-
             return groupedData.SelectMany(group => group.enrollments.Select(s=> s.Associates)).ToList();
 
         }

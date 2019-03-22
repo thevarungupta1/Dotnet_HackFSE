@@ -18,11 +18,16 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Enrollment> GetAll(int userId)
+        public IEnumerable<Enrollment> GetAll(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 return _unitOfWork.Enrollments.GetAll().Where(x => eventIds == null || eventIds.Contains(x.EventID));
             }
@@ -32,11 +37,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Enrollment> GetEnrolledAssociates(int userId)
+        public IEnumerable<Enrollment> GetEnrolledAssociates(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
                 return _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID)).ToList();
             }
             catch (Exception ex)
@@ -45,11 +55,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Associate> GetEnrolledUniqueAssociates(int userId)
+        public IEnumerable<Associate> GetEnrolledUniqueAssociates(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
                 return _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => s.Associates).Distinct().ToList();
             }
             catch (Exception ex)
@@ -76,11 +91,16 @@ namespace Outreach.Reporting.Business.Processors
             
             return true;
         }
-        public IEnumerable<Associate> GetTopFrequentVolunteers(int count, int userId)
+        public IEnumerable<Associate> GetTopFrequentVolunteers(int count, IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
                 return _unitOfWork.Enrollments.GetTopFrequentVolunteers(count);
             }
             catch (Exception ex)
@@ -89,11 +109,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount, int userId)
+        public Dictionary<int, List<int>> GetYearlyVolunteersCount(int yearsCount, IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 var allEnrollments = _unitOfWork.Enrollments.GetEnrolledAssociates().Select(s => new { s.EventDate.Year, s.AssociateID });
                 var enrollments = _unitOfWork.Enrollments.GetYearlyVolunteersCount(yearsCount).Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => new { s.EventDate.Year, s.AssociateID, s.EnrollmentID });
@@ -138,11 +163,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Enrollment> GetAllNewVolunteers(int userId)
+        public IEnumerable<Enrollment> GetAllNewVolunteers(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 var allVolunteers = _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID)).OrderBy(o => o.EventDate);
 
@@ -160,11 +190,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount(int userId)
+        public Dictionary<DateTime, List<int>> GetDateWiseVolunteersCount(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 var enrollments = _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID));
 
@@ -204,11 +239,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount, int userId)
+        public List<Dictionary<string, int>> GetYearlyBuWiseVolunteersCount(int yearsCount, IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 var businessUnits = _unitOfWork.Associates.GetAll().Select(s => s.BusinessUnit).Distinct();// .GroupBy(g=> g.BusinessUnit)
                 var enrollments = _unitOfWork.Enrollments.GetEnrollments().Where(x => eventIds == null || eventIds.Contains(x.EventID));
@@ -244,11 +284,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public Dictionary<string, int> GetDesignationWiseVolunteersCount(int userId)
+        public Dictionary<string, int> GetDesignationWiseVolunteersCount(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 var enrolledAssociates = _unitOfWork.Enrollments.GetEnrollments().Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => s.Associates).Distinct();
 
@@ -270,11 +315,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public Dictionary<string, List<decimal>> GetTopVolunteerData(int userId)
+        public Dictionary<string, List<decimal>> GetTopVolunteerData(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 List<decimal> decimalList;
                 decimal count = 0;
@@ -348,11 +398,16 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public Dictionary<DateTime, List<int>> GetMonthWiseVolunteersCount(int userId)
+        public Dictionary<DateTime, List<int>> GetMonthWiseVolunteersCount(IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 var enrollments = _unitOfWork.Enrollments.GetEnrolledAssociates().Where(x => eventIds == null || eventIds.Contains(x.EventID));
 
@@ -439,11 +494,16 @@ namespace Outreach.Reporting.Business.Processors
         //    }
         //}
 
-        public List<NewRepeatedVolunteersByYear> GetDesignationWiseNewRepeatedVolunteersCountByYear(int years, int userId)
+        public List<NewRepeatedVolunteersByYear> GetDesignationWiseNewRepeatedVolunteersCountByYear(int years, IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 var newRepeatedVolunteersByYear = new List<NewRepeatedVolunteersByYear>();
                 int lastFiveYear = DateTime.Now.AddYears(-years).Year;
@@ -493,11 +553,16 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public List<NewRepeatedVolunteersByYear> GetBusinessUnitWiseNewRepeatedVolunteersCountByYear(int years, int userId)
+        public List<NewRepeatedVolunteersByYear> GetBusinessUnitWiseNewRepeatedVolunteersCountByYear(int years, IDictionary<string, string> user)
         {
             try
             {
-                List<string> eventIds = GetEventIdsByUserId(userId);
+                List<string> eventIds = null;
+                if (user != null && user["role"] == "POC")
+                {
+                    int userId = Convert.ToInt32(user["userId"]);
+                    eventIds = GetEventIdsByUserId(userId);
+                }
 
                 var newRepeatedVolunteersByYear = new List<NewRepeatedVolunteersByYear>();
                 int lastFiveYear = DateTime.Now.AddYears(-years).Year;
@@ -549,7 +614,7 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Enrollment> GetEnrollmentsByFilter(int userId, ReportFilter filters)
+        public IEnumerable<Enrollment> GetEnrollmentsByFilter(IDictionary<string, string> user, ReportFilter filters)
         {
             try
             {
