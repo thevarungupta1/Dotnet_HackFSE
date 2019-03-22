@@ -16,16 +16,14 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(Roles = "Admin, PMO, POC")]
+    [Authorize(Roles = "Admin, PMO, POC")]
     public class AssociateController : ControllerBase
     {
         private readonly IAssociateProcessor _associateProcessor;
-        //private readonly ILogger<AssociateController> _logger;
 
         public AssociateController(IAssociateProcessor associateProcessor)
         {
             _associateProcessor = associateProcessor;
-            //_logger = logger;
         }
         // GET api/AllAssociates
         [HttpGet]
@@ -35,32 +33,13 @@ namespace Outreach.Reporting.Service.Controllers
             return await Task.FromResult(Ok(_associateProcessor.GetAll()));
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
         // POST api/values
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] IEnumerable<Associate> associates)
         {
           return await Task.FromResult(Ok(_associateProcessor.SaveAssociates(associates)));
         }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-
+        
 
     }
 }

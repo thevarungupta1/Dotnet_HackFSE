@@ -18,12 +18,10 @@ namespace Outreach.Reporting.Service.Controllers
     public class EventController : ControllerBase
     {
         private readonly IEventProcessor _eventProcessor;
-        private readonly ILogger<EventController> _logger;
 
-        public EventController(IEventProcessor eventProcessor, ILogger<EventController> logger)
+        public EventController(IEventProcessor eventProcessor)
         {
             _eventProcessor = eventProcessor;
-            _logger = logger;
         }
         // GET api/AllEvents
         [HttpGet]
@@ -47,18 +45,6 @@ namespace Outreach.Reporting.Service.Controllers
         public async Task<IActionResult> Post([FromBody] IEnumerable<Event> events)
         {
            return await Task.FromResult(Ok(_eventProcessor.SaveEvents(events)));
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
 
         private int GetCurrentUserId()

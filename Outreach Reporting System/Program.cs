@@ -74,7 +74,7 @@ namespace Outreach_Reporting_System
         {
             string ext = Path.GetExtension(e.FullPath);
             if (ext == ".xlsx")
-                FileReader.getExcelFile(e.FullPath);
+                FileReader.SendFilePath(e.FullPath);
             // Can change program state (set invalid state) in this method.
             // ... Better to use insensitive compares for file names.
         }

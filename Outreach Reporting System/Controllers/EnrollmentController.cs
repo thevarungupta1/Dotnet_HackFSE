@@ -23,17 +23,13 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(Roles = "Admin, PMO, POC")]
+    [Authorize(Roles = "Admin, PMO, POC")]
     public class EnrollmentController : ControllerBase
     {
         private readonly IEnrollmentProcessor _enrollmentProcessor;
-        private readonly ILogger<EnrollmentController> _logger;
-        private IHostingEnvironment _hostingEnvironment;
-        public EnrollmentController(IEnrollmentProcessor enrollmentProcessor, ILogger<EnrollmentController> logger, IHostingEnvironment hostingEnvironment)
+        public EnrollmentController(IEnrollmentProcessor enrollmentProcessor)
         {
             _enrollmentProcessor = enrollmentProcessor;
-            _logger = logger;
-            _hostingEnvironment = hostingEnvironment;
         }     
        
         // GET api/AllEnrollments

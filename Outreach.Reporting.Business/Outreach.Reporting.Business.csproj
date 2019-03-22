@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="4.5.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Outreach.Reporting.Data\Outreach.Reporting.Data.csproj" />
     <ProjectReference Include="..\Outreach.Reporting.Entity\Outreach.Reporting.Entity.csproj" />
   </ItemGroup>

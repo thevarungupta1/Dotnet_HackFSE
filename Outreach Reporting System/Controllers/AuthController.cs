@@ -19,12 +19,9 @@ namespace Outreach.Reporting.Service.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthProcessor _authProcessor;
-        private readonly ILogger<AuthController> _logger;
-
-        public AuthController(IAuthProcessor authProcessor, ILogger<AuthController> logger)
+        public AuthController(IAuthProcessor authProcessor)
         {
             _authProcessor = authProcessor;
-            _logger = logger;
         }
 
         // POST api/GetToken/{email_id}
@@ -43,7 +40,6 @@ namespace Outreach.Reporting.Service.Controllers
                 IActionResult response = Unauthorized();
                
                     var tokenString = GenerateJSONWebToken(userId, userRole);
-                   // response = Ok(new { token = tokenString });
 
                 return await Task.FromResult(Ok(new { token = tokenString, role = userRole }));
             }
@@ -68,30 +64,5 @@ namespace Outreach.Reporting.Service.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-        // POST api/auth/Logout
-        [HttpPost]
-        [Route("Logout")]
-        public IActionResult Logout()
-        {
-            return Ok();
-        }
-
-        //// POST api/GetToken/{email_id}
-        //[HttpPost]
-        //[Route("Refresh")]
-        //public IActionResult Refresh([FromBody]ApplicationUser user)
-        //{
-        //    if (_authProcessor.AuthenticateUser(user))
-        //    {
-        //        IActionResult response = Unauthorized();
-
-        //        var tokenString = GenerateJSONWebToken();
-        //        response = Ok(new { token = tokenString });
-
-        //        return response;
-        //    }
-        //    else
-        //        return Unauthorized();
-        //}
     }
 }

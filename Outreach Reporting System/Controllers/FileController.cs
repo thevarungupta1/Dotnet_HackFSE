@@ -19,12 +19,10 @@ namespace Outreach.Reporting.Service.Controllers
     public class FileController : ControllerBase
     {
         private readonly IFileProcessor _fileProcessor;
-        private readonly ILogger<FileController> _logger;
 
-        public FileController(IFileProcessor fileProcessor, ILogger<FileController> logger)
+        public FileController(IFileProcessor fileProcessor)
         {
             _fileProcessor = fileProcessor;
-            _logger = logger;
         }
         // GET api/File
         [HttpGet]
@@ -60,5 +58,12 @@ namespace Outreach.Reporting.Service.Controllers
             ));
         }
 
+        // POST api/File
+        [HttpPost]
+        [Route("ReadExcel")]
+        public async Task<IActionResult> ReadExcelFromPath([FromBody]string filePath)
+        {
+            return await Task.FromResult(Ok(_fileProcessor.ReadExcelFile(filePath)));
+        }
     }
 }

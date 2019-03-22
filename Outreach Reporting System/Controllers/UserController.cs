@@ -14,16 +14,14 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class UserController : ControllerBase
     {
         private readonly IUserProcessor _userProcessor;
-        private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserProcessor userProcessor, ILogger<UserController> logger)
+        public UserController(IUserProcessor userProcessor)
         {
             _userProcessor = userProcessor;
-            _logger = logger;
         }
         // GET api/User
         [HttpGet]
@@ -31,8 +29,9 @@ namespace Outreach.Reporting.Service.Controllers
         {           
             return await Task.FromResult(Ok(_userProcessor.GetAll()));
         }
+        //GET api/user/Roles
         [HttpGet]
-        [Route("GetRoles")]
+        [Route("Roles")]
         public IActionResult GetRoles()
         {            
             return Ok(_userProcessor.GetRoles());
@@ -46,7 +45,7 @@ namespace Outreach.Reporting.Service.Controllers
                 return BadRequest();
             return await Task.FromResult(Ok( _userProcessor.SaveUser(applicationUsers)));
         }
-
+        //POST api/SavePOC
         [HttpPost]
         [Route("SavePOC")]
         public async Task<IActionResult> SavePOC([FromBody] IEnumerable<PointOfContact> pocUsers)

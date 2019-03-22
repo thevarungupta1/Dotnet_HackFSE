@@ -17,11 +17,9 @@ namespace Outreach_Reporting_System.Controllers
     public class ReportFilterController : ControllerBase
     {
         private readonly IReportFilterProcessor _reportFilterProcessor;
-        private readonly ILogger<ReportFilterController> _logger;
-        public ReportFilterController(IReportFilterProcessor reportFilterProcessor, ILogger<ReportFilterController> logger)
+        public ReportFilterController(IReportFilterProcessor reportFilterProcessor)
         {
             _reportFilterProcessor = reportFilterProcessor;
-            _logger = logger;
         }
 
         // GET api/values

@@ -9,5 +9,6 @@ namespace Outreach.Reporting.Business.Interfaces
     {
         IEnumerable<File> GetAll();
         bool SaveFiles(IEnumerable<File> files);
+        bool ReadExcelFile(string filePath);
     }
 }
