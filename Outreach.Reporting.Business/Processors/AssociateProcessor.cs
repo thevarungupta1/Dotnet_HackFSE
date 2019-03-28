@@ -4,6 +4,7 @@ using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Outreach.Reporting.Business.Processors
 {
@@ -15,18 +16,18 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Associate> GetAll()
+        public async Task<IEnumerable<Associate>> GetAll()
         {
             try
             {
-                return _unitOfWork.Associates.GetAll();
+                return await _unitOfWork.Associates.GetAllAsync();
             }
             catch (Exception ex)
             {
                 return null;
             }
         }
-        public  bool SaveAssociates(IEnumerable<Associate> associates)
+        public async Task<bool> SaveAssociates(IEnumerable<Associate> associates)
         {
             try
             {
@@ -34,8 +35,8 @@ namespace Outreach.Reporting.Business.Processors
                 {
                     row.CreatedOn = DateTime.Now;
                 }
-                _unitOfWork.Associates.AddRange(associates);
-                _unitOfWork.Complete();
+                await _unitOfWork.Associates.AddRangeAsync(associates);
+                 _unitOfWork.Complete();
                 return true;
             }
             catch (Exception ex)

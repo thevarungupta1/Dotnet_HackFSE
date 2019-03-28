@@ -26,25 +26,24 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/GetToken/{email_id}
         [HttpPost]
-        public async Task<IActionResult> Authenticate([FromBody]int userId)
+        public IActionResult Authenticate(int id, string email)
         {
-            if (userId == 0)
+            if (id <= 0 || string.IsNullOrEmpty(email))
                 return BadRequest();
 
-            if (_authProcessor.AuthenticateUser(userId) || _authProcessor.CheckPocById(userId))
+            if (_authProcessor.AuthenticateUser(id, email) || _authProcessor.CheckPocById(id, email))
             {
-                string userRole = _authProcessor.GetUserRoleById(userId);
+                string userRole = _authProcessor.GetUserRoleById(id);
                 if (string.IsNullOrEmpty(userRole))
                     userRole = "POC";//if authenticated user role is null then set POC role
 
                 IActionResult response = Unauthorized();
                
-                    var tokenString = GenerateJSONWebToken(userId, userRole);
-
-                return await Task.FromResult(Ok(new { token = tokenString, role = userRole }));
+                    var tokenString = GenerateJSONWebToken(id, userRole);
+                return Ok(new { token = tokenString, role = userRole });
             }
             else
-                return Unauthorized();
+                return Unauthorized("Invalid Credentials");
         }
         private string GenerateJSONWebToken(int userId, string userRole)
         {

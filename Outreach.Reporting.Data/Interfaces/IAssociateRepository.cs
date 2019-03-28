@@ -3,11 +3,12 @@ using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Outreach.Reporting.Data.Interfaces
 {
     public interface IAssociateRepository : IRepository<Associate>
     {
-        IEnumerable<Associate> GetAssociatesRelatedData();
+        Task<IEnumerable<Associate>> GetAssociatesRelatedData();
     }
 }

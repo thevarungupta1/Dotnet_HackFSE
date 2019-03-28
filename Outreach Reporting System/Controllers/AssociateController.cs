@@ -27,9 +27,10 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/AllAssociates
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Associate>>> Get()
+        public async Task<IActionResult> Get()
         {
-            return await Task.FromResult(Ok(_associateProcessor.GetAll()));
+            var result = await _associateProcessor.GetAll();
+            return Ok(result);
         }
 
         // POST api/values
@@ -38,7 +39,9 @@ namespace Outreach.Reporting.Service.Controllers
         {
             if (associates == null)
                 return BadRequest();
-          return await Task.FromResult(Ok(_associateProcessor.SaveAssociates(associates)));
+
+          var result = await _associateProcessor.SaveAssociates(associates);
+          return Ok(result);
         }
         
 

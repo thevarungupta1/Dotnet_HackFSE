@@ -10,24 +10,19 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Reporting.Test.Controllers
 {
     public class AssociateControllerTest
     {
-        //private readonly Mock<ILogger<AssociateController>> _loggerMock;
-        //private readonly ILogger<AssociateController> _logger;
         private readonly IEnumerable<Associate> _associates;
         private readonly Mock<IAssociateProcessor> _associateProcessorMock;
-        private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Associate _associate;
 
         public AssociateControllerTest()
         {
-            //_loggerMock = new Mock<ILogger<AssociateController>>();
-            //_logger = _logger.Object;
-            _unitOfWorkMock = new Mock<IUnitOfWork>();
             _associates = new List<Associate>
             {
                  new Associate(),
@@ -35,53 +30,88 @@ namespace Reporting.Test.Controllers
             };               
         }
         [Fact]
-        public void TestGetAssociates_IsNotNull()
+        public async Task Get_WhenAssociatesFound_ShouldReturnAllAssociates()
         {
             //Arrange
             //var mockId = It.IsAny<int?>();
-            _unitOfWorkMock.Setup(repo => repo.Associates.GetAll()).Returns(_associates);
-            var processor = new AssociateProcessor(_unitOfWorkMock.Object);
-            var controller = new AssociateController(processor);
+            var processor = new Mock<IAssociateProcessor>();
+            processor.Setup(p => p.GetAll()).ReturnsAsync(_associates);
+            var controller = new AssociateController(processor.Object);
 
             //Act
-            var response = controller.Get();
+            var response = await controller.Get();
 
             //Assert
             Assert.NotNull(response);
         }
 
         [Fact]
-        public void TestGetAssociates_IsNull()
+        public async Task Get_WhenNoAssociatesFound_ShourReturnEmptyList()
         {
             //Arrange
             //var mockId = It.IsAny<int?>();
-            _unitOfWorkMock.Setup(repo => repo.Associates.GetAll()).Throws(null);
-            var processor = new AssociateProcessor(_unitOfWorkMock.Object);
-            var controller = new AssociateController(processor);
+            //_unitOfWorkMock.Setup(repo => repo.Associates.GetAll()).Throws(null);
+            var processor = new Mock<IAssociateProcessor>();
+            processor.Setup(p => p.GetAll()).ReturnsAsync(new List<Associate>());
+            var controller = new AssociateController(processor.Object);
 
             //Act
-            var response = new ContentResult { StatusCode = (int)HttpStatusCode.NoContent };
+            var response = await controller.Get();
 
             //Assert
-            var contentResult = Assert.IsType<ContentResult>(response);
-            Assert.Null(contentResult.Content);
+            var okResult = Assert.IsType<OkObjectResult>(response);
+            var returnValue = Assert.IsType<List<Associate>>(okResult.Value);
+            Assert.Empty(returnValue);
         }
 
         [Fact]
-        public void TestGetAssociates_BadRequest()
+        public async Task Post_WhenSaveAssociatesSuccess_ShourReturnTrue()
         {
             //Arrange
-            //var mockId = It.IsAny<int?>();
-            _unitOfWorkMock.Setup(repo => repo.Associates.GetAll()).Throws(new NullReferenceException());
-            var processor = new AssociateProcessor(_unitOfWorkMock.Object);
-            var controller = new AssociateController(processor);
+            var processor = new Mock<IAssociateProcessor>();
+            processor.Setup(p => p.SaveAssociates(_associates)).ReturnsAsync(true);
+            var controller = new AssociateController(processor.Object);
 
             //Act
-            var response = controller.Get();
+            var response = await controller.Post(_associates);
 
             //Assert
-            var badRequestResult = Assert.IsType<BadRequestResult>(response);
-            Assert.Equal(400, badRequestResult.StatusCode);
+            var okResult = Assert.IsType<OkObjectResult>(response);
+            var returnValue = Assert.IsType<bool>(okResult.Value);
+            //var idea = returnValue.FirstOrDefault();
+            Assert.True(returnValue);
+        }
+
+        [Fact]
+        public async Task Post_WhenSaveAssociatesFailed_ShourReturnFalse()
+        {
+            //Arrange
+            var processor = new Mock<IAssociateProcessor>();
+            processor.Setup(p => p.SaveAssociates(_associates)).ReturnsAsync(false);
+            var controller = new AssociateController(processor.Object);
+
+            //Act
+            var response = await controller.Post(_associates);
+
+            //Assert
+            var okResult = Assert.IsType<OkObjectResult>(response);
+            var returnValue = Assert.IsType<bool>(okResult.Value);
+            //var idea = returnValue.FirstOrDefault();
+            Assert.False(returnValue);
+        }
+
+        [Fact]
+        public async Task Post_WhenAssociatesListIsEmpty_ShourReturnBadRequest()
+        {
+            //Arrange
+            var processor = new Mock<IAssociateProcessor>();
+            var controller = new AssociateController(processor.Object);
+
+            //Act
+            var response = await controller.Post(null);
+
+            //Assert
+            Assert.IsType<BadRequestResult>(response);
         }
 
     }

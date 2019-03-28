@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Outreach.Reporting.Data.Repository
 {
@@ -20,9 +21,9 @@ namespace Outreach.Reporting.Data.Repository
             get { return Context as ReportDBContext; }
         }
 
-        public IEnumerable<Associate> GetAssociatesRelatedData()
+        public async Task<IEnumerable<Associate>> GetAssociatesRelatedData()
         {
-            return ReportContext.Associates.ToList();
+            return await ReportContext.Associates.ToListAsync();
         }
     }
 }

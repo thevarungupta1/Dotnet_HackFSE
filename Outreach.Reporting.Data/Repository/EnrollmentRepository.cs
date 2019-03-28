@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Outreach.Reporting.Data.Repository
 {
@@ -20,14 +21,15 @@ namespace Outreach.Reporting.Data.Repository
             get { return Context as ReportDBContext; }
         }
 
-        public IEnumerable<Enrollment> GetEnrolledAssociates()
+        public async Task<IEnumerable<Enrollment>> GetEnrolledAssociates()
         {
-            return ReportContext.Enrollments
+            var enrollments = await ReportContext.Enrollments
                                             .Include(e => e.Events)
-                                            .Include(a => a.Associates).ToList();
+                                            .Include(a => a.Associates).ToListAsync();
+            return enrollments;
         }
 
-        public IEnumerable<Associate> GetTopFrequentVolunteers(int count)
+        public  async Task<IEnumerable<Associate>> GetTopFrequentVolunteers(int count)
         {
             var enrollments = ReportContext.Enrollments
                                     .Include(a => a.Associates);
@@ -38,14 +40,14 @@ namespace Outreach.Reporting.Data.Repository
                                             enrollments = group
                                          })
                                          .OrderByDescending(x => x.enrollments.Count()).Take(count);
-            return groupedData.SelectMany(group => group.enrollments.Select(s=> s.Associates)).ToList();
+            return await groupedData.SelectMany(group => group.enrollments.Select(s=> s.Associates)).ToListAsync();
 
         }
 
-        public IEnumerable<Enrollment> GetYearlyVolunteersCount(int yearsCount=100)
+        public async Task<IEnumerable<Enrollment>> GetYearlyVolunteersCount(int yearsCount=100)
         {
-            var enrollments = ReportContext.Enrollments
-                                    .Include(a => a.Associates);
+            var enrollments = await ReportContext.Enrollments
+                                    .Include(a => a.Associates).ToListAsync();
 
             var groupedData = enrollments.GroupBy(enroll => enroll.EventDate)
             //.Select(group => group);
@@ -59,35 +61,35 @@ namespace Outreach.Reporting.Data.Repository
             return groupedData.SelectMany(group => group.enrollments.Select(s=> s));
         }
 
-        public IQueryable<Enrollment> GetEnrollments()
+        public async Task<IEnumerable<Enrollment>> GetEnrollments()
         {
-            var enrollments = ReportContext.Enrollments
-                                    .Include(a => a.Associates);
+            var enrollments = await ReportContext.Enrollments
+                                    .Include(a => a.Associates).ToListAsync();
 
             return enrollments;//.SelectMany(group => group.enrollments.Select(s=> s));
         }
 
-        public IQueryable<Enrollment> GetEnrollmentsByYears(int yearFrom)
+        public async Task<IEnumerable<Enrollment>> GetEnrollmentsByYears(int yearFrom)
         {
-            var enrollments = ReportContext.Enrollments.Where(x => x.EventDate.Year > yearFrom);
+            var enrollments = await ReportContext.Enrollments.Where(x => x.EventDate.Year > yearFrom).ToListAsync();
 
             return enrollments;
         }
 
-        public IEnumerable<string> GetBusinessUnits()
+        public async Task<IEnumerable<string>> GetBusinessUnits()
         {
-            return ReportContext.Enrollments.Select(s => s.BusinessUnit).Distinct().ToList();
+            return await ReportContext.Enrollments.Select(s => s.BusinessUnit).Distinct().ToListAsync();
         }
-        public IEnumerable<string> GetBaseLocations()
+        public async Task<IEnumerable<string>> GetBaseLocations()
         {
-            return ReportContext.Enrollments.Select(s => s.BaseLocation).Distinct().ToList();
+            return await ReportContext.Enrollments.Select(s => s.BaseLocation).Distinct().ToListAsync();
         }
 
-        public IQueryable<Enrollment> GetEnrollmentsWithRelatedTable()
+        public async Task<IEnumerable<Enrollment>> GetEnrollmentsWithRelatedTable()
         {
-            var enrollments = ReportContext.Enrollments
+            var enrollments = await ReportContext.Enrollments
                                     .Include(a => a.Associates)
-                                    .Include(e => e.Events);
+                                    .Include(e => e.Events).ToListAsync();
 
             return enrollments;//.SelectMany(group => group.enrollments.Select(s=> s));
         }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Outreach.Reporting.Data.Repository
 {
@@ -27,6 +28,11 @@ namespace Outreach.Reporting.Data.Repository
             return Context.Set<TEntity>().ToList();
         }
 
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            return await Context.Set<TEntity>().ToListAsync();
+        }
+
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
             return Context.Set<TEntity>().Where(predicate);
@@ -41,7 +47,13 @@ namespace Outreach.Reporting.Data.Repository
         {
             Context.Set<TEntity>().AddRange(entities);
         }
-                
+
+        public async Task<bool> AddRangeAsync(IEnumerable<TEntity> entities)
+        {
+           await Context.Set<TEntity>().AddRangeAsync(entities);
+            return true;
+        }
+
         public void Remove(TEntity entity)
         {
             Context.Set<TEntity>().Remove(entity);

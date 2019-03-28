@@ -16,9 +16,9 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public bool AuthenticateUser(int associateID)
+        public bool AuthenticateUser(int associateID, string email)
         {
-            var user = _unitOfWork.ApplicationUsers.Find(x => x.AssociateID == associateID).FirstOrDefault();
+            var user = _unitOfWork.ApplicationUsers.Find(x => x.AssociateID == associateID && x.Email == email).FirstOrDefault();
             return user != null;
         }
 
@@ -35,9 +35,9 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public bool CheckPocById(int userId)
+        public bool CheckPocById(int userId, string email)
         {
-            var poc = _unitOfWork.PointOfContacts.Find(x => x.AssociateID == userId).FirstOrDefault();
+            var poc = _unitOfWork.PointOfContacts.Find(x => x.AssociateID == userId && x.Email == email).FirstOrDefault();
             return poc != null;
         }
     }
