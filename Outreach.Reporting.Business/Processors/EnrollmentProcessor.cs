@@ -131,7 +131,8 @@ namespace Outreach.Reporting.Business.Processors
                     int userId = Convert.ToInt32(user["userId"]);
                     eventIds = await GetEventIdsByUserId(userId);
                 }
-                return await _unitOfWork.Enrollments.GetTopFrequentVolunteers(count);
+                var result = await _unitOfWork.Enrollments.GetTopFrequentVolunteers(count);   
+                   return result.Where(x => eventIds == null || eventIds.Contains(x.EventID)).Select(s => s.Associates).ToList();
             }
             catch (Exception ex)
             {

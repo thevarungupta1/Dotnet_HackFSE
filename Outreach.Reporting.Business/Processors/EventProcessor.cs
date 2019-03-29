@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Outreach.Reporting.Business.Processors
 {
@@ -16,7 +17,7 @@ namespace Outreach.Reporting.Business.Processors
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Event> GetAll(IDictionary<string, string> user)
+        public async Task<IEnumerable<Event>> GetAll(IDictionary<string, string> user)
         {
             try
             {
@@ -24,9 +25,10 @@ namespace Outreach.Reporting.Business.Processors
                 if (user != null && user["role"] == "POC")
                 {
                     int userId = Convert.ToInt32(user["userId"]);
-                    eventIds = GetEventIdsByUserId(userId);
+                    eventIds = await GetEventIdsByUserId(userId);
                 }
-                var events = _unitOfWork.Events.GetAll().Where(x => eventIds == null || eventIds.Contains(x.ID));
+                var tmpevents = await _unitOfWork.Events.GetAllAsync();
+                 var events = tmpevents.Where(x => eventIds == null || eventIds.Contains(x.ID));
                 foreach (var even in events)
                 {
                     even.Date = even.Date.Date;
@@ -38,7 +40,7 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public IEnumerable<Event> GetEventsRelatedData(IDictionary<string, string> user)
+        public async Task<IEnumerable<Event>> GetEventsRelatedData(IDictionary<string, string> user)
         {
             try
             {
@@ -46,9 +48,10 @@ namespace Outreach.Reporting.Business.Processors
                 if (user != null && user["role"] == "POC")
                 {
                     int userId = Convert.ToInt32(user["userId"]);
-                    eventIds = GetEventIdsByUserId(userId);
+                    eventIds = await GetEventIdsByUserId(userId);
                 }
-                return _unitOfWork.Events.GetEventsRelatedData().Where(x => eventIds == null || eventIds.Contains(x.ID));
+                var result = await _unitOfWork.Events.GetEventsRelatedData();
+                return result.Where(x => eventIds == null || eventIds.Contains(x.ID));
             }
             catch (Exception ex)
             {
@@ -56,7 +59,7 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public IEnumerable<Event> GetRecentEvents(IDictionary<string, string> user, int recentCount)
+        public async Task<IEnumerable<Event>> GetRecentEvents(IDictionary<string, string> user, int recentCount)
         {
             try
             {
@@ -64,9 +67,10 @@ namespace Outreach.Reporting.Business.Processors
                 if (user != null && user["role"] == "POC")
                 {
                     int userId = Convert.ToInt32(user["userId"]);
-                    eventIds = GetEventIdsByUserId(userId);
+                    eventIds = await GetEventIdsByUserId(userId);
                 }
-                return _unitOfWork.Events.GetAll().Where(x => eventIds == null || eventIds.Contains(x.ID)).OrderByDescending(o => o.Date).Take(recentCount).ToList();
+                var result = await _unitOfWork.Events.GetAllAsync();
+                return result.Where(x => eventIds == null || eventIds.Contains(x.ID)).OrderByDescending(o => o.Date).Take(recentCount);
             }
             catch (Exception ex)
             {
@@ -74,25 +78,26 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public bool SaveEvents(IEnumerable<Event> events)
+        public async Task<bool> SaveEvents(IEnumerable<Event> events)
         {
             foreach (var row in events)
             {
                 row.CreatedOn = DateTime.Now;
             }
-            _unitOfWork.Events.AddRange(events);
+            await _unitOfWork.Events.AddRangeAsync(events);
             _unitOfWork.Complete();
             return true;
         }
 
-        private List<string> GetEventIdsByUserId(int userId)
+        private async Task<List<string>> GetEventIdsByUserId(int userId)
         {
             List<string> eventIds = null;
             try
             {
                 if (userId == 0)
                     return null;
-                var result = _unitOfWork.PointOfContacts.GetAll().Where(x => x.AssociateID == userId).Select(s => s.EventIDs).ToList();
+                var tmpresult = await _unitOfWork.PointOfContacts.GetAllAsync();
+                var result = tmpresult.Where(x => x.AssociateID == userId).Select(s => s.EventIDs);
                 if (result != null && result.Any())
                 {
                     eventIds = new List<string>();
@@ -109,11 +114,12 @@ namespace Outreach.Reporting.Business.Processors
             return eventIds;
         }
 
-        public IEnumerable<string> GetAllFocusArea()
+        public async Task<IEnumerable<string>> GetAllFocusArea()
         {
             try
             {
-                return _unitOfWork.Events.GetAll().Select(s => s.Project + " - " + s.Category).Distinct().ToList();
+                var result = await _unitOfWork.Events.GetAllAsync();
+                return result.Select(s => s.Project + " - " + s.Category).Distinct();
             }
             catch (Exception ex)
             {

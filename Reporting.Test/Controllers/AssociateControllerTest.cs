@@ -19,10 +19,10 @@ namespace Reporting.Test.Controllers
     {
         private readonly IEnumerable<Associate> _associates;
         private readonly Mock<IAssociateProcessor> _associateProcessorMock;
-        private readonly Associate _associate;
 
         public AssociateControllerTest()
         {
+            _associateProcessorMock = new Mock<IAssociateProcessor>();
             _associates = new List<Associate>
             {
                  new Associate(),
@@ -34,15 +34,16 @@ namespace Reporting.Test.Controllers
         {
             //Arrange
             //var mockId = It.IsAny<int?>();
-            var processor = new Mock<IAssociateProcessor>();
-            processor.Setup(p => p.GetAll()).ReturnsAsync(_associates);
-            var controller = new AssociateController(processor.Object);
+            _associateProcessorMock.Setup(p => p.GetAll()).ReturnsAsync(_associates);
+            var controller = new AssociateController(_associateProcessorMock.Object);
 
             //Act
             var response = await controller.Get();
 
             //Assert
-            Assert.NotNull(response);
+            var okResult = Assert.IsType<OkObjectResult>(response);
+            var returnValue = Assert.IsType<List<Associate>>(okResult.Value);
+            Assert.NotEmpty(returnValue);
         }
 
         [Fact]
@@ -51,9 +52,8 @@ namespace Reporting.Test.Controllers
             //Arrange
             //var mockId = It.IsAny<int?>();
             //_unitOfWorkMock.Setup(repo => repo.Associates.GetAll()).Throws(null);
-            var processor = new Mock<IAssociateProcessor>();
-            processor.Setup(p => p.GetAll()).ReturnsAsync(new List<Associate>());
-            var controller = new AssociateController(processor.Object);
+            _associateProcessorMock.Setup(p => p.GetAll()).ReturnsAsync(new List<Associate>());
+            var controller = new AssociateController(_associateProcessorMock.Object);
 
             //Act
             var response = await controller.Get();
@@ -68,9 +68,8 @@ namespace Reporting.Test.Controllers
         public async Task Post_WhenSaveAssociatesSuccess_ShourReturnTrue()
         {
             //Arrange
-            var processor = new Mock<IAssociateProcessor>();
-            processor.Setup(p => p.SaveAssociates(_associates)).ReturnsAsync(true);
-            var controller = new AssociateController(processor.Object);
+            _associateProcessorMock.Setup(p => p.SaveAssociates(_associates)).ReturnsAsync(true);
+            var controller = new AssociateController(_associateProcessorMock.Object);
 
             //Act
             var response = await controller.Post(_associates);
@@ -86,9 +85,8 @@ namespace Reporting.Test.Controllers
         public async Task Post_WhenSaveAssociatesFailed_ShourReturnFalse()
         {
             //Arrange
-            var processor = new Mock<IAssociateProcessor>();
-            processor.Setup(p => p.SaveAssociates(_associates)).ReturnsAsync(false);
-            var controller = new AssociateController(processor.Object);
+            _associateProcessorMock.Setup(p => p.SaveAssociates(_associates)).ReturnsAsync(false);
+            var controller = new AssociateController(_associateProcessorMock.Object);
 
             //Act
             var response = await controller.Post(_associates);
@@ -104,8 +102,7 @@ namespace Reporting.Test.Controllers
         public async Task Post_WhenAssociatesListIsEmpty_ShourReturnBadRequest()
         {
             //Arrange
-            var processor = new Mock<IAssociateProcessor>();
-            var controller = new AssociateController(processor.Object);
+            var controller = new AssociateController(_associateProcessorMock.Object);
 
             //Act
             var response = await controller.Post(null);

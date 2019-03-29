@@ -14,7 +14,7 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(Roles = "Admin, PMO, POC")]
+    [Authorize(Roles = "Admin, PMO, POC")]
     public class EventController : ControllerBase
     {
         private readonly IEventProcessor _eventProcessor;
@@ -25,19 +25,19 @@ namespace Outreach.Reporting.Service.Controllers
         }
         // GET api/AllEvents
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Event>>> Get()
+        public async Task<IActionResult> Get()
         {
             var user = GetCurrentUser();
-            return await Task.FromResult(Ok(_eventProcessor.GetAll(user)));
+            return Ok(await _eventProcessor.GetAll(user));
         }
 
         // GET api/GetWithRelatedData
         [HttpGet]
         [Route("GetWithRelatedData")]
-        public async Task<ActionResult<IEnumerable<Enrollment>>> GetWithRelatedData()
+        public async Task<IActionResult> GetWithRelatedData()
         {
             var user = GetCurrentUser();
-            return await Task.FromResult(Ok(_eventProcessor.GetEventsRelatedData(user)));
+            return Ok(await _eventProcessor.GetEventsRelatedData(user));
         }
         
         // GET api/GetWithRelatedData
@@ -46,7 +46,7 @@ namespace Outreach.Reporting.Service.Controllers
         public async Task<IActionResult> GetRecentEvents(int recentCount)
         {
             var user = GetCurrentUser();
-            return await Task.FromResult(Ok(_eventProcessor.GetRecentEvents(user, recentCount)));
+            return Ok(await _eventProcessor.GetRecentEvents(user, recentCount));
         }
 
         // POST api/values
@@ -55,14 +55,14 @@ namespace Outreach.Reporting.Service.Controllers
         {
             if(events == null)
                 return BadRequest();
-            return await Task.FromResult(Ok(_eventProcessor.SaveEvents(events)));
+            return Ok(await _eventProcessor.SaveEvents(events));
         }
                
         [HttpGet]
         [Route("GetAllFocusArea")]
-        public async Task<ActionResult<IEnumerable<string>>> GetAllFocusArea()
+        public async Task<IActionResult> GetAllFocusArea()
         {
-            return await Task.FromResult(Ok(_eventProcessor.GetAllFocusArea()));
+            return Ok(await _eventProcessor.GetAllFocusArea());
         }
 
         private IDictionary<string, string> GetCurrentUser()
@@ -70,7 +70,7 @@ namespace Outreach.Reporting.Service.Controllers
             IDictionary<string, string> dict = null;
             try
             {
-                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                var identity = HttpContext?.User.Identity as ClaimsIdentity;
                 if (identity != null)
                 {
                     dict = new Dictionary<string, string>();

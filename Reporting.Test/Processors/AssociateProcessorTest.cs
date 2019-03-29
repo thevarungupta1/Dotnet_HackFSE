@@ -5,6 +5,7 @@ using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Reporting.Test.Processors
@@ -25,50 +26,36 @@ namespace Reporting.Test.Processors
         }
 
         [Fact]
-        public void GetAll()
+        public async Task GetAll_WhenAssociatesFound_ShouldReturnAllAssociates()
         {
             //Arrange
-            _repository.Setup(r => r.Associates.GetAll()).Returns(_associates);
+            //var mockId = It.IsAny<int?>();
+            _repository.Setup(p => p.Associates.GetAllAsync()).ReturnsAsync(_associates);
             var processor = new AssociateProcessor(_repository.Object);
 
             //Act
-            var output = processor.GetAll();
+            var response = await processor.GetAll();
 
             //Assert
-            Assert.NotNull(output);
-            _repository.VerifyAll();
-            Assert.NotNull(output);
+            var returnValue = Assert.IsType<List<Associate>>(response);
+            Assert.NotEmpty(returnValue);
         }
 
         [Fact]
-        public void GetAll_Null_InvalidObject()
+        public async Task SaveAssociates_WhenSaveAssociates_ShouldReturnTrue()
         {
             //Arrange
-            List<Associate> lstAssociates = null;
-            _repository.Setup(r => r.Associates.GetAll()).Returns(lstAssociates);
+            //var mockId = It.IsAny<int?>();
+            _repository.Setup(p => p.Associates.AddRangeAsync(_associates)).ReturnsAsync(true);
+            _repository.Setup(p => p.Complete()).Returns(1);
             var processor = new AssociateProcessor(_repository.Object);
 
             //Act
-            var output = processor.GetAll();
+            var response = await processor.SaveAssociates(_associates);
 
             //Assert
-            Assert.Null(output);
-            _repository.VerifyAll();
-        }
-
-        [Fact]
-        public void GetAll_ThrowsException()
-        {
-            //Arrange
-            _repository.Setup(r => r.Associates.GetAll()).Throws(new Exception());
-            var processor = new AssociateProcessor(_repository.Object);
-
-            //Act
-            //var exception = Record.Exception(() => processor.GetAll());
-
-            //Assert
-            //Assert.IsType<Exception>(exception);
-            //Assert.Equal("Exception of type 'System.Exception' was thrown.", exception.Message);
+            var returnValue = Assert.IsType<bool>(response);
+            Assert.True(returnValue);
         }
     }
 }

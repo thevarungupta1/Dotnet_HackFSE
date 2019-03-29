@@ -187,7 +187,7 @@ namespace Outreach.Reporting.Service.Controllers
             IDictionary<string, string> dict = null;            
             try
             {
-                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                var identity = HttpContext?.User.Identity as ClaimsIdentity;
                 if (identity != null)
                 {
                     dict = new Dictionary<string, string>();

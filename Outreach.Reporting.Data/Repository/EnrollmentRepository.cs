@@ -29,10 +29,10 @@ namespace Outreach.Reporting.Data.Repository
             return enrollments;
         }
 
-        public  async Task<IEnumerable<Associate>> GetTopFrequentVolunteers(int count)
+        public async Task<IEnumerable<Enrollment>> GetTopFrequentVolunteers(int count)
         {
-            var enrollments = ReportContext.Enrollments
-                                    .Include(a => a.Associates);
+            var enrollments = await ReportContext.Enrollments
+                                    .Include(a => a.Associates).ToListAsync();
 
             var groupedData = enrollments.GroupBy(enroll => enroll.AssociateID)
                                          .Select(group => new
@@ -40,8 +40,7 @@ namespace Outreach.Reporting.Data.Repository
                                             enrollments = group
                                          })
                                          .OrderByDescending(x => x.enrollments.Count()).Take(count);
-            return await groupedData.SelectMany(group => group.enrollments.Select(s=> s.Associates)).ToListAsync();
-
+            return groupedData.SelectMany(group => group.enrollments);
         }
 
         public async Task<IEnumerable<Enrollment>> GetYearlyVolunteersCount(int yearsCount=100)

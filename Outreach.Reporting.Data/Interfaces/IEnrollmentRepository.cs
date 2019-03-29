@@ -10,7 +10,7 @@ namespace Outreach.Reporting.Data.Interfaces
     public interface IEnrollmentRepository : IRepository<Enrollment>
     {
         Task<IEnumerable<Enrollment>> GetEnrolledAssociates();
-        Task<IEnumerable<Associate>> GetTopFrequentVolunteers(int count);
+        Task<IEnumerable<Enrollment>> GetTopFrequentVolunteers(int count);
         Task<IEnumerable<Enrollment>> GetYearlyVolunteersCount(int yearsCount);
         Task<IEnumerable<Enrollment>> GetEnrollments();
         Task<IEnumerable<Enrollment>> GetEnrollmentsByYears(int yearFrom);

@@ -65,7 +65,7 @@ namespace Outreach.Reporting.Service.Controllers
         [Route("ReadExcel")]
         public async Task<IActionResult> ReadExcelFromPath([FromBody]string filePath)
         {
-            if(!string.IsNullOrEmpty(filePath))
+            if(string.IsNullOrEmpty(filePath))
                 return BadRequest();
             return await Task.FromResult(Ok(_fileProcessor.ReadExcelFile(filePath)));
         }
