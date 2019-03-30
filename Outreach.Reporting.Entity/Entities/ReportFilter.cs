@@ -15,5 +15,6 @@ namespace Outreach.Reporting.Entity.Entities
         public string FocusAreas { get; set; }
         public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }
+        //public DateTime CreatedOn { get; set; }
     }
 }

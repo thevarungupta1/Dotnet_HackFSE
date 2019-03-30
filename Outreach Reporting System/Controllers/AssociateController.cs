@@ -35,7 +35,7 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] IEnumerable<Associate> associates)
+        public async Task<IActionResult> Post([FromBody] List<Associate> associates)
         {
             if (associates == null)
                 return BadRequest();

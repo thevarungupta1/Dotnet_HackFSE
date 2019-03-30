@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Outreach.Reporting.Business.Processors
 {
@@ -27,13 +28,14 @@ namespace Outreach.Reporting.Business.Processors
                 return null;
             }
         }
-        public async Task<bool> SaveAssociates(IEnumerable<Associate> associates)
+        public async Task<bool> SaveAssociates(List<Associate> associates)
         {
             try
             {
-                foreach (var row in associates)
+                var data = _unitOfWork.Associates.GetAll();
+                foreach(var associate in data)
                 {
-                    row.CreatedOn = DateTime.Now;
+                    associates.RemoveAll(a => a.ID == associate.ID);
                 }
                 await _unitOfWork.Associates.AddRangeAsync(associates);
                  _unitOfWork.Complete();

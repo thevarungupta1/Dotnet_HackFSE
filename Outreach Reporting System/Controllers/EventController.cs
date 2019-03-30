@@ -51,7 +51,7 @@ namespace Outreach.Reporting.Service.Controllers
 
         // POST api/values
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] IEnumerable<Event> events)
+        public async Task<IActionResult> Post([FromBody] List<Event> events)
         {
             if(events == null)
                 return BadRequest();

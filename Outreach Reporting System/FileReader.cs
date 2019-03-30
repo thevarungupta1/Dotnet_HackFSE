@@ -19,11 +19,17 @@ namespace Outreach_Reporting_System
         {
             try
             {
-                HttpResponseMessage response = await client.PostAsJsonAsync(
-               "api/File/ReadExcel", filePath);
-                response.EnsureSuccessStatusCode();
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://localhost:49552/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                return response.IsSuccessStatusCode;
+                    HttpResponseMessage response = await client.PostAsJsonAsync("api/File/ReadExcel", filePath);
+                    response.EnsureSuccessStatusCode();
+                    return response.IsSuccessStatusCode;
+                }              
+                
             }
             catch(Exception ex)
             {
@@ -33,27 +39,8 @@ namespace Outreach_Reporting_System
 
         public static void SendFilePath(string filePath)
         {
-            RunAsync(filePath).GetAwaiter().GetResult();
+            SendFilePathAsync(filePath).GetAwaiter().GetResult();
         }
-      
-        static async Task RunAsync(string filePath)
-        {
-            // Update port # in the following line.
-            client.BaseAddress = new Uri("http://localhost:49552/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-
-            try
-            {
-                var url = await SendFilePathAsync(filePath);
-                var test = url;
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-              
+                    
     }
 }

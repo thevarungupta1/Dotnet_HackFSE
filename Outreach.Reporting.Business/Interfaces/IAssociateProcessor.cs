@@ -8,7 +8,7 @@ namespace Outreach.Reporting.Business.Interfaces
 {
     public interface IAssociateProcessor
     {
-        Task<bool> SaveAssociates(IEnumerable<Associate> associates);
+        Task<bool> SaveAssociates(List<Associate> associates);
         Task<IEnumerable<Associate>> GetAll();
     }
 }

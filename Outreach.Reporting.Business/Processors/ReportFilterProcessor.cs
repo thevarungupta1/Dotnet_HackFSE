@@ -31,8 +31,8 @@ namespace Outreach.Reporting.Business.Processors
         {
             try
             {
-                // filter.CreatedOn = DateTime.Now;
-
+                 //filter.CreatedOn = DateTime.Now;
+                filter.AssociateID = userId;
                 _unitOfWork.ReportFilter.Add(filter);
                 _unitOfWork.Complete();
             }

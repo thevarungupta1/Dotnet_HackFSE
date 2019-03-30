@@ -78,8 +78,13 @@ namespace Outreach.Reporting.Business.Processors
             }
         }
 
-        public async Task<bool> SaveEvents(IEnumerable<Event> events)
+        public async Task<bool> SaveEvents(List<Event> events)
         {
+            var data = _unitOfWork.Events.GetAll();
+            foreach (var ev in data)
+            {
+                events.RemoveAll(a => a.ID == ev.ID);
+            }
             foreach (var row in events)
             {
                 row.CreatedOn = DateTime.Now;
