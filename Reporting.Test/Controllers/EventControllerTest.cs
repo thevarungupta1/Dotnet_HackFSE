@@ -14,12 +14,18 @@ namespace UnitTest.Controllers
     public class EventControllerTest
     {
         private readonly IEnumerable<Event> _events;
+        private readonly List<Event> _eventList;
         private readonly Mock<IEventProcessor> _eventProcessorMock;
 
         public EventControllerTest()
         {
             _eventProcessorMock = new Mock<IEventProcessor>();
             _events = new List<Event>
+            {
+                 new Event(),
+                  new Event()
+            };
+            _eventList = new List<Event>
             {
                  new Event(),
                   new Event()
@@ -78,11 +84,11 @@ namespace UnitTest.Controllers
         public async Task Post_WhenSaveValidEvents_ShouldReturnSaveSuccessTrue()
         {
             //Arrange
-            _eventProcessorMock.Setup(p => p.SaveEvents(_events)).ReturnsAsync(true);
+            _eventProcessorMock.Setup(p => p.SaveEvents(_eventList)).ReturnsAsync(true);
             var controller = new EventController(_eventProcessorMock.Object);
 
             //Act
-            var response = await controller.Post(_events);
+            var response = await controller.Post(_eventList);
 
             //Assert
             var okResult = Assert.IsType<OkObjectResult>(response);

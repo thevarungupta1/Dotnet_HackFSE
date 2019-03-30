@@ -14,11 +14,17 @@ namespace UnitTest.Processors
     {
         private readonly Mock<IUnitOfWork> _repository;
         private readonly IEnumerable<Event> _events;
+        private readonly List<Event> _eventList;
 
         public EventProcessorTest()
         {
             _repository = new Mock<IUnitOfWork>();
             _events = new List<Event>
+            {
+                 new Event(),
+                 new Event()
+            };
+            _eventList = new List<Event>
             {
                  new Event(),
                  new Event()
@@ -76,7 +82,7 @@ namespace UnitTest.Processors
             var processor = new EventProcessor(_repository.Object);
 
             //Act
-            var response = await processor.SaveEvents(_events);
+            var response = await processor.SaveEvents(_eventList);
 
             //Assert
             var returnValue = Assert.IsType<bool>(response);

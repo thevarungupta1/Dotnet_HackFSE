@@ -14,11 +14,18 @@ namespace Reporting.Test.Processors
     {
         private readonly Mock<IUnitOfWork> _repository;
         private readonly IEnumerable<Associate> _associates;
+        private readonly List<Associate> _associateList;
 
         public AssociateProcessorTest()
         {
             _repository = new Mock<IUnitOfWork>();
             _associates = new List<Associate>
+            {
+                 new Associate(),
+                 new Associate()
+            };
+
+            _associateList = new List<Associate>
             {
                  new Associate(),
                  new Associate()
@@ -51,7 +58,7 @@ namespace Reporting.Test.Processors
             var processor = new AssociateProcessor(_repository.Object);
 
             //Act
-            var response = await processor.SaveAssociates(_associates);
+            var response = await processor.SaveAssociates(_associateList);
 
             //Assert
             var returnValue = Assert.IsType<bool>(response);

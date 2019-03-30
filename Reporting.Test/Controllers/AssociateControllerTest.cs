@@ -18,12 +18,18 @@ namespace Reporting.Test.Controllers
     public class AssociateControllerTest
     {
         private readonly IEnumerable<Associate> _associates;
+        private readonly List<Associate> _associateList;
         private readonly Mock<IAssociateProcessor> _associateProcessorMock;
 
         public AssociateControllerTest()
         {
             _associateProcessorMock = new Mock<IAssociateProcessor>();
             _associates = new List<Associate>
+            {
+                 new Associate(),
+                 new Associate()
+            };
+            _associateList = new List<Associate>
             {
                  new Associate(),
                  new Associate()
@@ -68,11 +74,11 @@ namespace Reporting.Test.Controllers
         public async Task Post_WhenSaveAssociatesSuccess_ShourReturnTrue()
         {
             //Arrange
-            _associateProcessorMock.Setup(p => p.SaveAssociates(_associates)).ReturnsAsync(true);
+            _associateProcessorMock.Setup(p => p.SaveAssociates(_associateList)).ReturnsAsync(true);
             var controller = new AssociateController(_associateProcessorMock.Object);
 
             //Act
-            var response = await controller.Post(_associates);
+            var response = await controller.Post(_associateList);
 
             //Assert
             var okResult = Assert.IsType<OkObjectResult>(response);
@@ -85,11 +91,11 @@ namespace Reporting.Test.Controllers
         public async Task Post_WhenSaveAssociatesFailed_ShourReturnFalse()
         {
             //Arrange
-            _associateProcessorMock.Setup(p => p.SaveAssociates(_associates)).ReturnsAsync(false);
+            _associateProcessorMock.Setup(p => p.SaveAssociates(_associateList)).ReturnsAsync(false);
             var controller = new AssociateController(_associateProcessorMock.Object);
 
             //Act
-            var response = await controller.Post(_associates);
+            var response = await controller.Post(_associateList);
 
             //Assert
             var okResult = Assert.IsType<OkObjectResult>(response);
