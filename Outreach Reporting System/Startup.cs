@@ -22,6 +22,7 @@ using Outreach.Reporting.Business.Processors;
 using Outreach.Reporting.Data.Entities;
 using Outreach.Reporting.Data.Interfaces;
 using Outreach.Reporting.Data.Repository;
+using Outreach_Reporting_System.CustomFilters;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Outreach_Reporting_System
@@ -48,7 +49,15 @@ namespace Outreach_Reporting_System
             //    .AddEntityFrameworkStores<ReportContext>()
             //    .AddDefaultTokenProviders();
 
-            services.AddCors();
+            services.AddCors(options =>
+            {
+            options.AddPolicy("CorsPolicy",
+            builder => builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+                //.AllowCredentials());
+            });
+            services.AddMvc(config => { config.Filters.Add(typeof(CustomExceptionFilter)); });
 
             string securityKey = "this_is_our_super_long_security_key_for_outreach_reporting_system_project_2019_03_10$";
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
@@ -100,15 +109,20 @@ namespace Outreach_Reporting_System
             services.AddTransient<IFileProcessor, FileProcessor>();
             services.AddTransient<IReportFilterProcessor, ReportFilterProcessor>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<Microsoft.AspNetCore.Mvc.Filters.IExceptionFilter, CustomExceptionFilter>();
+
+            //ILoggerFactory logger = new LoggerFactory()
+            //.AddConsole(Configuration.GetSection("Logging"))
+            //.AddLog4Net();
+
+            //services.AddSingleton(logger).AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseCors(builder =>
-                builder.WithOrigins("http://localhost:4200")
-                    .AllowAnyHeader()
-                );
+            app.UseCors("CorsPolicy");
             //app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
 
             if (env.IsDevelopment())
