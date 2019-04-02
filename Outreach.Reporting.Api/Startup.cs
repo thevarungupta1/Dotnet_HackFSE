@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Business.Processors;
@@ -23,7 +12,7 @@ using Outreach.Reporting.Data.Entities;
 using Outreach.Reporting.Data.Interfaces;
 using Outreach.Reporting.Data.Repository;
 using Outreach_Reporting_System.CustomFilters;
-using Swashbuckle.AspNetCore.Swagger;
+using System.Text;
 
 namespace Outreach_Reporting_System
 {
@@ -51,10 +40,10 @@ namespace Outreach_Reporting_System
 
             services.AddCors(options =>
             {
-            options.AddPolicy("CorsPolicy",
-            builder => builder.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader());
+                options.AddPolicy("CorsPolicy",
+                builder => builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
                 //.AllowCredentials());
             });
             services.AddMvc(config => { config.Filters.Add(typeof(CustomExceptionFilter)); });

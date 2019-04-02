@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Mail;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Entity.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]

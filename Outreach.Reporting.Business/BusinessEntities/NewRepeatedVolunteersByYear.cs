@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Outreach.Reporting.Business.BusinessEntities
+﻿namespace Outreach.Reporting.Business.BusinessEntities
 {
     public class NewRepeatedVolunteersByYear
     {

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Outreach.Reporting.Business.Interfaces;
-using Outreach.Reporting.Entity.Entities;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Outreach.Reporting.Service.Controllers
 {
@@ -23,7 +18,7 @@ namespace Outreach.Reporting.Service.Controllers
         {
             _authProcessor = authProcessor;
         }
-
+       
         // POST api/GetToken/{email_id}
         [HttpPost]
         public IActionResult Authenticate(int id, string email)

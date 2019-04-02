@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Outreach.Reporting.Business.Processors
+﻿namespace Outreach.Reporting.Business.Processors
 {
     class ConfigurationProcessor
     {

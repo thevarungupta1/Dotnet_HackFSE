@@ -1,15 +1,9 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using Outreach.Reporting.Business.Interfaces;
-using Outreach.Reporting.Data.Entities;
+﻿using Outreach.Reporting.Business.Interfaces;
 using Outreach.Reporting.Data.Interfaces;
 using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.IO;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
 
 namespace Outreach.Reporting.Business.Processors
 {

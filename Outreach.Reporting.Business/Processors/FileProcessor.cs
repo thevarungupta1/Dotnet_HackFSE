@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Outreach.Reporting.Business.Interfaces;
+using Outreach.Reporting.Data.Interfaces;
+using Outreach.Reporting.Entity.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using Outreach.Reporting.Business.Interfaces;
-using Outreach.Reporting.Data.Interfaces;
-using Outreach.Reporting.Entity.Entities;
 
 namespace Outreach.Reporting.Business.Processors
 {

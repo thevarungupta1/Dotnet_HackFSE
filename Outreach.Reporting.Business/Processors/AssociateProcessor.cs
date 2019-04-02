@@ -3,9 +3,7 @@ using Outreach.Reporting.Data.Interfaces;
 using Outreach.Reporting.Entity.Entities;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace Outreach.Reporting.Business.Processors
 {

@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Outreach Reporting System\Outreach.Reporting.Service.csproj" />
+    <ProjectReference Include="..\Outreach.Reporting.Api\Outreach.Reporting.Api.csproj" />
     <ProjectReference Include="..\Outreach.Reporting.Data\Outreach.Reporting.Data.csproj" />
   </ItemGroup>
 

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Outreach.Reporting.Business.Processors;
 using Outreach.Reporting.Business.Interfaces;
-using Microsoft.Extensions.Logging;
 using Outreach.Reporting.Entity.Entities;
-using Microsoft.AspNetCore.Authorization;
-using System.Net.Mail;
-using System.Net;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Outreach.Reporting.Service.Controllers
 {
