@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LoadTest Name="LoadTest1" Description="" Owner="" storage="c:\users\administrator\desktop\project\back end\outreach reporting system\reporting.performance.test\loadtest1.loadtest" Priority="2147483647" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="Run Settings1" Id="34602fbb-3118-48a2-8a72-583f05b37c14" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+<LoadTest Name="LoadTest1" Description="" Owner="" storage="c:\users\administrator\desktop\projects\690784-hackathon-backend\reporting.performance.test\loadtest1.loadtest" Priority="2147483647" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="Run Settings1" Id="1758696d-9a0a-4521-a519-82633824dc33" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   <Scenarios>
     <Scenario Name="Scenario1" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="false" TestMixType="PercentageOfTestsStarted" ApplyDistributionToPacingDelay="true" MaxTestIterations="0" DisableDuringWarmup="false" DelayStartTime="0" AllowedAgents="">
       <ThinkProfile Value="0.2" Pattern="NormalDistribution" />
-      <LoadProfile Pattern="Constant" InitialUsers="25" />
+      <LoadProfile Pattern="Constant" InitialUsers="5" />
       <TestMix>
-        <TestProfile Name="WebTest1" Path="webtest1.webtest" Id="1235bc99-af1b-4340-9482-a839d6438d79" Percentage="100" Type="Microsoft.VisualStudio.TestTools.WebStress.DeclarativeWebTestElement, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="WebTest1" Path="webtest1.webtest" Id="515980e0-ad7f-4bad-8596-a906a2393302" Percentage="100" Type="Microsoft.VisualStudio.TestTools.WebStress.DeclarativeWebTestElement, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
       </TestMix>
       <BrowserMix>
         <BrowserProfile Percentage="100">
