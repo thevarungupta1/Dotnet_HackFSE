@@ -1,0 +1,24 @@
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.deps.json
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.deps.json
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.csproj.CopyComplete
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Entity\obj\Debug\netcoreapp2.2\Outreach.Reporting.Entity.pdb

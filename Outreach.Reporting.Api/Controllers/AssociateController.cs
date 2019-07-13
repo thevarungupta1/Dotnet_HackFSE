@@ -13,6 +13,7 @@ namespace Outreach.Reporting.Service.Controllers
     public class AssociateController : ControllerBase
     {
         private readonly IAssociateProcessor _associateProcessor;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(AssociateController));
 
         public AssociateController(IAssociateProcessor associateProcessor)
         {
@@ -22,6 +23,7 @@ namespace Outreach.Reporting.Service.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+            log.Info("Hello logging world!");
             var result = await _associateProcessor.GetAll();
             return Ok(result);
         }

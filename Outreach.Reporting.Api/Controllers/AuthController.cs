@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Outreach.Reporting.Business.Interfaces;
 using System;
@@ -11,9 +12,11 @@ namespace Outreach.Reporting.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class AuthController : ControllerBase
     {
         private readonly IAuthProcessor _authProcessor;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(AuthController));
         public AuthController(IAuthProcessor authProcessor)
         {
             _authProcessor = authProcessor;

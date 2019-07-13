@@ -13,6 +13,8 @@ namespace Outreach_Reporting_System.Controllers
     public class ReportFilterController : ControllerBase
     {
         private readonly IReportFilterProcessor _reportFilterProcessor;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(ReportFilterController));
+
         public ReportFilterController(IReportFilterProcessor reportFilterProcessor)
         {
             _reportFilterProcessor = reportFilterProcessor;

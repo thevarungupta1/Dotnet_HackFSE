@@ -15,6 +15,7 @@ namespace Outreach.Reporting.Service.Controllers
     public class EnrollmentController : ControllerBase
     {
         private readonly IEnrollmentProcessor _enrollmentProcessor;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(EnrollmentController));
         public EnrollmentController(IEnrollmentProcessor enrollmentProcessor)
         {
             _enrollmentProcessor = enrollmentProcessor;

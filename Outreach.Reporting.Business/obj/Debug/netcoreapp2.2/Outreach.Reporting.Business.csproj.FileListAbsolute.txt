@@ -1,0 +1,40 @@
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Business.deps.json
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Business.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Business.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Business.deps.json
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Business.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Business.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.csproj.CopyComplete
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Business\obj\Debug\netcoreapp2.2\Outreach.Reporting.Business.pdb

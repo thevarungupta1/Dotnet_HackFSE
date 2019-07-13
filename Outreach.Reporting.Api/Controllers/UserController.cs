@@ -12,7 +12,8 @@ namespace Outreach.Reporting.Service.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserProcessor _userProcessor;
-
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(UserController));
+        
         public UserController(IUserProcessor userProcessor)
         {
             _userProcessor = userProcessor;

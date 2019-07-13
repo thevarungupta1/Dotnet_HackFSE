@@ -14,6 +14,7 @@ namespace Outreach.Reporting.Service.Controllers
     public class FileController : ControllerBase
     {
         private readonly IFileProcessor _fileProcessor;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(FileController));
 
         public FileController(IFileProcessor fileProcessor)
         {

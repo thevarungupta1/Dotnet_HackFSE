@@ -1,0 +1,10 @@
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\bin\Debug\Reporting.Performance.Test.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\bin\Debug\Reporting.Performance.Test.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\obj\Debug\Reporting.Performance.Test.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\obj\Debug\Reporting.Performance.Test.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\obj\Debug\Reporting.Performance.Test.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\obj\Debug\Reporting.Performance.Test.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\obj\Debug\Reporting.Performance.Test.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\bin\Debug\WebTest1.webtest
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Reporting.Performance.Test\bin\Debug\LoadTest1.loadtest

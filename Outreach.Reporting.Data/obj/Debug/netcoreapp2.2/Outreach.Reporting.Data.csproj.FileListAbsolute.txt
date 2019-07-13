@@ -1,0 +1,28 @@
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.deps.json
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.runtimeconfig.json
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.runtimeconfig.dev.json
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.pdb
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.dll
+C:\Users\Administrator\Desktop\Projects\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.deps.json
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.runtimeconfig.json
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.runtimeconfig.dev.json
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Data.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\bin\Debug\netcoreapp2.2\Outreach.Reporting.Entity.pdb
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.csproj.CopyComplete
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.dll
+C:\Users\Administrator\Desktop\690784_nH Bug Squashers\690784-Hackathon-BackEnd\Outreach.Reporting.Data\obj\Debug\netcoreapp2.2\Outreach.Reporting.Data.pdb

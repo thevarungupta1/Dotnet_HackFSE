@@ -15,6 +15,7 @@ namespace Outreach.Reporting.Service.Controllers
     public class EventController : ControllerBase
     {
         private readonly IEventProcessor _eventProcessor;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(EventController));
 
         public EventController(IEventProcessor eventProcessor)
         {

@@ -125,7 +125,7 @@ namespace Outreach_Reporting_System
             }
 
             app.UseAuthentication();
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
             app.UseMvc();
 
             //This line enables the app to use Swagger, with the configuration in the ConfigureServices method.
